@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  service_api_url: 'https://ventas.negux.com/api/proxy',
+  admin_store_url: 'https://ventas.negux.com/api/proxy',
+  facebook_id: '2121071041449339'
 };
 
 /*

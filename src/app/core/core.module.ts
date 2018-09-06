@@ -5,9 +5,20 @@ import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 
+import { SharedService } from './services/shared.service';
+import { LocalStorageService } from './services/localStorage.service';
+import { SharingDataService } from './services/sharing.data.service';
+
 @NgModule({
-  imports: [CommonModule, HttpClientModule],
-  providers: []
+  imports: [
+    CommonModule, 
+    HttpClientModule
+  ],
+  providers: [
+    SharedService,
+    LocalStorageService,
+    SharingDataService
+  ]
 })
 export class CoreModule {
   /* Make sure CoreModule is imported only by one NgModule the AppModule */

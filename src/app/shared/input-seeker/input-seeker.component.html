@@ -1,0 +1,13 @@
+<div class="">
+      <form class="input-group  input-seeker">
+          <span class="input-group-btn category-search-span">
+          <select class="btn btn-secondary category-search" name="category" [(ngModel)]="model.idCategory" (change)="onChange($event.target.value)">
+            <option *ngFor="let category of categories" value="{{category?.idCategory}}">{{category?.nameCategory}}</option>
+          </select>
+        </span>
+        <input name="wordsearch" type="text" class="form-control input-search" placeholder="producto" 
+        [(ngModel)]="wordsearch" (keyup.enter)="search()"/>
+        <span class="input-group-btn">
+          <button class="btn btn-secondary button-search" (click)="search()"><i class="search-1icon- icon-search"></i></button></span>
+        </form>
+</div>

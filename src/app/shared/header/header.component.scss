@@ -1,15 +1,58 @@
-/* Header Styles */
+/* 11/03/2018 */
+.navbar {
+    background-color: #2A2f39;
+    .container{
+        background-color: #2A2f39;
+        padding-top:3px;
+    }
+}
 
-.navbar-menu {
-    a,
-    span {
-        border-bottom: none !important;
-    }
-    .is-brand {
-        font-size: 30px;
-    }
-    .navbar-item {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+.header{
+  height: 100%;
+  padding-top:5px;
+  min-height:65px;
+}
+
+.style-select{
+  margin:10px;
+  margin-top:20px;
+  height:21px;
+  overflow: hidden;
+  background-color:#2A2f39;
+  width:45%;
+
+  }
+
+  .style-select select:focus{
+    outline:none;
+  }
+
+.header-negocio {
+  background: black;
+  z-index: 999;
+  color: white;
+  position: fixed;
+  width: 100%;
+}
+li.item {
+  list-style: none;
+  display: inline-block;
+  margin: 5px;
+  text-transform: uppercase;
+  margin: 16px 18px 12px;
+  padding: 0;
+  letter-spacing: 0.05em;
+}
+
+/* ==== MEDIA QUERIES  ==== */
+
+/* Mobile */
+@media (max-width: 576px) {
+  div.container{
+    padding:0 20px;
+    padding-top:5px;
+  }
+}
+
+@media (min-width: 576px) {
 }

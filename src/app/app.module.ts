@@ -13,6 +13,7 @@ import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
 import { WelcomeModule } from "./features/welcome/welcome.module";
 import { ContactModule } from "./features/contact/contact.module";
+import { MainSearchModule } from './features/main-search/main-search.module';
 
 // ------------------------------------------------------------------------------
 // Import Routings
@@ -39,6 +40,7 @@ import { isPlatformBrowser } from "@angular/common";
 // Import environments
 // ------------------------------------------------------------------------------
 import { environment } from "../environments/environment";
+import { FacebookModule } from "../../node_modules/ngx-facebook/dist/esm/facebook.module";
 
 @NgModule({
   imports: [
@@ -49,7 +51,9 @@ import { environment } from "../environments/environment";
     CoreModule,
     WelcomeModule,
     ContactModule,
-    HttpClientModule
+    MainSearchModule,
+    HttpClientModule,
+    FacebookModule.forRoot(),
   ],
   declarations: [AppComponent],
   providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],

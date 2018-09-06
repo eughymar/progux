@@ -28,10 +28,17 @@
               }
             ],
             "styles": [
+              "./src/assets/font/fontello/css/fontellounicode.css",
+              "./src/assets/font/open-sans/style-fontfamily-opensans.css",
               "./node_modules/normalize.css/normalize.css",
               "./node_modules/bulma/css/bulma.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/stylesheets"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -84,6 +91,11 @@
               "./node_modules/bulma/css/bulma.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "/src/stylesheets"
+              ]
+            },
             "assets": [
               {
                 "glob": "**/*",

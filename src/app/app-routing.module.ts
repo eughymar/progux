@@ -9,6 +9,7 @@ import { RouterModule, Routes } from "@angular/router";
 // ------------------------------------------------------------------------------
 import { WelcomeComponent } from "./features/welcome/pages/welcome.component";
 import { ContactComponent } from "./features/contact/pages/contact.component";
+import { PageComponent } from './features/main-search/components/page/page.component';
 
 // ------------------------------------------------------------------------------
 // Import custom preload strategy
@@ -24,7 +25,7 @@ import { environment } from "../environments/environment";
 // Route Configuration
 // ------------------------------------------------------------------------------
 const routes: Routes = [
-  { path: "", component: WelcomeComponent, pathMatch: "full" },
+  { path: "", component: PageComponent, pathMatch: "full" },
   { path: "contact", component: ContactComponent, data: { preload: true } }
 ];
 

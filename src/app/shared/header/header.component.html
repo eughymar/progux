@@ -1,11 +1,61 @@
-<div class="navbar-menu">
-  <div class="navbar-start">
-    <!-- navbar items -->
-    <a class="navbar-item is-brand" [routerLink]="['/']">Marley.js</a>
-  </div>
 
-  <div class="navbar-end">
-    <!-- navbar items -->
-    <a class="navbar-item" [routerLink]="['/contact']" [routerLinkActive]="['is-active']">Contact</a>
+<!-- Desktop -->
+<div class="container d-none d-sm-block header" *ngIf="!isMainSearcher && !isBussines">
+  <div class="row">
+    <countries-list class=" col-sm-3 col-md-2 col-lg-3" [isMainSearch]="isMainSearcher"></countries-list>
+    <!-- <input-seeker-header class="col-sm-5 col-md-5 col-lg-5"></input-seeker-header> -->
+    <div class="col-sm-4 col-md-5 col-lg-4">
+      <!-- <profile-options></profile-options> -->
+    </div>
   </div>
 </div>
+
+<!-- Mobile -->
+<div class="container d-sm-none header" *ngIf="!isMainSearcher && !isBussines">
+  <div class="row flex-wrap align-content-center">
+    <countries-list class="col-2" [isMainSearch]="isMainSearcher"></countries-list>
+    <div class="col-10">
+      <!-- <profile-options></profile-options> -->
+    </div>
+  </div>
+  <div class="row">
+    <!-- <input-seeker-header class="col-12"></input-seeker-header> -->
+  </div>
+</div>
+
+<!-- Without session -->
+<nav class="navbar bd-structure-item bd-is-structure-container" title="level" >
+  <div class="container level" *ngIf="isMainSearcher && !isBussines">
+    <div class="level-left bd-structure-item" title="level-left">
+      <div class="level-item">
+        <countries-list [isMainSearch]="isMainSearcher"></countries-list>
+      </div>
+    </div>
+    <div class="level-right bd-structure-item" title="level-right">
+      <profile-options></profile-options>
+    </div>
+  </div>
+</nav>
+
+
+<!-- <nav class="navbar">
+  <div class="container">
+    <div class="columns level" *ngIf="isMainSearcher && !isBussines">
+      <div class="column is-2 is-half">
+        <countries-list [isMainSearch]="isMainSearcher"></countries-list>
+      </div>
+      <div class="column is-10 level-right">
+        <profile-options></profile-options>
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+<!-- <div class="container header" *ngIf="isMainSearcher && !isBussines">
+  <div class="row flex-wrap align-content-center">
+    <countries-list [isMainSearch]="isMainSearcher"></countries-list>
+    <div class="col-10 col-md-9 col-lg-9">
+      <profile-options></profile-options>
+    </div>
+  </div>
+</div> -->

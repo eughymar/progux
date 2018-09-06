@@ -1,0 +1,87 @@
+<!-- authenticated -->
+<div *ngIf="isAuthenticated" class="float-right profile">
+	<!-- Store -->
+	<div *ngIf="userHasStore" (click)="goToAdminStore()" style="cursor: pointer" class="icon-profile">
+		<i class="shop-1icon-"></i>
+	</div>
+	
+	<!-- <div *ngIf="userHasStore" (click)="goToAdminStore()" style="cursor: pointer" class="icon-profile">
+		<i class="shop-1icon-"></i>
+	</div> -->
+
+	<span *ngIf="!userHasStore" class="session-text icon-profile" (click)="goToWizard()">
+		Crea tu negocio
+	</span>
+
+	<!-- Notifications -->
+	<div class="icon-profile">
+		<i class="bellicon-"></i>
+	</div>
+
+	<!-- Shopping cart -->
+	<!-- <div class="icon-profile">
+		<i class="basket-alticon-"></i>
+	</div> -->
+
+	<!-- User -->
+	<div ngbDropdown placement="bottom-right" class="icon-profile">
+		<!-- <i class="usericon- dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle></i> -->
+		<span class="name-user-login" id="dropdownBasic1" ngbDropdownToggle>
+			<img class="img-user-profile" src="{{serverUrl+user?.picture}}"> 
+			{{user.firstNameUser}}
+		</span>
+
+		<div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+				<button  (click)="goToUserProfile()" class="dropdown-item text-user-session">Perfil</button>
+				<button (click)="logout()" class="dropdown-item text-user-session">Cerrar Sesión</button>
+		</div>
+	</div>
+</div>
+
+<!-- whithout authentication -->
+<div *ngIf="!isAuthenticated" class="float-right profile">	
+	<div ngbDropdown class="inline-block">
+		<!-- <i (click)="openNoLoggedModal(noLoggedContent)" class="shop-1icon- cpointer icon-ntf icon-profile">
+			<span class="c-ntf fos-bold">{{notificationNum}}</span>
+		</i>&nbsp; -->
+		<span class="session-text icon-profile" (click)="openNoLoggedModal(noLoggedContent)">
+			Crea tu negocio
+		</span>
+		<span class="session-text icon-profile" (click)="goToLogIn()">
+			Iniciar sesión
+		</span>
+		<!-- <span class="fos-regular session-text dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>INICIAR SESIÓN</span> -->
+		<!-- <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+				<button (click)="loginByFacebook()" class="dropdown-item">Iniciar por Facebook</button>
+				<button (click)="openModalLoginByNegux(content)"class="dropdown-item">Iniciar por Negux</button>
+			</div> -->
+	</div>
+</div>
+
+<!-- Need to be logged by negux modal template-->
+<ng-template #noLoggedContent let-c="close" let-d="dismiss">
+	<div class="modal-body new-description">
+    <p> Debe de iniciar sesión para poder crear su negocio</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn ngx-button" (click)="c('Close click')">Cerrar</button>
+  </div>
+</ng-template>
+
+
+<div class="modal">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<header class="modal-card-head">
+			<p class="modal-card-title">Modal title</p>
+			<button class="delete" aria-label="close"></button>
+		</header>
+		<section class="modal-card-body">
+			<!-- Content ... -->
+		</section>
+		<footer class="modal-card-foot">
+			<button class="button is-success">Save changes</button>
+			<button class="button">Cancel</button>
+		</footer>
+	</div>
+</div>

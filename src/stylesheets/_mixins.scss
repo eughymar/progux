@@ -1,0 +1,20 @@
+@mixin center($top: 50%, $left: 50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@mixin product-card {
+  img {
+    width: 90%;
+    margin: 10px auto;
+    transition: all 0.65s;
+    display: block;
+  }
+  &:hover {
+    & img {
+      transform: scale(1.05);
+    }
+  }
+}
