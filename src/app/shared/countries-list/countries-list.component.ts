@@ -30,7 +30,6 @@ export class CountriesListComponent implements OnInit{
   
   ngOnInit(){
     this.getCountries();
-    window.console.log('aaaa');
   }
 
   goToMainSearcher(){

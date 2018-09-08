@@ -13,7 +13,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 import { TestComponent } from './test/test.component';
 import { CountriesListComponent } from "./countries-list/countries-list.component";
-import { ProfileOptionsComponent } from './profile-options/profile-options.component';
+//import { ProfileOptionsComponent } from './profile-options/profile-options.component';
 import { InputSeekerComponent } from './input-seeker/input-seeker.component';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { InputSeekerComponent } from './input-seeker/input-seeker.component';
     HeaderComponent,
     TestComponent,
     CountriesListComponent,
-    ProfileOptionsComponent,
+//    ProfileOptionsComponent,
     InputSeekerComponent
   ],
   exports: [
@@ -35,7 +35,7 @@ import { InputSeekerComponent } from './input-seeker/input-seeker.component';
     HeaderComponent,
     TestComponent,
     CountriesListComponent,
-    ProfileOptionsComponent,
+//    ProfileOptionsComponent,
     InputSeekerComponent
   ]
 })
