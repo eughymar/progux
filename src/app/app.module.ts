@@ -13,7 +13,7 @@ import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
 import { WelcomeModule } from "./features/welcome/welcome.module";
 import { ContactModule } from "./features/contact/contact.module";
-import { MainSearchModule } from './features/main-search/main-search.module';
+import { MainSearchModule } from "./features/main-search/main-search.module";
 
 // ------------------------------------------------------------------------------
 // Import Routings
@@ -53,7 +53,7 @@ import { FacebookModule } from "../../node_modules/ngx-facebook/dist/esm/faceboo
     ContactModule,
     MainSearchModule,
     HttpClientModule,
-    FacebookModule.forRoot(),
+    FacebookModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],

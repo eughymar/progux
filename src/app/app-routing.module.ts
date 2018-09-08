@@ -9,7 +9,7 @@ import { RouterModule, Routes } from "@angular/router";
 // ------------------------------------------------------------------------------
 import { WelcomeComponent } from "./features/welcome/pages/welcome.component";
 import { ContactComponent } from "./features/contact/pages/contact.component";
-import { PageComponent } from './features/main-search/components/page/page.component';
+import { PageComponent } from "./features/main-search/components/page/page.component";
 
 // ------------------------------------------------------------------------------
 // Import custom preload strategy

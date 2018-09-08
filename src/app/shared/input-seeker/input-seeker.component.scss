@@ -1,68 +1,29 @@
 /* ---- style 17-03-2018 ----*/
-.input-seeker{
-  width:100%;
+.input-seeker {
   margin-top:5px;
-  height:42px;;
-  }
-
-form.input-seeker input{
-  background-color:#fff;
-  }
-
-div.col-3{
-  color:white;
-  text-align:center;
-  font-size:11px;
-  font-family:arial,sans-serif;
-  }
-
-.input-seeker{
+  height:42px;
+  width: 33%;
+  margin: auto;
   border-radius:3px;
   overflow:hidden;
   border: 1px solid white;
   background-color: white;
-  width:auto;
+  input {
+    background-color:#fff;
   }
-
-/* span .button-search{
-  background-color:rgb(57, 63, 75);
-  color:white;
-  border:none;
-  border-radius: 0;
-} */
-
-div form .category-search-span{
-  width:30%;
-}
-form .category-search{
-  border:none;
-  width:100%;
-  font-size:13px;
-  font-family:arial,sans-serif;
-}
-
-form .input-search{
-  border: none;
-  background-color:white;
-  font-size:13px;
-  font-family:arial,sans-serif;
-}
-
-div .input-search{
-  border: none;
-  background-color:white;
-}
-
-/* span .button-search:hover{
-  background-color:rgb(23, 157, 165);
-  color:#fff;
-  border:none;
-  border-radius: 0;
-} */
-
-.icon-search{
-  font-size:16px;
+  .category-search-span{
+    width:30%;
+    .category-search{
+      border:none;
+      width:100%;
+      font-size:13px;
+      font-family:arial,sans-serif;
+    }
   }
+  .icon-search{
+    font-size:16px;
+  }
+}
 
 /* ==== MEDIA QUERIES ==== */
 @media (max-width: 575px) {
