@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  service_api_url: 'https://ventas.negux.com/api/proxy',
-  admin_store_url: 'https://ventas.negux.com/api/proxy',
-  facebook_id: '2121071041449339'
+  service_api_url: "URL_API_SERVICE",
+  admin_store_url: "URL_API_SERVICE",
+  facebook_id: "2121071041449339"
 };
 
 /*
