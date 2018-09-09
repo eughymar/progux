@@ -32,14 +32,19 @@
               "./src/assets/font/open-sans/style-fontfamily-opensans.css",
               "./node_modules/normalize.css/normalize.css",
               "./node_modules/bulma/css/bulma.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/slick-carousel/slick/slick.scss",
+              "./node_modules/slick-carousel/slick/slick-theme.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/stylesheets"
               ]
             },
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/slick-carousel/slick/slick.min.js"
+            ]
           },
           "configurations": {
             "production": {

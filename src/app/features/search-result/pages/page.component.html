@@ -1,0 +1,42 @@
+<div class="container c-color-bg" *ngIf="loading">
+  <div class="main-content"></div>
+</div>
+
+<div class="container c-color-bg" *ngIf="!loading&&!thereIsResult">
+  <div class="main-content" style="height:660px;">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 col-lg-5">
+        <img src="assets/img/withoutResult.jpg" style="width:340px;">
+      </div>
+      <div class="col-sm-12 col-md-7 col-lg-7" style="margin-top:40px;">
+        <p>No se han encontrado resultados para tu búsqueda (
+          <strong>{{searchQuery}}</strong>).</p>
+        <p>Sugerencias:</p>
+        <ul>
+          <li>
+            <p>Asegúrate de que todas las palabras estén escritas correctamente.</p>
+          </li>
+          <li>
+            <p>Prueba diferentes palabras clave.</p>
+          </li>
+          <li>
+            <p>Prueba palabras clave más generales.</p>
+          </li>
+          <li>
+            <p>Prueba menos palabras clave.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container c-color-bg" *ngIf="!loading&&thereIsResult">
+  <div class="main-content">
+    <ngx-slider *ngIf="imageSources" [imageData]="imageSources" [title]="storeTitle" [isStore]=true></ngx-slider>
+  </div>
+  <div class="main-content">
+    <ngx-products-list [title]="productTitle"></ngx-products-list>
+  </div>
+</div>
+<br>

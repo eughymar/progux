@@ -1,0 +1,31 @@
+<h4 class="title-section-ngx">
+	{{title}}</h4>
+<div class="row">
+	<div class="col-2 col-sm-2 col-md-1 col-lg-1" (click)="slickModal.slickPrev()">
+		<p class="buttom-control">
+			<i class="left-open-bigicon-"></i>
+		</p>
+	</div>
+	<div class="col-8 col-sm-8 col-md-10 col-lg-10">
+		<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+			<div ngxSlickItem *ngFor="let slide of imageData" class="slide" (click)="goToDetail(slide)">
+
+				<img class="shadow-img" *ngIf="isStore" src="{{url+slide.urlLogoStore}}" title="{{slide.nameStore}}">
+				<div *ngIf="slide.renderedInitials" class="logo-name">{{slide.logoName}}</div>
+
+				<div class="name-store-slider" *ngIf="isStore">{{slide.nameStore}}</div>
+				<img class="shadow-img" *ngIf="!isStore" src="{{url+slide.urlImageProduct}}" title="{{slide.nameProduct}}">
+
+				<div class="name-store-slider" *ngIf="!isStore">{{slide.nameProduct}}</div>
+				<div class="barraBottom"></div>
+			</div>
+		</ngx-slick-carousel>
+	</div>
+	<div class="col-2 col-sm-2 col-md-1 col-lg-1">
+		<div class="" (click)="slickModal.slickNext()">
+			<p class="buttom-control">
+				<i class="right-open-bigicon-"></i>
+			</p>
+		</div>
+	</div>
+</div>

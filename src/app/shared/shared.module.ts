@@ -5,6 +5,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from '@angular/forms';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 // ------------------------------------------------------------------------------
 // Import components
@@ -15,12 +16,14 @@ import { TestComponent } from './test/test.component';
 import { CountriesListComponent } from "./countries-list/countries-list.component";
 import { ProfileOptionsComponent } from './profile-options/profile-options.component';
 import { InputSeekerComponent } from './input-seeker/input-seeker.component';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   imports: [
     CommonModule, 
     RouterModule,
-    FormsModule
+    FormsModule,
+    SlickCarouselModule,
   ],
   declarations: [
     FooterComponent, 
@@ -28,7 +31,8 @@ import { InputSeekerComponent } from './input-seeker/input-seeker.component';
     TestComponent,
     CountriesListComponent,
     ProfileOptionsComponent,
-    InputSeekerComponent
+    InputSeekerComponent,
+    SliderComponent
   ],
   exports: [
     FooterComponent, 
@@ -36,7 +40,8 @@ import { InputSeekerComponent } from './input-seeker/input-seeker.component';
     TestComponent,
     CountriesListComponent,
     ProfileOptionsComponent,
-    InputSeekerComponent
+    InputSeekerComponent,
+    SliderComponent
   ]
 })
 export class SharedModule {}

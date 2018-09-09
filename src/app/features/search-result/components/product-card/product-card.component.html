@@ -1,0 +1,33 @@
+
+<div class="card container-card">
+
+	<div class="promotion-image " *ngIf="data.percentDiscount!=0">
+		<p class="promotion-text">{{data.percentDiscount|number:'1.0-0'}}%</p>
+	</div>
+	<img class="card-img-top" src="{{url+data.urlImageProduct}}" (click)='productDetail(data)'>
+	<!-- <div class="overlay">
+			<div class="text-card-hover">
+				<div>{{data.store.nameStore}}</div>
+				<div>{{data.itemDescription}}</div>
+				<div>{{data.itemStars}}</div>
+				<div>Bs.{{data.priceProduct}}</div>
+			</div>
+	</div> -->
+	<div class="name-product">{{data.nameProduct}}</div>
+
+	<div
+		class="price-product"
+		*ngIf="data.priceProduct > 0 && data.percentDiscount!=0">
+		<span class="line">{{data.priceProduct|number:'1.2-2'}} Bs</span>
+		<span>{{data.newPrice|number:'1.2-2'}} Bs</span>
+	</div>
+
+	<div
+		class="price-product"
+		*ngIf="data.priceProduct > 0 && data.percentDiscount==0">
+		<span>{{data.priceProduct|number:'1.2-2'}} Bs</span>
+	</div>
+
+	<div class="color-blue">Tienda: <span class="color-blue" (click)='storeDetail(data)'>{{data.store.nameStore}}</span></div>
+</div>	
+

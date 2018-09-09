@@ -103,10 +103,11 @@ export class InputSeekerComponent implements OnInit{
       
     // }
 
-    search(){
+    search() {
       var country = this._sharingDataService.getCountry();
-      var idCategory = this.currentCategory.idCategory;
 
+      var idCategory = this.currentCategory.idCategory;
+      // debugger;
       var params = {
         queryParams:{ 
           query: this.wordsearch,

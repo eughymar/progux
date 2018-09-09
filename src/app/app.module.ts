@@ -15,6 +15,7 @@ import { WelcomeModule } from "./features/welcome/welcome.module";
 import { ContactModule } from "./features/contact/contact.module";
 import { MainSearchModule } from "./features/main-search/main-search.module";
 
+
 // ------------------------------------------------------------------------------
 // Import Routings
 // ------------------------------------------------------------------------------
@@ -40,7 +41,11 @@ import { isPlatformBrowser } from "@angular/common";
 // Import environments
 // ------------------------------------------------------------------------------
 import { environment } from "../environments/environment";
-import { FacebookModule } from "../../node_modules/ngx-facebook/dist/esm/facebook.module";
+import { FacebookModule } from "ngx-facebook/dist/esm/facebook.module";
+
+import { SearchResultModule } from "./features/search-result/search-result.module";
+
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   imports: [
@@ -53,7 +58,9 @@ import { FacebookModule } from "../../node_modules/ngx-facebook/dist/esm/faceboo
     ContactModule,
     MainSearchModule,
     HttpClientModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    SearchResultModule,
+    SlickCarouselModule,
   ],
   declarations: [AppComponent],
   providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],
