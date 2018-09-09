@@ -14,7 +14,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 import { TestComponent } from './test/test.component';
 import { CountriesListComponent } from "./countries-list/countries-list.component";
-import { ProfileOptionsComponent } from './profile-options/profile-options.component';
+//import { ProfileOptionsComponent } from './profile-options/profile-options.component';
 import { InputSeekerComponent } from './input-seeker/input-seeker.component';
 import { SliderComponent } from './slider/slider.component';
 
@@ -30,7 +30,6 @@ import { SliderComponent } from './slider/slider.component';
     HeaderComponent,
     TestComponent,
     CountriesListComponent,
-    ProfileOptionsComponent,
     InputSeekerComponent,
     SliderComponent
   ],
@@ -39,7 +38,6 @@ import { SliderComponent } from './slider/slider.component';
     HeaderComponent,
     TestComponent,
     CountriesListComponent,
-    ProfileOptionsComponent,
     InputSeekerComponent,
     SliderComponent
   ]
