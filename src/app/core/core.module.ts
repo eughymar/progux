@@ -8,6 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { SharedService } from './services/shared.service';
 import { LocalStorageService } from './services/localStorage.service';
 import { SharingDataService } from './services/sharing.data.service';
+import { UtilService } from "./services/util.service";
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { SharingDataService } from './services/sharing.data.service';
   providers: [
     SharedService,
     LocalStorageService,
-    SharingDataService
+    SharingDataService,
+    UtilService
   ]
 })
 export class CoreModule {

@@ -1,31 +1,33 @@
 
 <!-- Desktop -->
-<div class="container d-none d-sm-block header" *ngIf="!isMainSearcher && !isBussines">
-  <div class="row">
-    <countries-list class=" col-sm-3 col-md-2 col-lg-3" [isMainSearch]="isMainSearcher"></countries-list>
-    <!-- <input-seeker-header class="col-sm-5 col-md-5 col-lg-5"></input-seeker-header> -->
-    <div class="col-sm-4 col-md-5 col-lg-4">
-      <!-- <profile-options></profile-options> -->
+<nav class="navbar d-none d-sm-block" *ngIf="!isMainSearcher && !isBussines">
+  <div class="container">
+    <div class="columns">
+      <countries-list class="column is-three-quarters-mobile is-two-thirds-tablet is-one-quarter-fullhd" [isMainSearch]="isMainSearcher"></countries-list>
+      <input-seeker class="column is-9" [classs]="'input-header'"></input-seeker>
+      <!-- <div class="column col-sm-4 col-md-5 col-lg-4">
+        <profile-options></profile-options>
+      </div> -->
     </div>
   </div>
-</div>
+</nav>
 
 <!-- Mobile -->
-<div class="container d-sm-none header" *ngIf="!isMainSearcher && !isBussines">
+<!-- <div class="container d-sm-none header" *ngIf="!isMainSearcher && !isBussines">
   <div class="row flex-wrap align-content-center">
     <countries-list class="col-2" [isMainSearch]="isMainSearcher"></countries-list>
-    <div class="col-10">
+    <div class="col-10"> -->
       <!-- <profile-options></profile-options> -->
-    </div>
+    <!-- </div>
   </div>
-  <div class="row">
+  <div class="row"> -->
     <!-- <input-seeker-header class="col-12"></input-seeker-header> -->
-  </div>
-</div>
+  <!-- </div>
+</div> -->
 
 <!-- Without session -->
-<nav class="navbar bd-structure-item bd-is-structure-container" title="level" >
-  <div class="container level" *ngIf="isMainSearcher && !isBussines">
+<nav class="navbar bd-structure-item bd-is-structure-container" title="level" *ngIf="isMainSearcher && !isBussines">
+  <div class="container level">
     <div class="level-left bd-structure-item" title="level-left">
       <div class="level-item">
         <countries-list [isMainSearch]="isMainSearcher"></countries-list>

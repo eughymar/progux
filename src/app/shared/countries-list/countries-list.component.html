@@ -1,30 +1,25 @@
-<!-- Authentification -->
-  <div class="form-group inline-block d-none d-sm-block" [hidden]="false">
-    <div *ngIf="!isMainSearch">
-      <!-- <img class="container-logo" (click)="goToMainSearcher()"  src="assets/img/lNeguxHeader.png"> -->
-      <img class="container-logo" (click)="goToMainSearcher()"  src="assets/img/logoNGXWhite.png">
-      <img class="container-text-logo" (click)="goToMainSearcher()"  src="assets/img/textNGXWhite.png">
+  <!-- Authentification -->
+    <div class="form-group inline-block d-none d-sm-block" [hidden]="false">
+      <div *ngIf="!isMainSearch">
+        <!-- <img class="container-logo" (click)="goToMainSearcher()"  src="assets/img/lNeguxHeader.png"> -->
+        <img class="container-logo" (click)="goToMainSearcher()"  src="assets/img/logoNGXWhite.png">
+        <img class="container-text-logo" (click)="goToMainSearcher()"  src="assets/img/textNGXWhite.png">
+      </div>
+      <div class="style-select" *ngIf="isMainSearch">
+      <select class="" id="country" (change)="onChange($event.target.value)">
+        <option *ngFor="let country of countries" [value]="country?.idCountry">{{country?.nameCountry}}</option>
+      </select>
+      </div>
     </div>
-    <div class="style-select" *ngIf="isMainSearch">
-    <select class="" id="country" (change)="onChange($event.target.value)">
-      <option *ngFor="let country of countries" [value]="country?.idCountry">{{country?.nameCountry}}</option>
-    </select>
+  
+    <!-- Mobile authemtification -->
+    <!-- <div class="d-sm-none" *ngIf="!isMainSearch">
+      <img class="container-logo" (click)="goToMainSearcher()" src="assets/img/lNeguxLogo.png">
+    </div> -->
+  
+    <!-- Without authentification -->
+    <div class="style-select" [hidden]="true">
+      <select class="" id="country" (change)="onChange($event.target.value)">
+        <option *ngFor="let country of countries" [value]="country?.idCountry">{{country?.nameCountry}}</option>
+      </select>
     </div>
-  </div>
-
-  <!-- Mobile authemtification -->
-  <div class="d-sm-none" *ngIf="!isMainSearch">
-    <img class="container-logo" (click)="goToMainSearcher()" src="assets/img/lNeguxLogo.png">
-  </div>
-
-  <!-- Without authentification -->
-  <div class="style-select" [hidden]="true">
-    <select class="" id="country" (change)="onChange($event.target.value)">
-      <option *ngFor="let country of countries" [value]="country?.idCountry">{{country?.nameCountry}}</option>
-    </select>
-  </div>
-
-  
-
-  
-

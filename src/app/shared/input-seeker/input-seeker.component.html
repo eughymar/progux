@@ -1,5 +1,5 @@
 <div class="">
-  <form class="field is-grouped input-seeker">
+  <form class="field is-grouped input-seeker {{classs}}">
     <div class="select category-search-span">
       <select class="category-search" name="category" [(ngModel)]="model.idCategory" (change)="onChange($event.target.value)">
         <option *ngFor="let category of categories" value="{{category?.idCategory}}">{{category?.nameCategory}}</option>

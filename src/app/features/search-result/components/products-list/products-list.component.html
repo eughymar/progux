@@ -1,13 +1,13 @@
 <h5 class="title-section-ngx"><span class="color-nro-results">{{productsCount}} </span>{{title}}</h5>
 
-<div class="row">
+<div class="rowd">
 	<div *ngFor="let product of products" class="col-1ths col-2ths col-sm-3ths col-md-4ths col-lg-5ths">
 		<ngx-product-card [data]="product"></ngx-product-card>
 	</div>
 </div>
-<br>
-<div class="row">
-		<button *ngIf="!finished" class="col-center btn ngx-button" (click)="getProducts()">Ver más</button>
+
+<div class="control">
+	<button *ngIf="!finished" class="button is-primary" (click)="getProducts()">Ver más</button>
 </div>
 
 

@@ -1,15 +1,110 @@
-<!-- Footer -->
-<footer class="footer">
-    <!-- Container -->
-    <div class="container">
-        <!-- Content -->
-        <div class="content has-text-centered">
+<div class="container-shared footer">
+    <!-- With authentication page search mobile desktop -->
+    <div class="container" *ngIf="isMainSearch">
+        <div class="row without-session d-flex justify-content-center">
+            <div class="footer-text-i fos-light d-flex align-items-center">
+                &#169; 2018 Negux
+            </div>
+        </div>
+    </div>
+    <!-- Authentication -->
+
+    <!-- template condition and terms -->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Términos y condiciones</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
             <p>
-                <strong><a href="https://github.com/PetrNikolas/marley">Marley</a></strong> by <a href="http://www.petrnikolas.com/">Petr Nikolas</a>.
+                <b>1.1 El pasaje estándar Lorem Ipsum, usado desde el año 1500.</b>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+                <b>2.2Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45 antes de Cristo</b>
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
             </p>
         </div>
-        <!-- End Content -->
+        <div class="modal-footer">
+            <button type="button" class="btn ngx-button" (click)="c('Close click')">Cerrar</button>
+        </div>
+    </ng-template>
+    <!-- /template -->
+
+    <!-- Desktop -->
+    <div class="container d-none d-sm-block" *ngIf="!isMainSearch">
+        <div class="row" [hidden]="false">
+            <div class="logo col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="d-flex">
+                    <div class="ngx-img p-1">
+                        <img src="assets/img/lNegux.png">
+                    </div>
+                    <div class="content-text fos-light p-1">
+                        SOLUCIONES TECNOLÓGICAS
+                        <br/> {{neguxTitle}} S.R.L
+                        <br/>
+                        <span class="website" (click)="goToStoreNegux()">
+                            WebSite
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="terminos-condiciones">
+                    <a style="cursor:pointer;" (click)="open(content)">&nbsp;Términos y condiciones</a>
+                    <br/> &#169; {{neguxTitleData}}
+                    <div>
+                        <div class="social-footer" style="float:right">
+                            <span>
+                                <a href="">
+                                    <i class="twitter-squaredicon-"></i>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="">
+                                    <i class="facebook-squaredicon-"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- End Container -->
-</footer>
-<!-- End Footer -->
+
+    <!-- Mobile -->
+    <div class="container d-sm-none" *ngIf="!isMainSearch">
+        <div class="row footer-mobile" [hidden]="false">
+            <div class="col-6 logo">
+                <img style="width:64px;" src="assets/img/textNGX.png">
+            </div>
+
+            <div class="col-6 details">
+                <div class="">
+                    <span class="ter-con-mobile-right">
+                        <a href="">
+                            <i class="twitter-squaredicon-"></i>
+                        </a>
+                    </span>
+                    <span class="ter-con-mobile-right">
+                        <a href="">
+                            <i class="facebook-squaredicon-"></i>
+                        </a>
+                    </span>
+                </div>
+                <div class="ter-con-mobile-right">&#169; 2018 Negux</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,9 @@
   overflow:hidden;
   border: 1px solid white;
   background-color: white;
+  &.input-header {
+    width: 100%;
+  }
   input {
     background-color:#fff;
   }

@@ -25,6 +25,7 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 })
 
 export class InputSeekerComponent implements OnInit{
+    @Input() public classs: string;
 
     //Attributes
     wordsearch: string;
