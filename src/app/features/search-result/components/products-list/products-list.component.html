@@ -1,23 +1,11 @@
 <h5 class="title-section-ngx"><span class="color-nro-results">{{productsCount}} </span>{{title}}</h5>
 
-<div class="rowd">
-	<div *ngFor="let product of products" class="col-1ths col-2ths col-sm-3ths col-md-4ths col-lg-5ths">
-		<ngx-product-card [data]="product"></ngx-product-card>
-	</div>
+<div class="columns is-multiline">
+  <div *ngFor="let product of products" class="col-1ths col-2ths col-sm-3ths col-md-4ths col-lg-5ths">
+    <ngx-product-card [data]="product"></ngx-product-card>
+  </div>
 </div>
 
-<div class="control">
-	<button *ngIf="!finished" class="button is-primary" (click)="getProducts()">Ver más</button>
+<div class="is-centered">
+  <button *ngIf="!finished" class="button is-primary" (click)="getProducts()">Ver más</button>
 </div>
-
-
-<!-- <div class="search-results"
-	infinite-scroll
-	[infiniteScrollDistance]="scrollDistance"
-	[infiniteScrollThrottle]="scrollThrottle"
-	(scrolled)="onScrollDown()">
-</div>
-
-<div *ngIf="!finished"></div>
-
-<div *ngIf="finished"> Es todo!!!</div> -->

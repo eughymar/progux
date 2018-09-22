@@ -1,0 +1,124 @@
+.product-card {
+  &.card {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid rgb(229, 230, 231);
+    border-radius: 2px;
+    box-shadow: 2px 4px 4px -3px rgba(0, 0, 0, 0.3);
+    transition: 0.65s;
+    overflow: hidden;
+
+    &:hover {
+      box-sizing: border-box;
+      border: 1px solid #dcdcdc;
+      box-shadow: 2px 6px 8px -3px rgba(134, 132, 132, 0.8);
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    .card-image {
+      .promotion-image {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-image: url(../../../../../assets/img/promotionImage.png);
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        position: absolute;
+        top: -3%;
+        left: 84%;
+        z-index: 1;
+      }
+
+      .promotion-text {
+        color: white;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-top: 0.9rem;
+        margin-left: 0.6rem;
+      }
+
+      img {
+        transition: all .65s;
+        display: block;
+      }
+    }
+
+    .card-content {
+      padding: 0.7rem;
+
+      .name-product {
+        font-family: Arial, sans-serif;
+        font-size: 0.9rem;
+        color: #686f7a;
+        margin-bottom: 10px;
+        letter-spacing: 0px;
+      }
+
+      .price-product {
+        font-family: "open_sansregular";
+        color: #29303b;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-left: 0;
+        margin-top: -10px;
+        padding-bottom: 10px;
+
+        .line {
+          text-decoration: line-through;
+          color: #686f7a;
+          font-size: 12px;
+        }
+      }
+
+      .name-store {
+        font-family: Helvetica, sans-serif;
+        font-size: 0.9rem;
+
+        .name {
+          color: rgb(114, 116, 116);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .product-card {
+    .name-product {
+      height: 15px;
+      font-size: 12px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .name-store {
+      font-size: 10px;
+    }
+
+    .name-product {
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      color: rgb(54, 54, 54);
+      color: #686f7a;
+      padding: 5px 10px;
+      height: 50px;
+      letter-spacing: 0px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .price-product {
+      font-family: "open_sansbold";
+      font-size: 0.9rem;
+      margin-left: 0;
+      padding: 0 10px;
+      padding-bottom: 10px;
+      text-align: right;
+    }
+  }
+}

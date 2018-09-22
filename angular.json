@@ -31,7 +31,6 @@
               "./src/assets/font/fontello/css/fontellounicode.css",
               "./src/assets/font/open-sans/style-fontfamily-opensans.css",
               "./node_modules/normalize.css/normalize.css",
-              "./node_modules/bulma/css/bulma.css",
               "src/styles.scss",
               "./node_modules/slick-carousel/slick/slick.scss",
               "./node_modules/slick-carousel/slick/slick-theme.scss"

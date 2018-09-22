@@ -9,7 +9,7 @@ import { SearchResultService } from '../../services/search-result.service';
 @Component({
   selector: 'ngx-product-card',
   templateUrl: 'product-card.component.html',
-  styleUrls:['product-card.component.css']
+  styleUrls:['product-card.component.scss']
 })
 
 export class ProductCardComponent implements OnInit{
