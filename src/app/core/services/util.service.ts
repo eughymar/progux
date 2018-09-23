@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Event, Router, NavigationStart} from '@angular/router';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 
 export class UtilService {
 	public isMainSearch: boolean = true;

@@ -2,7 +2,7 @@
 // Import Angular libs
 // ------------------------------------------------------------------------------
 import { Component } from "@angular/core";
-import { UtilService } from './core/services/util.service';
+import { UtilService } from "./core/services/util.service";
 
 @Component({
   selector: "app-root",
@@ -10,7 +10,9 @@ import { UtilService } from './core/services/util.service';
   styleUrls: ["app.component.scss"]
 })
 export class AppComponent {
-  constructor(private _util: UtilService) {
+  constructor(private _util: UtilService) {}
 
+  isMainPage() {
+    return this._util.isMainPage();
   }
 }

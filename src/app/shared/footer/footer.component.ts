@@ -4,7 +4,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 // import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Router, Event, NavigationStart, NavigationEnd } from '@angular/router';
-import { UtilService } from '../../core/services/util.service';
 // import { RouterConfigLoader } from '@angular/router/src/router_config_loader';
 
 @Component({
@@ -17,6 +16,7 @@ export class FooterComponent implements OnInit {
   //Attributes
   public neguxTitle: string;
   public neguxTitleData: string;
+  public isMainSearch: boolean = true;
 
   //Modal
   closeResult: string;
@@ -24,7 +24,7 @@ export class FooterComponent implements OnInit {
   //Methods
   constructor(
     // private modalService: NgbModal,
-    private router: Router,
+    private router: Router
     ) {
   }
 
