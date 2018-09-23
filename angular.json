@@ -29,7 +29,7 @@
             ],
             "styles": [
               "./src/assets/font/fontello/css/fontellounicode.css",
-              "./src/assets/font/open-sans/style-fontfamily-opensans.css",
+              "./src/assets/font/titillium/titillium.css",
               "./node_modules/normalize.css/normalize.css",
               "src/styles.scss",
               "./node_modules/slick-carousel/slick/slick.scss",
