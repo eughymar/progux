@@ -1,5 +1,5 @@
 @import "_variables.scss";
-@import "general.scss";
+@import "_mixins.scss";
 @import "theme.scss";
 
 @import "_utils.scss";
@@ -10,7 +10,7 @@
 .col-md-4ths,
 .col-sm-3ths,
 .col-2ths,
-.col-1ths{
+.col-1ths {
   float: left;
   margin-block-end: 5px;
 }
@@ -25,7 +25,7 @@
   .col-sm-3ths {
     width: 33.33%;
   }
-  }
+}
 
 @media (min-width: 992px) {
   .col-md-4ths {
@@ -43,6 +43,7 @@
 .is-centered {
   text-align: center;
 }
+
 /* ------ End Columns ------ */
 
 /* ------ utilities ------ */
@@ -478,3 +479,12 @@
 }
 
 /* ------ end utilities ------ */
+
+.title-section {
+  padding-top: 10px;
+  padding-bottom: 25px;
+  color: #2A2f39;
+  letter-spacing: 0.03rem;
+  font-size: 1.1rem;
+  @include is-bold;
+}

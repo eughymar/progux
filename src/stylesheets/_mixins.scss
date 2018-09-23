@@ -1,3 +1,5 @@
+@import '_variables';
+
 @mixin center($top: 50%, $left: 50%) {
   position: absolute;
   top: $top;
@@ -17,4 +19,8 @@
       transform: scale(1.05);
     }
   }
+}
+
+@mixin is-bold {
+  font-family: $font-bold;
 }
