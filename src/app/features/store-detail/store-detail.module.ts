@@ -8,6 +8,7 @@ import { ActionsComponent } from './components/actions/actions.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { SearchResultModule } from '../search-result/search-result.module';
 import { TeamComponent } from './components/team/team.component';
+import { PricingComponent } from './components/pricing/pricing.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { TeamComponent } from './components/team/team.component';
     FormsModule,
     SearchResultModule
   ],
-  declarations: [StoreDetailComponent, HeadStoreComponent, SafePipe, ActionsComponent, CatalogueComponent, TeamComponent]
+  declarations: [StoreDetailComponent, HeadStoreComponent, SafePipe, ActionsComponent, CatalogueComponent, TeamComponent, PricingComponent]
 })
 export class StoreDetailModule { }

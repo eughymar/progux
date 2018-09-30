@@ -6,7 +6,8 @@
   </div>
 </div>
 <app-team *ngIf="headData && headData.team.length > 0" id="team" [team]="headData.team"></app-team>
-
+<app-pricing *ngIf="headData && headData.promotionImages.length > 0" id="promotion" [data]="headData"></app-pricing>
+<!-- <ngx-pricing-store *ngIf="headData && headData.promotionImages.length > 0" id="promotion" [data]="headData"></ngx-pricing-store> -->
 <!-- FACEBOOK -->
 <!-- <div id="facebook-chat">
   <div id="fb-root"></div>

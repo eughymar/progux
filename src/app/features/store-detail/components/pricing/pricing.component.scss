@@ -1,0 +1,146 @@
+@import '_utils.scss';
+/* $themes: $themes; */
+
+.pricing {
+  display: flex;
+  justify-content: center;
+
+  .package {
+    box-sizing: border-box;
+    max-width: 280px;
+    width: 280px;
+    height: 380px;
+    border: 3px solid #e8e8e8;
+    border-radius: 7px;
+    display: inline-block;
+    padding: 24px;
+    text-align: center;
+    float: left;
+    transition: margin-top 0.5s linear;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    &:hover {
+      margin-top: -15px;
+      transition: margin-top 0.3s linear;
+    }
+
+    .name {
+      color: #565656;
+      font-weight: 300;
+      font-size: 3rem;
+      margin-top: -5px;
+    }
+
+    .price {
+      margin-top: 7px;
+      font-weight: bold;
+    }
+
+    .available {
+      font-size: .9rem;
+      font-weight: 600;
+      padding: 2px 21px 2px 21px;
+      border: 1px solid #e4e4e4;
+      display: inline-block;
+      border-radius: 15px;
+      background-color: white;
+      position: relative;
+      bottom: -20px;
+    }
+
+    hr {
+      margin-top: 0.3rem;
+    }
+
+    ul {
+      list-style: none;
+      text-align: left;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        i {
+          font-size: 1.3rem;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    .up {
+      color: white;
+      position: absolute;
+      left: 9px;
+      top: 6px;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@each $key in $themes {
+  $color: component-color($component: btn-primary, $state: color, $theme: $key);
+
+  .#{$key} .pricing {
+    .package {
+      &:before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-radius: 4px 0;
+        border-bottom: 40px solid transparent;
+        border-left: 40px solid $color;
+        border-top: 40px solid $color;
+        border-right: 40px solid transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+      }
+
+      &:hover {
+        border-color: $color;
+
+        .name {
+          color: $color;
+        }
+      }
+
+      .available {
+        color: $color;
+      }
+
+      ul {
+        li {
+          i {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 624px) {
+  .package {
+    // margin: 0 auto;
+  }
+}
+
+.package {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  img {
+    display: block;
+    border: 1px solid green;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 400px) {
+      width: 80%;
+    }
+  }
+
+}
