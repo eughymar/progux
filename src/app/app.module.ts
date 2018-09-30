@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------------------
 import { NgModule, ErrorHandler } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
 // ------------------------------------------------------------------------------
@@ -64,7 +64,8 @@ import { environment } from "../environments/environment";
     StoreDetailModule,
     SlickCarouselModule,
     ScrollToModule.forRoot(),
-    NotFoundModule
+    NotFoundModule,
+    FormsModule
   ],
   declarations: [AppComponent],
   providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],

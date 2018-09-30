@@ -34,6 +34,9 @@ import { SearchResultService } from './services/search-result.service';
   ],
   providers: [
     SearchResultService
+  ],
+  exports: [
+    ProductCardComponent
   ]
 })
 

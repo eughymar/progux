@@ -1,0 +1,34 @@
+<div class="title-section">
+  <div class="d-flex justify-content-center">
+    <span class="title-name">{{title}}</span>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="title-line"></div>
+  </div>
+</div>
+
+<!-- Search section -->
+<div class="inline-block">
+  <!-- <input class="input" type="text" placeholder="Buscar en catálogo" [(ngModel)]="query" (keyup.enter)="getTotalProducts()"> -->
+  <div class="input-group col-12 col-md-4 offset-md-8 col-lg-4 offset-lg-8 input-seeker">
+     <input type="text" class="form-control input-search" placeholder="Buscar en catálogo" [(ngModel)]="query"
+ (keyup.enter)="getTotalProducts()"> 
+    <div class="input-group-append">
+      <button class="btn catalogue-search-btn" type="button" (click)="getTotalProducts()">
+        <i class="search-1icon-"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Catalogue List -->
+
+<div class="columns is-multiline">
+  <div *ngFor="let product of products" class="col-1ths col-2ths col-sm-3ths col-md-4ths col-lg-5ths">
+    <app-product-card [data]="product"></app-product-card>
+  </div>
+</div>
+
+<div class="row button-vermas">
+  <button *ngIf="!finished" class="col-center btn ngx-button" (click)="getTotalProducts()">Ver más</button>
+</div>
