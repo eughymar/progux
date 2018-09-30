@@ -1,0 +1,116 @@
+<div class="container-fluid c-color-bgr">
+  <div class="container c-color-bgr team-container">
+    <!--title-section-->
+    <div class="title-section white">
+      <div class="d-flex justify-content-center">
+        <span class="title-name">Nuestro equipo</span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="title-line"></div>
+      </div>
+    </div>
+    <!--end title-section-->
+
+    <div class="row d-flex justify-content-between">
+      <div *ngFor="let member of team" class="col-6 col-md-4 col-lg-3">
+
+        <div class="team-wrapper mb-5 ">
+
+          <!-- <picture class="team-image"> -->
+          <picture class="team-image d-flex justify-content-center">
+            <img src={{url+member.urlImage}} alt="">
+          </picture>
+          <div class="team-detail mt-3">
+            <div class="name">
+              <span>{{member.firstName}} {{member.lastName}}</span>
+            </div>
+            <ul class="list-inline mb-0">
+              <a href="#"><i class="twittericon-"></i></a>
+              <a href="#"><i class="facebookicon-"></i></a>
+            </ul>
+            <div *ngIf="member.position" class="description">
+              <span>{{member.position}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-3 col-md-6">
+        <div class="team-wrapper mb-5">
+          <div class="team-image">
+            <img src="../../../../assets/borrarImagesPrueba/team_1.jpg" alt="">
+          </div>
+          <div class="team-detail mt-3">
+            <div class="name">
+              <span>Roman Fernandez</span>
+            </div>
+            <ul class="list-inline mb-0">
+              <a href="#"><i class="twittericon-"></i></a>
+              <a href="#"><i class="facebookicon-"></i></a>
+            </ul>
+            <div class="description">
+              <span>Propietario</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="team-wrapper mb-5">
+          <div class="team-image">
+            <img src="../../../../assets/borrarImagesPrueba/team_2.jpg" alt="">
+          </div>
+          <div class="team-detail mt-3">
+            <div class="name">
+              <span>Carla Gutierrez</span>
+            </div>
+            <ul class="list-inline mb-0">
+              <a href="#"><i class="twittericon-"></i></a>
+              <a href="#"><i class="facebookicon-"></i></a>
+            </ul>
+            <div class="description">
+              <span>Gerente</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="col-lg-3 col-md-6">
+        <div class="team-wrapper mb-5">
+          <div class="team-image">
+            <img src="../../../../assets/borrarImagesPrueba/team_3.jpg" alt="">
+          </div>
+          <div class="team-detail mt-3">
+            <div class="name">
+              <span>Alvaro Monasterio</span>
+            </div>
+            <ul class="list-inline mb-0">
+              <a href="#"><i class="twittericon-"></i></a>
+              <a href="#"><i class="facebookicon-"></i></a>
+            </ul>
+            <div class="description">
+              <span>Ejecutivo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="team-wrapper mb-5">
+          <div class="team-image">
+            <img src="../../../../assets/borrarImagesPrueba/team_4.jpg" alt="">
+          </div>
+          <div class="team-detail mt-3">
+            <div class="name">
+              <span>Rosario Lopez</span>
+            </div>
+            <ul class="list-inline mb-0">
+              <a href="#"><i class="twittericon-"></i></a>
+              <a href="#"><i class="facebookicon-"></i></a>
+            </ul>
+            <div class="description">
+              <span>Ejecutiva de ventas</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { SafePipe } from '../../core/pipes/safe.pipe';
 import { ActionsComponent } from './components/actions/actions.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { SearchResultModule } from '../search-result/search-result.module';
+import { TeamComponent } from './components/team/team.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { SearchResultModule } from '../search-result/search-result.module';
     FormsModule,
     SearchResultModule
   ],
-  declarations: [StoreDetailComponent, HeadStoreComponent, SafePipe, ActionsComponent, CatalogueComponent]
+  declarations: [StoreDetailComponent, HeadStoreComponent, SafePipe, ActionsComponent, CatalogueComponent, TeamComponent]
 })
 export class StoreDetailModule { }

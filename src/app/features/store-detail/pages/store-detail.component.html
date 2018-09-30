@@ -5,7 +5,7 @@
     <app-catalogue *ngIf="idStore && headData" [data]="headData"></app-catalogue>
   </div>
 </div>
-
+<app-team *ngIf="headData && headData.team.length > 0" id="team" [team]="headData.team"></app-team>
 
 <!-- FACEBOOK -->
 <!-- <div id="facebook-chat">
