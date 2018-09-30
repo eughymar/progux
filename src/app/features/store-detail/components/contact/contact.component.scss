@@ -1,0 +1,159 @@
+/*===   19/04/2018   ===*/
+
+@import "_utils.scss";
+$themes: $themes;
+
+@each $key in $themes {
+  .#{$key} .locations {
+    &.no-mobile {
+      .branch-offices {
+        background: component-color($component: btn-primary, $state: color, $theme: $key);
+      }
+    }
+  }
+}
+
+$color-background: #24303e;
+
+/*Estilos para direcciones de tienda*/
+.container,
+.container-contact {
+  background-color: $color-background;
+}
+
+.container-contact-a {
+  margin-top: 37px;
+  padding-bottom: 45px;
+  background-color: #f7f8fa;
+  background-color: #232f3e;
+}
+
+.container-map {
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.text-nro-sucursales {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #8fc7f8;
+}
+
+.section-addresses {
+  height: auto;
+  text-align: center;
+}
+
+.info-window {
+  text-align: center;
+  display: block;
+}
+
+.info-title {
+  font-weight: bold;
+}
+
+
+.locations {
+  &.no-mobile {
+    position: relative;
+
+    .branch-offices {
+      .branch {
+        width: 100%;
+        max-width: 100%;
+        flex: inherit;
+      }
+
+      position: absolute;
+      // background: #28a097;
+      top: 0;
+      z-index: 999;
+      right: 0;
+      margin: 20px;
+      padding: 25px;
+      color: white;
+      min-height: 300px;
+      min-width: 250px;
+      max-width: 250px;
+      border-radius: 4px;
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .branch-offices {
+    background: $color-background;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: rgb(214, 213, 213);
+    padding: 40px 15px 40px 15px;
+
+    .title-address {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+
+    .detail {
+      font-size: 0.9rem;
+      font-weight: lighter;
+
+      i {
+        color: white;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.detail {
+  font-size: 0.9rem;
+  font-weight: lighter;
+
+  @media(max-width: 320px) {
+    font-size: 0.8rem;
+  }
+}
+
+.mapa {
+  margin: 0px auto;
+  width: 80%;
+  height: 400px;
+}
+
+.contact-data-store {
+  font-family: "open_sansregular";
+  text-align: center;
+  color: white;
+}
+
+
+/*===   Media queries   ===*/
+@media (max-width: 576px) {
+  .section-addresses {
+    padding-top: 10px;
+    height: 250px;
+  }
+
+  .line-title {
+    width: 10%;
+  }
+
+  .title-section-store {
+    font-size: 1.2rem;
+  }
+
+  .mapa {
+    width: 90%;
+  }
+
+  /*   overflow-y: scroll; */
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

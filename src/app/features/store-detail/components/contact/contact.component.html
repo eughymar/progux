@@ -1,0 +1,65 @@
+<div class="container-contact pb-5">
+  <div class="container-fluid">
+    <div class="title-section white">
+      <div class="d-flex justify-content-center">
+        <span class="title-name">Contacto</span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="title-line"></div>
+      </div>
+      <div class="d-flex justify-content-center text-nro-sucursales">({{countBranchStore}}&nbsp; <span *ngIf="countBranchStore==1">sucursal)</span><span
+          *ngIf="countBranchStore>1">sucursales)</span></div>
+    </div>
+  </div>
+  <div id="map" class="mapa "></div>
+  <br>
+  <!-- <div class="locations" [ngClass]="{ 'no-mobile': showBranch }" (window:resize)="onResize($event)"> P-->
+  <div class="contact-data-store">
+    <!--N-->
+    <!-- Address business store -->
+    <div class="container branch-offices">
+      <div class="row d-flex justify-content-center">
+        <div *ngFor="let branchStore of data; let idx = index" class="col-md-4 branch">
+          <div class="title-address"> SUCURSAL {{idx+1}} </div>
+          <div class="detail">
+            <div (click)="selectBranchStore(branchStore)" class="detail">
+              <i class="location-1icon-"></i> <span>{{branchStore.address}}</span>
+            </div>
+            <div class=""><i class="phone-2icon-"></i> <span>Tel.{{branchStore.cellphoneBranchStore}}</span></div>
+            <div><i class="clockicon-"></i>Horarios de Atención</div>
+            <div *ngIf="mondayToFriday">
+              Lunes a Viernes
+              <span>{{mondayToFriday.hourBeginOne}} - {{mondayToFriday.hourEndOne}}</span><br />
+              <span>{{mondayToFriday.hourBeginTwo}} - {{mondayToFriday.hourEndTwo}}</span>
+            </div>
+            <div *ngIf="saturday">
+              Sábado
+              <span>{{saturday.hourBeginOne}} - {{saturday.hourEndOne}}</span><br />
+              <span>{{saturday.hourBeginTwo}} - {{saturday.hourEndTwo}}</span>
+            </div>
+            <div *ngIf="sunday">
+              Domingo
+              <span>{{sunday.hourBeginOne}} - {{sunday.hourEndOne}}</span><br />
+              <span>{{sunday.hourBeginTwo}} - {{sunday.hourEndTwo}}</span>
+            </div>
+          </div>
+          <!-- <div>{{branchStore.listSchedule.}}</div> -->
+          <!-- Popover Template (Schedule) -->
+          <ng-template #scheduleContent>
+            <button (click)="p.close()" class="btn btn-primary">Close</button>
+            <div *ngFor="let item of branchStore.listSchedule">
+              <div *ngIf="item.enabled">
+                <span>{{day[item.daySchedule]}}</span><br />
+                <span *ngIf="item.hourBeginOne">{{item.hourBeginOne| date:'shortTime'}} - {{item.hourEndOne|
+                  date:'shortTime'}}</span><br />
+                <span *ngIf="item.hourBeginTwo">{{item.hourBeginTwo| date:'shortTime'}} - {{item.hourEndTwo|
+                  date:'shortTime'}}</span>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Address business store -->
+</div>
