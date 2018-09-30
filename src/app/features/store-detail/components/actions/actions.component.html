@@ -1,0 +1,48 @@
+<!---->
+<div class="container title-section c-color-bg">
+  <div class="d-flex justify-content-center">
+    <span class="title-name">Sobre nosotros</span>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="title-line"></div>
+  </div>
+  <p class="paragraph-store parrafo-regular">{{data.store.descriptionStore}}</p>
+</div>
+
+<!--Sección video e información del negocio-->
+<div class="container-fluid container-actions c-color-bgr">
+  <div class="container c-color-bgr">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- <div class="container-description-store">{{description}}</div> -->
+        <p class="parrafo-regular">{{data.store.descriptionVideo}}</p>
+      </div>
+
+      <div class="col-md-6 video">
+        <!-- If video exist -->
+        <div *ngIf="data.store.urlVideo" class="video-play">
+          <img src="../../../assets/img/videoNGX.png" alt="" width="100%" height="100%">
+          <div class="button-play" (click)="showVideo(video)">
+            <span class="icon-play"></span>
+            <div class="button-animation"></div>
+          </div>
+        </div>
+
+        <!-- If video is null -->
+        <div *ngIf="!data.store.urlVideo" class="video-play marcar">
+          <img src={{url+data.store.urlVideoImage}} alt="" width="100%" height="100%">
+        </div>
+        <!-- <img src={{url+data.store.urlVideoImage}} alt="" width="100%" height="100%"> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+<br>
+
+<!-- video -->
+<ng-template #video let-c="close" let-d="dismiss">
+  <div class="modal-body modal-video">
+    <iframe width="100%" [src]="urlVideo | safe: 'resourceUrl'" frameborder="0" allowfullscreen class="show-video"></iframe>
+  </div>
+</ng-template>
