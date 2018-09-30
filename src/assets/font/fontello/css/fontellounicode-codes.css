@@ -123,6 +123,10 @@
 .video_camera_round-[#964]icon-:before { content: '\e870'; } /* '' */
 .coffee-[#689]icon-:before { content: '\e871'; } /* '' */
 .sport_1icon-:before { content: '\e872'; } /* '' */
+.share-1icon-:before { content: '\e873'; } /* '' */
+.chaticon-:before { content: '\e874'; } /* '' */
+.ok-1icon-:before { content: '\e875'; } /* '' */
+.chat-1icon-:before { content: '\e888'; } /* '' */
 .download-1icon-:before { content: '\f02e'; } /* '' */
 .upload-1icon-:before { content: '\f02f'; } /* '' */
 .rulericon-:before { content: '\f044'; } /* '' */
@@ -136,6 +140,7 @@
 .gplus-squaredicon-:before { content: '\f0d4'; } /* '' */
 .gplusicon-:before { content: '\f0d5'; } /* '' */
 .mail-alticon-:before { content: '\f0e0'; } /* '' */
+.chat-emptyicon-:before { content: '\f0e6'; } /* '' */
 .bell-alticon-:before { content: '\f0f3'; } /* '' */
 .foodicon-:before { content: '\f0f5'; } /* '' */
 .plus-squaredicon-:before { content: '\f0fe'; } /* '' */

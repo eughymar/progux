@@ -47,6 +47,7 @@
     "@angular/upgrade": "^6.0.0",
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
+    "@nicky-lenaers/ngx-scroll-to": "^1.1.1",
     "angular-in-memory-web-api": "^0.6.0",
     "bulma": "^0.7.1",
     "core-js": "^2.5.4",

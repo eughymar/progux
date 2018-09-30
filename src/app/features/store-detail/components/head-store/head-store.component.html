@@ -1,0 +1,117 @@
+<!--menu-store-->
+<div class="store-navbar c-color-bgr" [ngClass]="{active: activeMenuMobile}">
+  <div class="store-logo">
+    <img src={{url+data.store.urlLogoStore}}><!-- <span class="">{{data.store.nameStore}}</span> -->
+  </div>
+
+  <div class="menu-toggle" (click)="verificate()">
+    <div class="menu-icon" [ngClass]="{active: activeMenuMobile}">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </div>
+  <ul class="menu-list" [ngClass]="{active: activeMenuMobile}">
+    <li><a (click)="triggerScrollTo('home')"><span>INICIO</span></a></li>
+    <li><a (click)="triggerScrollTo('actions')"><span>Nosotros</span></a></li>
+    <li><a (click)="triggerScrollTo('catalogue')"><span>Catálogo</span></a></li>
+    <li *ngIf="data.team.length > 0"><a (click)="triggerScrollTo('team')"><span>Equipo</span></a></li>
+    <li *ngIf="data.promotionImages.length > 0"><a (click)="triggerScrollTo('promotion')"><span>Promoción</span></a></li>
+    <li><a (click)="triggerScrollTo('contact')"><span>Contactos</span></a></li>
+    <li><a href="mainSearcher"><span><img src="assets/img/logoNGXWhite.png" width="50" class="logo-negux"> </span></a></li>
+  </ul>
+</div>
+<!--End menu-store-->
+
+<!-- StoreBanner -->
+<div class="store-banner ">
+  <!-- <div class="button-ctrl-back"><i class="angle-lefticon-"></i></div> -->
+  <!-- <ngx-slider-store  *ngIf="imagesSourceStore" [imageData]="imagesSourceStore" [title]=""></ngx-slider-store> -->
+  <div *ngIf="pixeles > 576" class="banner-img" [style.backgroundImage]="url+data.store.urlBannerDesktopStore | safe: 'urlStyle'"></div>
+  <div *ngIf="pixeles <= 576" class="banner-img" [style.backgroundImage]="url+data.store.urlBannerMobileStore | safe: 'urlStyle'"></div>
+
+  <div *ngIf="data.store.renderedLogo" class="container-logo">
+    <img src={{url+data.store.urlLogoStore}} class="img-logo">
+    <p *ngIf="data.store.renderedInitials" class="name-logo-default">{{nameLogo}}</p>
+
+  </div>
+  <div *ngIf="data.store.renderedNameStore" class="container-name-store">
+    <span class="name-store">{{data.store.nameStore}}</span>
+  </div>
+  <div *ngIf="data.store.renderedPhrase" class="container-motto-store">
+    <span class="fr-store">{{data.store.phraseStore}}</span>
+  </div>
+  <div class="container container-opinions-redes">
+    <div class="row">
+      <div class="stars-store">
+        <span class="number-stars">{{data.starsStore}}</span>
+        <!-- <ngb-rating [rate]="data.starsStore"></ngb-rating> -->
+      </div>
+    </div>
+    <div class="row">
+      <span (click)="goToAssessmentStore()" class="n-opinions-store">{{data.numCommentsStore}}&nbsp;Opiniones</span>
+    </div>
+    <span class="n-opinions-store" *ngIf="data.store.nitStore">Nit: {{data.store.nitStore}}</span>
+    <div class="is-flex">
+      <div class="icon-contact instagram d-inline-block " *ngIf="data.store.instagramStore">
+        <a target="_blank" href={{data.store.instagramStore}}><i class="instagram-1icon-"></i></a>
+      </div>
+      <!-- <div class="icon-contact twitter d-inline-block" *ngIf="data.store.twitterStore"> -->
+      <div class="icon-contact twitter d-inline-block">
+        <a><i class="twittericon-"></i></a>
+        <!-- <a class="twitter-share-button" target="_blank"
+                href="https://twitter.com/intent/tweet"
+                data-size="large">
+              <i class="twittericon-"></i>
+            </a> -->
+      </div>
+      <div class="icon-contact facebook d-inline-block" *ngIf="data.store.facebookStore">
+        <a target="_blank" href="{{data.store.facebookStore}}"><i class=" facebookicon-"></i></a>
+      </div>
+      <div class="icon-contact whatsapp d-inline-block" *ngIf="data.store.whatsappStore">
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=591{{data.store.whatsappStore}}&text=Consulta%20aqui"><i
+            class="whatsappicon-"></i></a>
+      </div>
+      <div class="icon-contact share d-inline-block">
+        <a target="_blank" (click)="shareStore()"><i class="share-1icon-"></i></a>
+      </div>
+      <!-- store is followed -->
+      <div *ngIf="!isFollowing" class="icon-contact unfollowed d-inline-block">
+        <a target="_blank" (click)="followStore(content)"><i class="demo-icon checkicon-"></i></a>
+      </div>
+      <div *ngIf="isFollowing" class="icon-contact follow d-inline-block">
+        <a target="_blank" (click)="followStore(stopFollowing)"><i class="demo-icon checkicon-"></i></a>
+      </div>
+      <!-- store is unfollowed -->
+      <div class="icon-contact qualify d-inline-block">
+        <a target="_blank"><i class="demo-icon staricon-"></i></a>
+      </div>
+      <!-- <div class="icon-contact phone d-inline-block" *ngIf="data.store.cellphoneStore">
+            <a target="_blank" href><i class="phone-1icon-"></i></a>
+          </div> -->
+    </div>
+    <!-- End SOR -->
+  </div>
+</div>
+<!-- End Store-->
+
+<!-- without session -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-body new-description">
+    <p> Debe de iniciar sesión para poder seguir esta tienda </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn ngx-button" (click)="c('Close click')">Cerrar</button>
+  </div>
+</ng-template>
+
+<!-- stop following -->
+<ng-template #stopFollowing let-c="close" let-d="dismiss">
+  <div class="modal-body new-description">
+    <p> Esta seguro que quiere dejar de seguir esta tienda?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn ngx-button" (click)="c('Close click')">Aceptar</button>
+    <button type="button" class="btn ngx-button" (click)="d('Close click')">Cerrar</button>
+  </div>
+</ng-template>

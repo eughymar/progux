@@ -9,17 +9,19 @@ import { SharedService } from './services/shared.service';
 import { LocalStorageService } from './services/localStorage.service';
 import { SharingDataService } from './services/sharing.data.service';
 import { UtilService } from "./services/util.service";
+import { SafePipe } from "./pipes/safe.pipe";
 
 @NgModule({
   imports: [
-    CommonModule, 
+    CommonModule,
     HttpClientModule
   ],
   providers: [
     SharedService,
     LocalStorageService,
     SharingDataService,
-    UtilService
+    UtilService,
+    SafePipe
   ]
 })
 export class CoreModule {

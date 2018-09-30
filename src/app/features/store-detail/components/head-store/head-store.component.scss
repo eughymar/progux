@@ -1,0 +1,413 @@
+@import "_utils.scss";
+@import "_mixins.scss";
+$themes: $themes;
+
+@each $key in $themes {
+  .#{$key} .store-navbar {
+    background-color: component-color($component: navbar, $state: color, $theme: $key);
+  }
+}
+
+/*===   19/04/2018   ===*/
+/*Detalles de tienda*/
+/*mejorar*/
+.store-banner {
+  height: 100vh;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.store-navbar {
+  // background: #151515;
+  width: 100vh;
+  color: rgb(253, 251, 251);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  min-height: 65px;
+
+  &.active {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0), #000);
+    height: 100%;
+  }
+
+  .store-logo {
+    float: left;
+    display: block;
+    line-height: 60px;
+    margin: 0 30px;
+
+    img {
+      width: 40px;
+    }
+
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 35px;
+    height: 30px;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    right: 15px;
+    top: 21px;
+    z-index: 200;
+    float: right;
+    margin: 15px;
+
+    .menu-icon {
+      .line {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        display: block;
+        margin: 5px auto;
+        transition: all .3s ease-in-out;
+      }
+
+      &.active {
+        :nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        :nth-child(2) {
+          opacity: 0;
+        }
+
+        :nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu-list {
+    font-size: 12px;
+    text-align: right;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      text-transform: uppercase;
+      margin: 20px 10px 2px;
+      padding: 0;
+      letter-spacing: 0.05em;
+      transform: none;
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          span {
+            padding-bottom: 5px;
+            border-bottom: solid 2px white;
+          }
+        }
+
+        .logo-negux {
+          border-bottom: solid 3px transparent;
+          width: 19px;
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.stars-store {
+  font-size: 1.566rem;
+  color: rgb(241, 186, 4);
+  font-weight: bold;
+}
+
+/*Background color for banner default*/
+.color-for-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #02a3dd;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/*Gradient for banner personalized*/
+.color-for-image-prz {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 16.666%;
+  background: rgba(7, 7, 7, 0.17);
+}
+
+/*Banner Default block*/
+
+.store-banner {
+  .banner-img {
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .container-logo {
+    @include center(35%)
+  }
+
+  .container-name-store {
+    margin-top: 1.5rem;
+    color: #fff;
+    text-align: center;
+    line-height: 2em;
+    @include center(53%);
+  }
+}
+
+
+.img-logo {
+  padding: 0;
+  margin: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.name-logo-default {
+  font-family: "open_sansbold";
+  font-size: 3.5rem;
+  color: rgb(255, 255, 253);
+  text-align: center;
+  width: 150px;
+  position: absolute;
+  top: 25%;
+
+}
+
+.name-store {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 10px;
+}
+
+.fr-store {
+  font-family: "open_sanslight";
+  font-size: 1rem;
+}
+
+.container-opinions-redes {
+  position: absolute;
+  z-index: 12;
+  left: 15%;
+  bottom: 10%;
+  background-color: transparent;
+  padding-top: 50px;
+}
+
+.number-stars {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: #0fb96a;
+}
+
+
+.n-opinions-store {
+  font-family: "open_sansregular";
+  font-size: 0.8rem;
+  color: rgb(23, 157, 165);
+  color: #fff;
+}
+
+.n-opinions-store:hover {
+  text-decoration-line: underline;
+  cursor: pointer;
+  color: rgba(248, 189, 26, 0.863);
+}
+
+.icon-contact {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  color: white;
+  background-color: #2A2f39;
+  position: relative;
+  margin-right: 5px;
+
+  a {
+    color: white;
+    @include center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+/* Colores para contacto*/
+.facebook {
+  background-color: #3b5998;
+}
+
+.whatsapp {
+  background-color: #3abe4c;
+}
+
+.twitter {
+  background-color: #1ea1f3;
+}
+
+.phone {
+  background-color: #e69852;
+  background-color: rgb(23, 157, 165)
+}
+
+.qualify {
+  background-color: #f59a09;
+}
+
+.follow {
+  background-color: #02cc1d;
+}
+
+.unfollowed {
+  background-color: #f71f1f;
+
+  a {
+    color: #fff;
+    @include center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.share {
+  background-color: #047ac4;
+}
+
+.instagram {
+  background-color: #517EA2;
+}
+
+
+
+/*===   Media queries   ===*/
+@media (max-width: 575px) {
+  .name-store {
+    font-size: 1.8rem;
+    position: relative;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+  }
+
+  .fr-store {
+    font-family: "open_sanslight";
+    font-size: 1rem;
+  }
+
+  .container-opinions-redes {
+
+    margin-left: 12px;
+    position: absolute;
+    z-index: 12;
+    left: 5%;
+    bottom: 8%;
+    background-color: transparent;
+    padding-top: 5px;
+  }
+
+  /*Gradient for banner personalized mobile*/
+  .color-for-image-prz {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 20%;
+    background: rgba(7, 7, 7, 0.18);
+  }
+}
+
+/*===  Media querie <= 700px ===*/
+
+@media (max-width: 700px) {
+  .menu-list {
+    text-align: inherit !important;
+    font-size: inherit !important;
+  }
+
+  .name-store {
+    font-size: 1.8rem;
+    position: relative;
+    letter-spacing: 2px;
+  }
+
+  .fr-store {
+    font-family: "open_sanslight";
+    font-size: 1rem;
+  }
+
+  .container-opinions-redes {
+
+    margin-left: 12px;
+    position: absolute;
+    z-index: 12;
+    left: 5%;
+    bottom: 5%;
+    background-color: transparent;
+    padding-top: 5px;
+
+  }
+}
+
+
+/* @media screen and (max-width : 760px) { P*/
+@media screen and (max-width : 850px) {
+  .header {
+    display: none !important;
+  }
+
+  .store-navbar {
+    height: 90px;
+
+    // background: linear-gradient(to top, rgba(255,0,0,0), #000);
+    .menu-toggle {
+      display: block;
+    }
+
+    .menu-list {
+      position: static;
+      display: none;
+
+      li {
+        margin-bottom: 1px;
+        width: 100%;
+
+        a {
+          display: block;
+          width: 100%;
+        }
+      }
+
+    }
+  }
+
+  @each $key in $themes {
+    .#{$key} .store-navbar {
+      background: linear-gradient(to top, rgba(255, 0, 0, 0), component-color($component: navbar, $state: color-mobile, $theme: $key));
+    }
+  }
+}

@@ -4,7 +4,7 @@
   font-family: 'fontellounicode';
   src: url('../font/fontellounicode.eot');
   src: url('../font/fontellounicode.eot?#iefix') format('embedded-opentype'),
-       url('../font/fontellounicode.woff') format('woff2'),
+       url('../font/fontellounicode.woff2') format('woff2'),
        url('../font/fontellounicode.woff') format('woff'),
        url('../font/fontellounicode.ttf') format('truetype'),
        url('../font/fontellounicode.svg#fontellounicode') format('svg');
@@ -17,7 +17,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontellounicode';
-    src: url('../font/fontellounicode.svg?84679514#fontellounicode') format('svg');
+    src: url('../font/fontellounicode.svg?83500715#fontellounicode') format('svg');
   }
 }
 */
@@ -179,6 +179,10 @@
 .video_camera_round-[#964]icon-:before { content: '\e870'; } /* '' */
 .coffee-[#689]icon-:before { content: '\e871'; } /* '' */
 .sport_1icon-:before { content: '\e872'; } /* '' */
+.share-1icon-:before { content: '\e873'; } /* '' */
+.chaticon-:before { content: '\e874'; } /* '' */
+.ok-1icon-:before { content: '\e875'; } /* '' */
+.chat-1icon-:before { content: '\e888'; } /* '' */
 .download-1icon-:before { content: '\f02e'; } /* '' */
 .upload-1icon-:before { content: '\f02f'; } /* '' */
 .rulericon-:before { content: '\f044'; } /* '' */
@@ -192,6 +196,7 @@
 .gplus-squaredicon-:before { content: '\f0d4'; } /* '' */
 .gplusicon-:before { content: '\f0d5'; } /* '' */
 .mail-alticon-:before { content: '\f0e0'; } /* '' */
+.chat-emptyicon-:before { content: '\f0e6'; } /* '' */
 .bell-alticon-:before { content: '\f0f3'; } /* '' */
 .foodicon-:before { content: '\f0f5'; } /* '' */
 .plus-squaredicon-:before { content: '\f0fe'; } /* '' */
