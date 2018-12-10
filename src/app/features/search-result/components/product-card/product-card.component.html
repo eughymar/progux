@@ -19,6 +19,6 @@
       <span>{{data.priceProduct|number:'1.2-2'}} Bs</span>
     </div>
 
-    <div class="name-store">Tienda: <span class="is-italic name" (click)='storeDetail(data)'>{{data.store.nameStore}}</span></div>
+    <div class="name-store" *ngIf="!isStore">Tienda: <span class="is-italic name" (click)='storeDetail(data)'>{{data.store.nameStore}}</span></div>
   </div>
 </div>

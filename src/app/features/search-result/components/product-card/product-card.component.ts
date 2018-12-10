@@ -15,6 +15,7 @@ import { SearchResultService } from '../../services/search-result.service';
 export class ProductCardComponent implements OnInit{
 
   @Input() data: any;
+  @Input() isStore = false;
 
   url = environment.service_api_url;
 
