@@ -1,0 +1,24 @@
+<div class="modal modal-fx-slideRight" #modal>
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">
+          {{ config.data.title }}
+        </p>
+        <button class="delete" aria-label="close" (click)="close()"></button>
+      </header>
+      <section class="modal-card-body">
+        <ng-template appInsertion></ng-template>
+      </section>
+      <footer class="modal-card-foot" *ngIf="config.data.optionOk || config.data.optionCancel">
+        <button class="button is-success" >
+          {{ config.data.optionOk }}
+        </button>
+        <button class="button"  (click)="close()">
+          {{ config.data.optionCancel }}
+        </button>
+      </footer>
+    </div>
+  </div>
+</div>

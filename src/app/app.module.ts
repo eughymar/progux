@@ -20,6 +20,7 @@ import { StoreDetailModule } from './features/store-detail/store-detail.module';
 import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
 import { NotFoundModule } from "./features/not-found/not-found.module";
 import { FacebookModule } from "ngx-facebook/dist/esm/facebook.module";
+import { DialogModule } from "./dialog/dialog.module";
 
 // ------------------------------------------------------------------------------
 // Import Routings
@@ -65,7 +66,8 @@ import { environment } from "../environments/environment";
     SlickCarouselModule,
     ScrollToModule.forRoot(),
     NotFoundModule,
-    FormsModule
+    FormsModule,
+    DialogModule
   ],
   declarations: [AppComponent],
   providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],
