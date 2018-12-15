@@ -1,18 +1,39 @@
 .modal {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  visibility: hidden; }
-  .modal .modal-background {
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
+  visibility: hidden;
+  z-index: 9999;
+  &.is-active {
+    visibility: visible; 
+    .modal-background {
+      opacity: 1;
+    }
+  }
+  .modal-background {
+    background-color: rgba(0, 0, 0, .32) !important;
+  }
+  .modal-background {
     transition: all 0.3s;
-    opacity: 0; }
-  .modal.is-active {
-    visibility: visible; }
-    .modal.is-active .modal-background {
-      opacity: 1; }
+    opacity: 0; 
+  }
+  .modal-content {
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2),
+    0 24px 38px 3px rgba(0, 0, 0, .14),
+    0 9px 46px 8px rgba(0, 0, 0, .12);
+    &.is-large {
+      width: 800px;
+    }
+  }
+  .modal-card {
+    .modal-card-head {
+      .modal-card-title {
+        font-size: 1.3rem;
+      }
+    }
+    .modal-card-foot {
+      justify-content: flex-end;
+    }
+  }
+}
   .modal.modal-full-screen .modal-background {
     background-color: #fff; }
   .modal.modal-full-screen .modal-content {

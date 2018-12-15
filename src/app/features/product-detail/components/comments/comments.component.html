@@ -1,0 +1,25 @@
+<p class="comment-title has-margin-t-1">Deja tu comentario</p>
+<div class="field is-horizontal form-comment is-clearfix">
+  <div class="field-body">
+    <div class="field">
+      <p class="control">
+        <textarea class="textarea input-validate-comment" rows="1" cols="" placeholder="Escribe tu comentario."
+          [(ngModel)]="comment"></textarea>
+      </p>
+    </div>
+  </div>
+  <div class="field-label is-marginless">
+    <button class="button is-primary is-pulled-right" (click)="sendComment(content)">Enviar</button>
+  </div>
+</div>
+
+<ng-container *ngIf="opinion.length">
+  <p class="title-section-ngx is-clearfix">OPINIONES</p>
+  <div class="is-flex comment-box" *ngFor="let item of opinion">
+    <img src="{{ url+item?.urlImageUser }}" class="">
+    <p class="comment-text">
+      <span class="date-user-comment">{{item?.nameUser}} {{item?.dateComment|date}} </span>
+      <span>{{item?.descriptionComment}}</span>
+    </p>
+  </div>
+</ng-container>

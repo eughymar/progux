@@ -5,6 +5,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { SearchResultService } from '../../services/search-result.service';
+import { DialogService } from '../../../../dialog/dialog.service';
+import { ProductDetailComponent } from '../../../product-detail/pages/product-detail.component';
 
 @Component({
   selector: 'app-product-card',
@@ -21,7 +23,8 @@ export class ProductCardComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private _searchResultService: SearchResultService
+    private _searchResultService: SearchResultService,
+    private dialog: DialogService
   ){}
 
   ngOnInit(){
@@ -29,11 +32,26 @@ export class ProductCardComponent implements OnInit{
     this.data.nameProduct = this._searchResultService.nameProduct(this.data.nameProduct);
   }
 
-  productDetail(product){
-    this.router.navigate(['./productDetail',product.idProduct]);
-  }
+  // productDetail(product){
+  //   this.router.navigate(['./productDetail',product.idProduct]);
+  // }
 
   storeDetail(product){
     this.router.navigate(['./bo',product.store.nameUrlStore]);
+  }
+
+  productDetail(product) {
+    const ref = this.dialog.open(ProductDetailComponent,
+      {
+        data: {
+          title: product.nameProduct,
+          optionOk: 'Aceptar',
+          product: product,
+          size: 'large'
+        }
+      });
+    ref.afterClosed.subscribe(result => {
+      console.log('Dialog closed', result);
+    });
   }
 }

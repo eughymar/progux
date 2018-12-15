@@ -18,6 +18,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 
 // services
 import { SearchResultService } from './services/search-result.service';
+import { ProductDetailModule } from '../product-detail/product-detail.module';
 
 @NgModule({
   imports:[
@@ -25,7 +26,8 @@ import { SearchResultService } from './services/search-result.service';
     CommonModule,
     HttpModule,
     // SlickModule.forRoot(),
-    SharedModule
+    SharedModule,
+    ProductDetailModule
   ],
   declarations:[
     SearchResultComponent,

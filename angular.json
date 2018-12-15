@@ -44,7 +44,8 @@
               "src/styles.scss",
               "./node_modules/leaflet/dist/leaflet.css",
               "./node_modules/slick-carousel/slick/slick.scss",
-              "./node_modules/slick-carousel/slick/slick-theme.scss"
+              "./node_modules/slick-carousel/slick/slick-theme.scss",
+              "./node_modules/bulma-utilities/css/bulma-utilities.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

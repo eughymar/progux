@@ -1,0 +1,151 @@
+<div class="columns">
+  <!-- Mobile -->
+  <!-- <div class="is-6">
+    <h3 class="product-title">{{data.nameProduct}}</h3>
+    <div>
+      <span class="qualification-text">{{data.starsProduct}}</span>
+      <ngb-rating class="product-rate" [rate]="data.starsProduct" [max]="5" [readonly]="true"></ngb-rating>
+    </div>
+    <br>
+  </div> -->
+
+  <div class="column is-6">
+    <div class="picture d-flex justify-content-center">
+      <img class="" src="{{productSelected}}">
+    </div>
+    <!-- slick -->
+    <!-- <div class="row" style="align-items: center;justify-content: center;">
+      <div *ngIf="displayArrow" class="col-2 col-sm-2 col-md-1 col-lg-1" (click)="slickModal.slickPrev()">
+        <i class="left-open-bigicon-"></i>
+      </div>
+
+      <div class="col-8 col-sm-8 col-md-10 col-lg-10">
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide" (click)="selectImage(slide)" style="cursor: pointer;">
+            <img class="shadow-img" src="{{url+slide.urlImage}}">
+          </div>
+        </ngx-slick>
+      </div>
+
+      <div *ngIf="displayArrow" class="col-2 col-sm-2 col-md-1 col-lg-1">
+        <div class="" (click)="slickModal.slickNext()">
+          <i class="right-open-bigicon-"></i>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+
+  <div class="column is-6 product-data">
+    <div class="is-flex has-margin-b-6">
+      <p class="qualification">
+        <span class="qualification-text">{{ data.starsProduct }}</span>
+      </p>
+      <app-rating [rate]="data.starsProduct" [readOnly]="true"></app-rating>
+    </div>
+
+    <div class="d-none d-sm-block div-line"></div>
+    <p>
+      <span class="title-dproduct">Precio: </span>
+      <ng-container *ngIf="data.percentDiscount==0">
+        <span *ngIf="data.priceProduct > 0" class="price-product">{{ data.priceProduct|number:'1.2-2' }} Bs.</span>
+      </ng-container>
+      <ng-container *ngIf="data.percentDiscount != 0">
+        <span *ngIf="data.priceProduct > 0" class="price-product line">{{ data.priceProduct|number:'1.2-2' }} Bs.</span>
+        <span *ngIf="data.priceProduct > 0" class="price-product">{{data.newPrice|number:'1.2-2'}} Bs.</span>
+      </ng-container>
+    </p>
+
+    <p>
+      <span class="title-dproduct">{{ data.store.typeStore || 'Tienda' }}: </span>
+      <a (click)="goToStore()">
+        <img class="dp-img-store" src="{{ url+data?.store?.urlLogoStore }}">
+        <span class="description-dproduct is-link"> {{ data?.store?.nameStore }}</span>
+      </a>
+    </p>
+
+    <p>
+      <span class="title-dproduct">Última actualización:</span>
+      <span class="description-dproduct"> {{ data.lastUpdate | date }}</span>
+    </p>
+
+
+    <div class="options is-flex">
+      <!-- <div *ngIf="followingReady&&!isFollowing" class="col-3 color-blue" (click)="followProduct(followWithoutSessionContent)">
+          <i class="ok-outlineicon-"></i><br><span>Seguir</span>
+        </div>
+
+        <div  *ngIf="followingReady&&isFollowing" class="col-3 follow" (click)="followProduct(stopFollowingContent)">
+          <i class="ok-outlineicon-"></i><br><span>Siguiendo</span>
+        </div> -->
+
+      <div *ngIf="followingReady&&!isFollowing" class="col-1" (click)="followProduct(followWithoutSessionContent)">
+        <span class="dp-icon-color"><abbr title="Seguir">
+            <i class="ok-outlineicon-"></i>
+          </abbr>
+        </span>
+      </div>
+
+      <div *ngIf="followingReady&&isFollowing" class="col-1 product-follow" (click)="followProduct(stopFollowingContent)">
+        <span class=""><abbr title="Siguiendo">
+            <i class="ok-outlineicon-"></i>
+          </abbr>
+        </span>
+      </div>
+
+      <div class="col-1">
+        <span class="dp-icon-color" (click)="shareProduct()">
+          <abbr title="Compartir">
+            <i class="facebookicon-"></i>
+          </abbr>
+        </span>
+      </div>
+
+      <!-- <div *ngIf="data.store.modeStore !== 'personal'" class="">
+            <i class="basket-2icon-"></i><br>Añadir a<br>carrito
+          </div> -->
+
+      <div *ngIf="isLogged" class="col-1" (click)="rateProduct(scoreContent)">
+        <span class="dp-icon-color"><abbr title="Tú calificación">
+            <i class="star-2icon-"></i>
+          </abbr>
+        </span>
+      </div>
+
+      <div *ngIf="!isLogged" class="col-1" (click)="noLogged(scoreWithoutSessionContent)">
+        <span class="dp-icon-color"><abbr title="Tú calificación">
+            <i class="star-2icon-"></i>
+          </abbr>
+        </span>
+      </div>
+    </div>
+    <br>
+
+    <!--  Tabs detalle product -->
+    <div class="row">
+      <div class="col-12  col-md-12 col-lg-12">
+        <!-- <ngb-tabset>
+          <ngb-tab class="nav-link active" title="Descripción">
+            <ng-template ngbTabContent> -->
+        <span class="title-tab">{{data.descriptionProduct}}</span>
+        <div *ngFor="let item of data.variants" class="content-tab">
+          <span class="title-tab">{{item.key}} :</span> {{item.value}}
+        </div>
+        <!-- </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Oferta y Envío">
+            <ng-template ngbTabContent> -->
+        <div *ngIf="data.offer" class="content-tab">
+          <div><span class="title-tab">Fecha de la oferta:</span> {{data.offer.dateBegin|date}} -
+            {{data.offer.dateEnd|date}}</div>
+          <div><span class="title-tab">Porcentaje de descuento:</span>
+            {{data.offer.percentDiscount|number:'1.1-1'}}%</div>
+        </div>
+        <div *ngIf="!data.offer" class="content-tab">Aun no hay Ofertas</div>
+        <!-- </ng-template>
+          </ngb-tab>
+        </ngb-tabset> -->
+      </div>
+    </div>
+  </div>
+</div>
