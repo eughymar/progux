@@ -17,6 +17,7 @@ import { CountriesListComponent } from "./countries-list/countries-list.componen
 //import { ProfileOptionsComponent } from './profile-options/profile-options.component';
 import { InputSeekerComponent } from './input-seeker/input-seeker.component';
 import { SliderComponent } from './slider/slider.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { SliderComponent } from './slider/slider.component';
     TestComponent,
     CountriesListComponent,
     InputSeekerComponent,
-    SliderComponent
+    SliderComponent,
+    RatingComponent
   ],
   exports: [
     FooterComponent, 
@@ -39,7 +41,8 @@ import { SliderComponent } from './slider/slider.component';
     TestComponent,
     CountriesListComponent,
     InputSeekerComponent,
-    SliderComponent
+    SliderComponent,
+    RatingComponent
   ]
 })
 export class SharedModule {}
