@@ -79,14 +79,14 @@
           <i class="ok-outlineicon-"></i><br><span>Siguiendo</span>
         </div> -->
 
-      <div *ngIf="followingReady&&!isFollowing" class="col-1" (click)="followProduct(followWithoutSessionContent)">
+      <div *ngIf="followingReady&&!isFollowing" class="col-1" (click)="followProduct()">
         <span class="dp-icon-color"><abbr title="Seguir">
             <i class="ok-outlineicon-"></i>
           </abbr>
         </span>
       </div>
 
-      <div *ngIf="followingReady&&isFollowing" class="col-1 product-follow" (click)="followProduct(stopFollowingContent)">
+      <div *ngIf="followingReady&&isFollowing" class="col-1 product-follow" (click)="followProduct()">
         <span class=""><abbr title="Siguiendo">
             <i class="ok-outlineicon-"></i>
           </abbr>
@@ -112,7 +112,7 @@
         </span>
       </div>
 
-      <div *ngIf="!isLogged" class="col-1" (click)="noLogged(scoreWithoutSessionContent)">
+      <div *ngIf="!isLogged" class="col-1" (click)="noLogged()">
         <span class="dp-icon-color"><abbr title="Tú calificación">
             <i class="star-2icon-"></i>
           </abbr>
@@ -145,3 +145,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #scoreContent>
+  <app-rating [(rate)]="currentRate"></app-rating>
+</ng-template>

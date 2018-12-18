@@ -1,9 +1,10 @@
-import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector, Type, EmbeddedViewRef, ComponentRef } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector, Type, EmbeddedViewRef, ComponentRef, TemplateRef } from '@angular/core';
 import { DialogModule } from './dialog.module';
 import { DialogComponent } from './dialog.component';
 import { DialogInjector } from './dialog-injector';
 import { DialogConfig } from './dialog-config';
 import { DialogRef } from './dialog-ref';
+import { DialogInfoComponent } from './dialog-info.component';
 
 @Injectable({
   providedIn: DialogModule
@@ -13,10 +14,13 @@ export class DialogService {
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private appRef: ApplicationRef, private injector: Injector) {}
 
-  public open(componentType: Type<any>, config: DialogConfig) {
+  public open(content: Type<any>, config: DialogConfig) {
     const dialogRef = this.appendDialogComponentToBody(config);
-
-    this.dialogComponentRef.instance.childComponentType = componentType;
+    if (content instanceof TemplateRef) {
+      this.dialogComponentRef.instance.childTemplateType = content;
+    } else {
+      this.dialogComponentRef.instance.childComponentType = content;
+    }
 
     return dialogRef;
   }
@@ -53,5 +57,9 @@ export class DialogService {
   private removeDialogComponentFromBody() {
     this.appRef.detachView(this.dialogComponentRef.hostView);
     this.dialogComponentRef.destroy();
+  }
+
+  public openInfo(config: DialogConfig) {
+    return this.open(DialogInfoComponent, config);
   }
 }

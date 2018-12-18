@@ -11,10 +11,10 @@
       <ng-template appInsertion></ng-template>
     </section>
     <footer class="modal-card-foot" *ngIf="config.data.optionOk || config.data.optionCancel">
-      <button class="button is-primary" *ngIf="config.data.optionOk" (click)="close()">
+      <button class="button is-primary" *ngIf="config.data.optionOk" (click)="accept()">
         {{ config.data.optionOk }}
       </button>
-      <button class="button" *ngIf="config.data.optionCancel" (click)="close()">
+      <button class="button" *ngIf="config.data.optionCancel" (click)="cancel()">
         {{ config.data.optionCancel }}
       </button>
     </footer>

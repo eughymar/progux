@@ -118,6 +118,8 @@ export class RatingComponent implements OnInit, OnChanges, ControlValueAccessor,
     /** (NOT TESTED) Remove 300ms click delay on touch devices */
     e.preventDefault();
     e.stopPropagation();
+    console.log("HANDLEEEEEEEEE", value);
+    
     this.update(value + 1);
   }
 

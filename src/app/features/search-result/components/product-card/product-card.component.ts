@@ -41,17 +41,13 @@ export class ProductCardComponent implements OnInit{
   }
 
   productDetail(product) {
-    const ref = this.dialog.open(ProductDetailComponent,
-      {
+    this.dialog.open(ProductDetailComponent, {
         data: {
           title: product.nameProduct,
           optionOk: 'Aceptar',
           product: product,
           size: 'large'
         }
-      });
-    ref.afterClosed.subscribe(result => {
-      console.log('Dialog closed', result);
     });
   }
 }

@@ -6,6 +6,7 @@ import { LocalStorageService } from '../../../../core/services/localStorage.serv
 import { ProductDetailService } from '../../product-detail.service';
 import { FacebookService, InitParams, UIParams, UIResponse } from 'ngx-facebook';
 import { DialogRef } from '../../../../dialog/dialog-ref';
+import { DialogService } from '../../../../dialog/dialog.service';
 
 @Component({
   selector: 'app-image-data',
@@ -46,7 +47,7 @@ export class ImageDataComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private _localStorage: LocalStorageService,
-    // private modalService: NgbModal,
+    private dialogService: DialogService,
     private _productDetailService: ProductDetailService,
     private fb: FacebookService,
     public dialog: DialogRef
@@ -174,84 +175,91 @@ export class ImageDataComponent implements OnInit {
 
 	/**
 	 * Follow a product if the user is log in
-	 * @param content This is the modal template
 	 */
-  // followProduct(content): void {
-  //   if (!this.isLogged) {
-  //     this.modalService.open(content).result.then(
-  //       (result) => {
-  //         this.closeResult = `Closed with: ${result}`;
-  //       },
-  //       (reason) => {
-  //         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //       });
-  //   } else {
-  //     var temp = {
-  //       idProduct: +this.idProduct,
-  //       idUser: this._localStorage.getProfile().idUser
-  //     };
-  //     // unfollow product
-  //     if (this.isFollowing) {
-  //       this.modalService.open(content).result.then(
-  //         (result) => {
-  //           this.closeResult = `Closed with: ${result}`;
-  //           this._productDetailService.unfollowProduct(temp).subscribe(
-  //             (result) => { this.isFollowing = false; })
-  //         },
-  //         (reason) => {
-  //           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //         });
-  //     } else {
-  //       // follow product
-  //       this._productDetailService.followProduct(temp).subscribe(
-  //         (result) => { this.isFollowing = true; }
-  //       )
-  //     }
-  //   }
-  // }
-
-  // rateProduct(content): void {
-  //   this.actualRate(); // User actual rate
-  //   this.modalService.open(content).result.then(
-  //     (result) => {
-  //       this.closeResult = `Closed with: ${result}`;
-  //       let temp = {
-  //         idProduct: this.idProduct,
-  //         idUser: this.idUser,
-  //         value: this.currentRate
-  //       }
-  //       this._productDetailService.rateProduct(temp).subscribe(
-  //         (result) => {
-  //           console.log(result);
-  //         }
-  //       )
-  //     },
-  //     (reason) => {
-  //       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //     });
-  // }
-
-  actualRate(): void {
-    this._productDetailService.actualRate(this.idProduct, this.idUser).subscribe(
-      (response) => {
-        //console.log("actual rate --> ", response);
-        this.currentRate = response["value"];
-      },
-      (error) => {
-        console.log(error);
+  followProduct(): void {
+    if (!this.isLogged) {
+      this.dialogService.openInfo({
+        data: {
+          title: "Advertencia",
+          optionOk: 'Aceptar',
+          message: 'Debe de iniciar sesión para poder seguir este producto'
+        }
+      });
+    } else {
+      var temp = {
+        idProduct: +this.idProduct,
+        idUser: this._localStorage.getProfile().idUser
+      };
+      // unfollow product
+      if (this.isFollowing) {
+        const dialogUnFollow = this.dialogService.openInfo({
+          data: {
+            title: "Advertencia",
+            optionOk: 'Aceptar',
+            optionCancel: 'Cerrar',
+            message: 'Esta seguro que quiere dejar de seguir este producto?'
+          }
+        });
+        
+        dialogUnFollow.afterClosed.subscribe(response => {
+          if (response) {
+            this._productDetailService.unfollowProduct(temp).subscribe(
+              (result) => { this.isFollowing = false; });
+          }
+        });
+      } else {
+        // follow product
+        this._productDetailService.followProduct(temp).subscribe(
+          (result) => { this.isFollowing = true; });
       }
-    )
+    }
   }
 
-  // noLogged(content): void {
-  //   this.modalService.open(content).result.then(
-  //     (result) => {
-  //       this.closeResult = `Closed with: ${result}`;
-  //     },
-  //     (reason) => {
-  //       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //     });
-  // }
+  rateProduct(content):void {
+    const rate = this.dialogService.open(content, {
+      data: {
+        title: "Calificación",
+        optionOk: 'Aceptar',
+        optionCancel: 'Cancelar'
+      }
+    });
+    rate.afterClosed.subscribe(response => {
+      if (response && this.currentRate > 0) {
+        let temp = {
+          idProduct: this.idProduct,
+          idUser: this.idUser,
+          value: this.currentRate
+        }
+        this._productDetailService.rateProduct(temp).subscribe(
+          (result) => {
+            console.log(result);
+          }
+        );
+      }
+    });
+  }
+      
+  actualRate(): void {
+  this._productDetailService.actualRate(this.idProduct, this.idUser).subscribe(
+    (response) => {
+      //console.log("actual rate --> ", response);
+      this.currentRate = response["value"];
+    },
+    (error) => {
+      console.log(error);
+    }
+    )
+  }
+  
+  noLogged(content): void {
+    this.dialogService.openInfo({
+      data: {
+        title: "Advertencia",
+        optionOk: 'Aceptar',
+        message: 'Debe de iniciar sesión para poder calificar este producto.'
+      }
+    });
+  }
 
 	/**
 	 * Share product in Facebook
@@ -284,19 +292,4 @@ export class ImageDataComponent implements OnInit {
       })
       .catch((e: any) => console.error(e));
   }
-
-	/**
-	 * Show the reason to close the modal
-	 * @param reason 
-	 */
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return `with: ${reason}`;
-  //   }
-  // }
-
 }

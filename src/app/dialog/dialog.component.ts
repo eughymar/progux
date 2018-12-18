@@ -20,6 +20,7 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
   public onClose = this._onClose.asObservable();
 
   childComponentType: Type<any>;
+  childTemplateType: any;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver, 
@@ -29,7 +30,8 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
     public config: DialogConfig) {}
 
   ngAfterViewInit() {
-    this.loadChildComponent(this.childComponentType);
+    this.load();
+    // this.loadChildComponent(this.childComponentType);
     this.cd.detectChanges();
   }
 
@@ -41,15 +43,26 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
     evt.stopPropagation();
   }
 
-  loadChildComponent(componentType: Type<any>) {
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentType);
-
+  load() {
     let viewContainerRef = this.insertionPoint.viewContainerRef;
     viewContainerRef.clear();
-
-    this.componentRef = viewContainerRef.createComponent(componentFactory);
+    if (this.childComponentType) {
+      this.loadChildComponent(this.childComponentType, viewContainerRef);
+    }
+    if (this.childTemplateType) {
+      this.loadChildTemplate(this.childTemplateType, viewContainerRef);
+    }
     this.renderer.addClass(this.modal.nativeElement, 'is-active');
     this.freeze();
+  }
+
+  loadChildComponent(componentType: Type<any>, viewContainerRef) {
+    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentType);
+    this.componentRef = viewContainerRef.createComponent(componentFactory);
+  }
+
+  loadChildTemplate(content, viewContainerRef) {
+    viewContainerRef.createEmbeddedView(content);
   }
 
   ngOnDestroy() {
@@ -58,9 +71,18 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  accept() {
+    this.dialogRef.close(true);
+    this.close();
+  }
+
+  cancel() {
+    this.dialogRef.close(false);
+    this.close();
+  }
+
   close() {
     this._onClose.next();
-
     this.renderer.removeClass(this.modal.nativeElement, 'is-active');
     this.unFreeze();
   }
