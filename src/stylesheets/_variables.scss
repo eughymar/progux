@@ -23,7 +23,7 @@ $navbar-light: purple;
 
 $color-primary: #179da5;
 $color-dark: #2A2f39;
-$font: 'titillium-light';
+$font: 'titillium';
 $font-bold: 'titillium-bold';
 
 $primary: $color-primary;
@@ -36,3 +36,7 @@ $dark: $color-dark;
 // $light:
 
 $family-primary: $font;
+$font-size: 0.9rem;
+
+$tabs-link-active-border-bottom-color: $color-primary;
+$tabs-link-active-color: $color-primary;

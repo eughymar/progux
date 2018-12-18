@@ -119,33 +119,29 @@
         </span>
       </div>
     </div>
-    <br>
 
-    <!--  Tabs detalle product -->
-    <div class="row">
-      <div class="col-12  col-md-12 col-lg-12">
-        <!-- <ngb-tabset>
-          <ngb-tab class="nav-link active" title="Descripción">
-            <ng-template ngbTabContent> -->
-        <span class="title-tab">{{data.descriptionProduct}}</span>
-        <div *ngFor="let item of data.variants" class="content-tab">
-          <span class="title-tab">{{item.key}} :</span> {{item.value}}
-        </div>
-        <!-- </ng-template>
-          </ngb-tab>
-          <ngb-tab title="Oferta y Envío">
-            <ng-template ngbTabContent> -->
-        <div *ngIf="data.offer" class="content-tab">
-          <div><span class="title-tab">Fecha de la oferta:</span> {{data.offer.dateBegin|date}} -
-            {{data.offer.dateEnd|date}}</div>
-          <div><span class="title-tab">Porcentaje de descuento:</span>
-            {{data.offer.percentDiscount|number:'1.1-1'}}%</div>
-        </div>
-        <div *ngIf="!data.offer" class="content-tab">Aun no hay Ofertas</div>
-        <!-- </ng-template>
-          </ngb-tab>
-        </ngb-tabset> -->
-      </div>
+    <div class="description has-margin-t-5">
+      <my-tabs>
+        <my-tab [tabTitle]="'Descripción'">
+          <span class="title-tab">{{data.descriptionProduct}}</span>
+          <div *ngFor="let item of data.variants" class="content-tab">
+            <span class="title-tab">{{item.key}} :</span> {{item.value}}
+          </div>
+        </my-tab>
+        <my-tab tabTitle="Oferta y Envío">
+          <div *ngIf="data.offer" class="content-tab">
+            <div>
+              <span class="title-tab">Fecha de la oferta:</span> {{data.offer.dateBegin|date}} -
+              {{data.offer.dateEnd|date}}
+            </div>
+            <div>
+              <span class="title-tab">Porcentaje de descuento:</span>
+              {{data.offer.percentDiscount|number:'1.1-1'}}%
+            </div>
+          </div>
+          <div *ngIf="!data.offer" class="content-tab">Aun no hay Ofertas</div>
+        </my-tab>
+      </my-tabs>
     </div>
   </div>
 </div>

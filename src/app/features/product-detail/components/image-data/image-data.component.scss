@@ -26,7 +26,6 @@ $colorInfo: #0066c0;
   }
   .title-dproduct {
     font-family: Arial, sans-serif;
-    font-size: 0.8rem;
     font-weight: bold;
     color: black;
   }
@@ -47,7 +46,6 @@ $colorInfo: #0066c0;
     }
   }
   .description-dproduct {
-    font-size: 0.8rem;
     color: $colorInfo;
     &.is-link {
       &:hover {
@@ -70,19 +68,12 @@ $colorInfo: #0066c0;
   font-weight: bold;
 }
 
-
-
-
-
-
-
-/*Estilo de descripción y oferta*/
-.title-tab {
-  font-size: 0.81rem;
-  color: rgb(37, 37, 37);
-}
-
-.content-tab {
-  font-size: 0.8rem;
-  color: rgb(100, 99, 99);
+.description {
+  .title-tab {
+    color: rgb(37, 37, 37);
+  }
+  
+  .content-tab {
+    color: rgb(100, 99, 99);
+  }
 }

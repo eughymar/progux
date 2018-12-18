@@ -2,7 +2,6 @@
 $colorTextos: #0066c0;
 .comment-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
   color: $colorTextos;
 }
 
@@ -25,11 +24,9 @@ $colorTextos: #0066c0;
         margin-right: 1rem;
     }
     .comment-text {
-        font-size: 0.8rem;
         color: #111;
         .date-user-comment {
             font-family: Arial, sans-serif;
-            font-size: 0.8rem;
             color: $colorTextos;
         }
     }

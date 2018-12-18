@@ -5,6 +5,9 @@
 @import "_utils.scss";
 @import 'bulma';
 
+body {
+  font-size: $font-size;
+}
 /* ----------- forms ----------- */
 input:focus,
 select:focus,
