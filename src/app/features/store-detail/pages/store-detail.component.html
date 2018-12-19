@@ -1,6 +1,6 @@
 <app-head-store *ngIf="headData" [data]="headData" id="home"></app-head-store>
 <app-actions *ngIf="idStore&&headData" [data]="headData" id="actions"></app-actions>
-<div class="container c-color-bg" id="catalogue">
+<div class="section container" id="catalogue">
   <div class="main-content" style="overflow-x: hidden;">
     <app-catalogue *ngIf="idStore && headData" [data]="headData"></app-catalogue>
   </div>

@@ -1,26 +1,32 @@
 <!--menu-store-->
-<div class="store-navbar c-color-bgr" [ngClass]="{active: activeMenuMobile}">
-  <div class="store-logo">
-    <img src={{url+data.store.urlLogoStore}}><!-- <span class="">{{data.store.nameStore}}</span> -->
-  </div>
-
-  <div class="menu-toggle" (click)="verificate()">
-    <div class="menu-icon" [ngClass]="{active: activeMenuMobile}">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
+<nav class="navbar is-fixed-top" [ngClass]="{active: isActive}">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src={{url+data.store.urlLogoStore}}>
+      </a>
+      <span class="navbar-burger burger" [ngClass]="{'is-active': isActive}" (click)="isActive = !isActive">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div class="navbar-menu" [ngClass]="{'is-active': isActive}">
+      <div class="navbar-end">
+        <a class="navbar-item" (click)="triggerScrollTo('home')"><span>Inicio</span></a>
+        <a class="navbar-item" (click)="triggerScrollTo('actions')"><span>Nosotros</span></a>
+        <a class="navbar-item" (click)="triggerScrollTo('catalogue')"><span>Catálogo</span></a>
+        <a class="navbar-item" *ngIf="data.team.length > 0" (click)="triggerScrollTo('team')"><span>Equipo</span></a>
+        <a class="navbar-item" *ngIf="data.promotionImages.length > 0" (click)="triggerScrollTo('promotion')"><span>Promoción</span></a>
+        <a class="navbar-item" (click)="triggerScrollTo('contact')"><span>Contactos</span></a>
+        <a class="navbar-item"><span> Login </span></a>
+        <a class="navbar-item" href="mainSearcher">
+          <span><img src="assets/img/logoNGXWhite.png" width="20" class="logo-negux"> </span>
+        </a>
+      </div>
     </div>
   </div>
-  <ul class="menu-list" [ngClass]="{active: activeMenuMobile}">
-    <li><a (click)="triggerScrollTo('home')"><span>INICIO</span></a></li>
-    <li><a (click)="triggerScrollTo('actions')"><span>Nosotros</span></a></li>
-    <li><a (click)="triggerScrollTo('catalogue')"><span>Catálogo</span></a></li>
-    <li *ngIf="data.team.length > 0"><a (click)="triggerScrollTo('team')"><span>Equipo</span></a></li>
-    <li *ngIf="data.promotionImages.length > 0"><a (click)="triggerScrollTo('promotion')"><span>Promoción</span></a></li>
-    <li><a (click)="triggerScrollTo('contact')"><span>Contactos</span></a></li>
-    <li><a href="mainSearcher"><span><img src="assets/img/logoNGXWhite.png" width="50" class="logo-negux"> </span></a></li>
-  </ul>
-</div>
+</nav>
 <!--End menu-store-->
 
 <!-- StoreBanner -->

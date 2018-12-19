@@ -8,9 +8,45 @@ $themes: $themes;
   }
 }
 
-/*===   19/04/2018   ===*/
-/*Detalles de tienda*/
-/*mejorar*/
+.navbar {
+  background: $primary;
+  color: white;
+  .logo-negux {
+    padding-top: 8px;
+  }
+  .navbar-item {
+    &:hover {
+      span {
+        border-bottom: solid 1.3px white;
+      }
+      background: transparent;
+    }
+  }
+  &.active {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0), $primary);
+    height: 100%;
+    .navbar-menu {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  .navbar-burger {
+    width: 3.5rem;
+    span {
+      left: calc(50% - 10px);
+      width: 20px;
+      height: 1.5px;
+    }
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  a {
+    color: white;
+    font-size: 1rem;
+  }
+}
+
 .store-banner {
   height: 100vh;
   background-position: 50% 50%;
@@ -19,7 +55,6 @@ $themes: $themes;
 }
 
 .store-navbar {
-  // background: #151515;
   width: 100vh;
   color: rgb(253, 251, 251);
   position: fixed;
@@ -160,14 +195,13 @@ $themes: $themes;
   }
 
   .container-logo {
-    @include center(35%)
+    @include center(33%)
   }
 
   .container-name-store {
-    margin-top: 1.5rem;
     color: #fff;
     text-align: center;
-    line-height: 2em;
+    width: 75%;
     @include center(53%);
   }
 }
@@ -182,7 +216,6 @@ $themes: $themes;
 }
 
 .name-logo-default {
-  font-family: "open_sansbold";
   font-size: 3.5rem;
   color: rgb(255, 255, 253);
   text-align: center;
@@ -193,13 +226,13 @@ $themes: $themes;
 }
 
 .name-store {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact;
   font-size: 3.5rem;
   letter-spacing: 10px;
+  line-height: 0.9;
 }
 
 .fr-store {
-  font-family: "open_sanslight";
   font-size: 1rem;
 }
 
@@ -214,7 +247,6 @@ $themes: $themes;
 
 .number-stars {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.95rem;
   color: #fff;
   padding: 4px 8px;
@@ -224,7 +256,6 @@ $themes: $themes;
 
 
 .n-opinions-store {
-  font-family: "open_sansregular";
   font-size: 0.8rem;
   color: rgb(23, 157, 165);
   color: #fff;
@@ -314,7 +345,6 @@ $themes: $themes;
   }
 
   .fr-store {
-    font-family: "open_sanslight";
     font-size: 1rem;
   }
 
@@ -356,7 +386,6 @@ $themes: $themes;
   }
 
   .fr-store {
-    font-family: "open_sanslight";
     font-size: 1rem;
   }
 
