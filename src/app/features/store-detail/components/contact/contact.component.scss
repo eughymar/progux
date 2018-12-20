@@ -16,9 +16,11 @@ $themes: $themes;
 $color-background: #24303e;
 
 /*Estilos para direcciones de tienda*/
-.container,
 .container-contact {
   background-color: $color-background;
+  .data-branch {
+    color: white;
+  }
 }
 
 .container-contact-a {
@@ -35,7 +37,6 @@ $color-background: #24303e;
 }
 
 .text-nro-sucursales {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   color: #8fc7f8;
 }
@@ -90,7 +91,6 @@ $color-background: #24303e;
     padding: 40px 15px 40px 15px;
 
     .title-address {
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
       font-weight: bold;
       padding-bottom: 10px;
@@ -119,38 +119,37 @@ $color-background: #24303e;
 
 .mapa {
   margin: 0px auto;
-  width: 80%;
   height: 400px;
+  z-index: 1;
 }
 
 .contact-data-store {
-  font-family: "open_sansregular";
   text-align: center;
   color: white;
 }
 
 
 /*===   Media queries   ===*/
-@media (max-width: 576px) {
-  .section-addresses {
-    padding-top: 10px;
-    height: 250px;
-  }
+// @media (max-width: 576px) {
+//   .section-addresses {
+//     padding-top: 10px;
+//     height: 250px;
+//   }
 
-  .line-title {
-    width: 10%;
-  }
+//   .line-title {
+//     width: 10%;
+//   }
 
-  .title-section-store {
-    font-size: 1.2rem;
-  }
+//   .title-section-store {
+//     font-size: 1.2rem;
+//   }
 
-  .mapa {
-    width: 90%;
-  }
+//   .mapa {
+//     width: 90%;
+//   }
 
-  /*   overflow-y: scroll; */
-}
+//   /*   overflow-y: scroll; */
+// }
 
 @media (min-width: 768px) {}
 
