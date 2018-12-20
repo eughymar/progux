@@ -15,31 +15,17 @@ $themes: $themes;
   }
 }
 
-/*===   19/04/2018   ===*/
-.container-actions {
-  /* padding-top:45px; */
-  padding-bottom: 0px;
-  color: #fff;
-  overflow-x: hidden;
-
-  .container {
-    .container-description-store {
-      text-align: justify;
-    }
-
-    .video {
-      iframe {
-        min-height: 380px;
-      }
-    }
-  }
-}
-
-.video {
+.info-video {
+  color: white;
+  background: rebeccapurple;
   .video-play {
     position: relative;
-    height: 300px;
-
+    text-align: center;
+    img {
+      background: #000;
+      min-height: 290px;
+      max-height: 300px;
+    }
     .button-play {
       width: 80px;
       height: 80px;
@@ -72,14 +58,10 @@ $themes: $themes;
   }
 }
 
-.modal-video {
-  padding: 0 !important;
-
+.video {
   .show-video {
-    min-height: 500px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    position: absolute;
-    background-color: black;
+    height: calc(100vh - 15rem);
+    background-color: #000;
   }
 }
 
@@ -92,70 +74,4 @@ $themes: $themes;
     opacity: 0;
     transform: scale(1.8);
   }
-}
-
-.title-section-store {
-  font-family: "open_sansbold";
-  font-size: 1.6rem;
-  padding: 0;
-  margin: 0;
-}
-
-.line-title {
-  width: 5%;
-  border-bottom: 3px solid #fff;
-}
-
-.container-actions-a {
-  margin-top: 50px;
-}
-
-.text-center {
-  font-family: Arial, sans-serif;
-  padding: 25px 0 20px;
-  font-size: 0.8rem;
-  width: 110px;
-  height: 110px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-}
-
-.text-center:hover {
-  cursor: pointer;
-  color: rgb(19, 127, 133);
-  border: 3px solid rgb(19, 127, 133);
-}
-
-.paragraph-store {
-  width: 80%;
-  text-align: center;
-  margin: 40px auto;
-
-}
-
-.parrafo-regular {
-  font-family: "open_sansregular";
-  font-size: 16px;
-}
-
-/*===   Media Queries   ===*/
-@media (max-width: 575px) {
-  .line-title {
-    width: 10%;
-  }
-
-  .text-center {
-    font-family: Arial, sans-serif;
-    padding: 20px 0 20px;
-    font-size: 0.6rem;
-    width: 75px;
-    height: 75px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-  }
-
-  .title-section-store {
-    font-size: 1.2rem;
-  }
-
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FacebookService, InitParams, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
-
 import { environment } from '../../../../../environments/environment';
 import { Subject } from 'rxjs';
+import { DialogService } from '../../../../dialog/dialog.service';
 
 @Component({
   selector: 'app-actions',
@@ -24,12 +23,12 @@ export class ActionsComponent implements OnInit {
   url: string = environment.service_api_url;
   idUser: string;
   followingReady: boolean = false;
-  urlVideo: any = 'https://www.youtube.com/embed/88NPJsceU_8';
+  urlVideo: any = 'https://www.youtube.com/embed/88NPJsceU_8?autoplay=1';
 
   public static updateActions: Subject<boolean> = new Subject();
 
   constructor(
-    // private modalService: NgbModal,
+    private dialogService: DialogService,
     private fb: FacebookService,
 
   ) { }
@@ -70,11 +69,6 @@ export class ActionsComponent implements OnInit {
 	 */
   shareStore(): void {
     const shareUrl = window.location.href;
-    // console.log(this.storeName)
-    // console.log(this.description);
-    // console.log(shareUrl);
-    // console.log(this.url+this.urlLogo);
-
     const params: UIParams = {
       method: 'share_open_graph',
       action_type: 'og.shares',
@@ -91,10 +85,6 @@ export class ActionsComponent implements OnInit {
       })
     };
 
-    // let params: UIParams = {
-    // 	href: window.location.href,
-    // 	method: 'share'
-    // };
     this.fb.ui(params)
       .then((res: UIResponse) => {
         // console.log(res);
@@ -102,25 +92,12 @@ export class ActionsComponent implements OnInit {
       .catch((e: any) => console.error(e));
   }
 
-  /**
-	 * Show the reason to close the modal
-	 * @param reason
-	 */
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return `with: ${reason}`;
-  //   }
-  // }
-
-  // public showVideo(content): void {
-  //   this.modalService.open(content, { size: 'lg' }).result.then((result) => {
-  //     this.closeResult = `Closed with: ${result}`;
-  //   }, (reason) => {
-  //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //   });
-  // }
+  public showVideo(content): void {
+    this.dialogService.open(content, {
+      data: {
+        optionOk: 'Aceptar',
+        size: 'large'
+      }
+    });
+  }
 }

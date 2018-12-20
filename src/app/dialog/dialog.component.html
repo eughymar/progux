@@ -1,7 +1,7 @@
 <div class="modal modal-fx-slideRight" #modal>
   <div class="modal-background"></div>
   <div class="modal-card modal-content {{ config.data.size? 'is-' + config.data.size : '' }}">
-    <header class="modal-card-head">
+    <header class="modal-card-head" *ngIf="config.data.title">
       <p class="modal-card-title">
         {{ config.data.title }}
       </p>
