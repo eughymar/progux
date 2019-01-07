@@ -8,20 +8,14 @@
 </div>
 
 <!-- Search section -->
-<div class="inline-block">
-  <!-- <input class="input" type="text" placeholder="Buscar en catálogo" [(ngModel)]="query" (keyup.enter)="getTotalProducts()"> -->
-  <div class="input-group col-12 col-md-4 offset-md-8 col-lg-4 offset-lg-8 input-seeker">
-     <input type="text" class="form-control input-search" placeholder="Buscar en catálogo" [(ngModel)]="query"
- (keyup.enter)="getTotalProducts()"> 
-    <div class="input-group-append">
-      <button class="btn catalogue-search-btn" type="button" (click)="getTotalProducts()">
-        <i class="search-1icon-"></i>
-      </button>
-    </div>
+
+<div class="columns">
+  <div class="column form-search is-6 is-offset-6 is-flex">
+    <input class="input is-primary" type="text" placeholder="Buscar en catálogo" [(ngModel)]="query" (keyup.enter)="getTotalProducts()">
+    <button class="button is-primary is-pulled-right" (click)="getTotalProducts()"><i class="search-1icon-"></i></button>
   </div>
 </div>
 
-<button class="button is-primary" (click)="open(showDetails)"> </button>
 <!-- Catalogue List -->
 
 <div class="columns is-multiline">
