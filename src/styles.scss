@@ -41,6 +41,23 @@ body {
   align-items: center;
 }
 
+@include mobile-extra {
+  .column {
+    &.is-full-mobile-extra {
+      width: 280px !important;
+      margin: auto;
+    }
+  }
+}
+
+@include mobile-extra-sm {
+  .column {
+    &.is-full-mobile-extra {
+      width: 100% !important;
+    }
+  }
+}
+
 
 /* ----- Title section ----- */
 // .title-section {

@@ -18,8 +18,8 @@
 
 <!-- Catalogue List -->
 
-<div class="columns is-multiline">
-  <div *ngFor="let product of products" class="col-1ths col-2ths col-sm-3ths col-md-4ths col-lg-5ths">
+<div class="columns is-flex is-multiline">
+  <div class="column is-paddingless is-paddingless is-one-quarter-widescreen is-one-third-tablet is-half-mobile is-full-mobile-extra" *ngFor="let product of products">
     <app-product-card [data]="product" [isStore]="true"></app-product-card>
   </div>
 </div>
@@ -27,8 +27,3 @@
 <div class="row button-vermas">
   <button *ngIf="!finished" class="col-center btn ngx-button" (click)="getTotalProducts()">Ver más</button>
 </div>
-
-
-<ng-template #showDetails>
-  <h1>This is a detail product</h1>
-</ng-template>
