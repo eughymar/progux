@@ -193,28 +193,37 @@ $themes: $themes;
     background-size: cover;
     background-repeat: no-repeat;
   }
-
-  .container-logo {
-    @include center(33%)
-  }
-
-  .container-name-store {
-    color: #fff;
+  .main-information-store {
     text-align: center;
     width: 75%;
-    @include center(53%);
+    @include center(45%);
+    .container-logo {
+      padding: 1rem;
+      .img-logo {
+        padding: 0;
+        margin: 0;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+    }
+    .container-name-store {
+      color: #fff;
+      .name-store {
+        font-family: Impact;
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+        line-height: 0.9;
+      }
+      .motto-store {
+        font-size: 1.25rem;
+        font-family: 'titillium-light';
+      }
+    }
   }
+
 }
-
-
-.img-logo {
-  padding: 0;
-  margin: 0;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
+// TODO is this necessary?
 .name-logo-default {
   font-size: 3.5rem;
   color: rgb(255, 255, 253);
@@ -222,18 +231,6 @@ $themes: $themes;
   width: 150px;
   position: absolute;
   top: 25%;
-
-}
-
-.name-store {
-  font-family: Impact;
-  font-size: 3.5rem;
-  letter-spacing: 5px;
-  line-height: 0.9;
-}
-
-.fr-store {
-  font-size: 1rem;
 }
 
 .container-opinions-redes {
@@ -336,20 +333,20 @@ $themes: $themes;
 
 
 /*===   Media queries   ===*/
-@media (max-width: 575px) {
-  .name-store {
-    font-size: 1.8rem;
-    position: relative;
-    letter-spacing: 1px;
-    line-height: 1.5rem;
+@include mobile-extra {
+  .store-banner {
+    .main-information-store {
+      .container-name-store {
+        .name-store {
+          font-size: 1.8rem !important;
+          position: relative;
+          line-height: 1.5rem;
+        }
+      }
+    }
   }
-
-  .fr-store {
-    font-size: 1rem;
-  }
-
+  
   .container-opinions-redes {
-
     margin-left: 12px;
     position: absolute;
     z-index: 12;
@@ -358,7 +355,7 @@ $themes: $themes;
     background-color: transparent;
     padding-top: 5px;
   }
-
+  
   /*Gradient for banner personalized mobile*/
   .color-for-image-prz {
     position: absolute;
@@ -371,26 +368,12 @@ $themes: $themes;
   }
 }
 
-/*===  Media querie <= 700px ===*/
-
-@media (max-width: 700px) {
+@include mobile {
   .menu-list {
     text-align: inherit !important;
     font-size: inherit !important;
   }
-
-  .name-store {
-    font-size: 1.8rem;
-    position: relative;
-    letter-spacing: 2px;
-  }
-
-  .fr-store {
-    font-size: 1rem;
-  }
-
   .container-opinions-redes {
-
     margin-left: 12px;
     position: absolute;
     z-index: 12;
@@ -398,13 +381,32 @@ $themes: $themes;
     bottom: 5%;
     background-color: transparent;
     padding-top: 5px;
-
+  }
+  .store-banner {
+    .main-information-store {
+      width: 100%;
+      padding: 0 1.5rem 0 1.5rem;
+      .container-logo {
+        .img-logo {
+          width: 140px;
+          height: 140px;
+        }
+      }
+      .container-name-store {
+        .name-store {
+          font-size: 2.5rem;
+          letter-spacing: 2px;
+        }
+        .motto-store {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
 
 
-/* @media screen and (max-width : 760px) { P*/
-@media screen and (max-width : 850px) {
+@include tablet {
   .header {
     display: none !important;
   }

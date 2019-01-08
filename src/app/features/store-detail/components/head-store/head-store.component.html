@@ -35,17 +35,16 @@
   <!-- <ngx-slider-store  *ngIf="imagesSourceStore" [imageData]="imagesSourceStore" [title]=""></ngx-slider-store> -->
   <div *ngIf="pixeles > 576" class="banner-img" [style.backgroundImage]="url+data.store.urlBannerDesktopStore | safe: 'urlStyle'"></div>
   <div *ngIf="pixeles <= 576" class="banner-img" [style.backgroundImage]="url+data.store.urlBannerMobileStore | safe: 'urlStyle'"></div>
-
-  <div *ngIf="data.store.renderedLogo" class="container-logo">
-    <img src={{url+data.store.urlLogoStore}} class="img-logo">
-    <p *ngIf="data.store.renderedInitials" class="name-logo-default">{{nameLogo}}</p>
-
-  </div>
-  <div *ngIf="data.store.renderedNameStore" class="container-name-store">
-    <span class="name-store">{{data.store.nameStore}}</span>
-  </div>
-  <div *ngIf="data.store.renderedPhrase" class="container-motto-store">
-    <span class="fr-store">{{data.store.phraseStore}}</span>
+  <div class="main-information-store">
+    <div *ngIf="data.store.renderedLogo" class="container-logo">
+      <img src={{url+data.store.urlLogoStore}} class="img-logo">
+      <!-- TODO is this necessary? -->
+      <p *ngIf="data.store.renderedInitials" class="name-logo-default">{{nameLogo}}</p>
+    </div>
+    <div *ngIf="data.store.renderedNameStore" class="container-name-store">
+      <span class="name-store">{{data.store.nameStore}}</span>
+      <p *ngIf="data.store.renderedPhrase" class="motto-store">{{data.store.phraseStore}}</p>
+    </div>
   </div>
   <div class="container container-opinions-redes">
     <div class="row">
