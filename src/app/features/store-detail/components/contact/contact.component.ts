@@ -48,8 +48,8 @@ export class ContactComponent implements OnInit {
     // map's config
     var map = L.map('map', { dragging: false }).setView([this.lat, this.lng], 17);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
     map.scrollWheelZoom.disable();	// scroll wheel zoom disable
