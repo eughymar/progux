@@ -1,56 +1,73 @@
-/* creado el 01/04/2018 */
-.container-logo{
-  margin-top:10px;
-  width:20px;
-  height:15px;
-  cursor:pointer;
+.select{
+  margin-top: 10px;
+  select {
+    background: transparent;
+    border: solid 1px transparent;
+    border-radius: 0;
+    &:hover {
+      border-color: white;
+      &::after {
+        border-color: white;
+      }
+    }
   }
-
-.container-text-logo{
-  padding-top:18px;
-  width:65px;
-  height:auto;
-  cursor:pointer;
-  }
-
-.style-select select {
-  position:relative;
-  top:-5px;
-  margin:0;
-  padding:0;
-  width:70px;
-  font-family: "open_sansregular";
-  background: transparent;
-  border: none;
-  font-size:10px;
-  letter-spacing:1px;
-  height:16px;
-  background-color: #2A2f39;
-  color:white;
-  outline:  none;
-}
-
-/* ==== MEDIA QUERIES ==== */
-@media (max-width: 575px) {
-  .container-logo{
-    margin-top:2px;
-    width:45px;
-    height:auto;
+  &::after {
+    border-color: #d6d6d6b0 !important;
   }
 }
+// /* creado el 01/04/2018 */
+// .container-logo{
+//   margin-top:10px;
+//   width:20px;
+//   height:15px;
+//   cursor:pointer;
+//   }
 
-@media (min-width: 576px) {
+// .container-text-logo{
+//   padding-top:18px;
+//   width:65px;
+//   height:auto;
+//   cursor:pointer;
+//   }
 
-}
+// .style-select select {
+//   position:relative;
+//   top:-5px;
+//   margin:0;
+//   padding:0;
+//   width:70px;
+//   // font-family: "open_sansregular";
+//   background: transparent;
+//   border: none;
+//   font-size:10px;
+//   letter-spacing:1px;
+//   height:16px;
+//   background-color: #2A2f39;
+//   color:white;
+//   outline:  none;
+// }
 
-@media (min-width: 768px) {
+// /* ==== MEDIA QUERIES ==== */
+// @media (max-width: 575px) {
+//   .container-logo{
+//     margin-top:2px;
+//     width:45px;
+//     height:auto;
+//   }
+// }
+
+// @media (min-width: 576px) {
+
+// }
+
+// @media (min-width: 768px) {
  
-}
+// }
 
-@media (min-width: 992px) {
+// @media (min-width: 992px) {
 
-}
+// }
 
-@media (min-width: 1200px) {
+// @media (min-width: 1200px) {
   
-}
+// }

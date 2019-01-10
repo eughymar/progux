@@ -20,6 +20,7 @@ import { SliderComponent } from './slider/slider.component';
 import { RatingComponent } from './rating/rating.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TabComponent } from "./tabs/tab.component";
+import { ProfileOptionsComponent } from './profile-options/profile-options.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { TabComponent } from "./tabs/tab.component";
     SliderComponent,
     RatingComponent,
     TabsComponent,
-    TabComponent
+    TabComponent,
+    ProfileOptionsComponent
   ],
   exports: [
     FooterComponent, 

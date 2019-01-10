@@ -8,11 +8,21 @@
 body {
   font-size: $font-size;
 }
+*:focus {
+  outline: none;
+}
 .section {
   padding: 1.5rem !important;
 }
 .columns {
   margin: 0 !important;
+}
+.is-transparent {
+  background: transparent !important;
+}
+.is-flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .title-section {
@@ -47,6 +57,9 @@ body {
       width: 280px !important;
       margin: auto;
     }
+  }
+  .is-hidden-mobile-extra {
+    display: none !important;
   }
 }
 

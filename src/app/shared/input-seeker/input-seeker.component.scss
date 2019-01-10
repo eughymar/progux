@@ -1,18 +1,14 @@
-/* ---- style 17-03-2018 ----*/
+
+@import "mixins"; 
 .input-seeker {
-  margin-top:5px;
-  height:42px;
-  width: 33%;
+  margin-top: 5px;
+  height: auto;
+  width: 100%;
   margin: auto;
-  border-radius:3px;
-  overflow:hidden;
-  border: 1px solid white;
-  background-color: white;
+  overflow: hidden;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
   &.input-header {
     width: 100%;
-  }
-  input {
-    background-color:#fff;
   }
   .category-search-span{
     width:30%;
@@ -23,22 +19,37 @@
       font-family:arial,sans-serif;
     }
   }
-  .icon-search{
-    font-size:16px;
+  .columns {
+    width: 100%;
+  }
+  .main-search {
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    .input-search { 
+      font-size: 1rem;
+      border: none;
+      width: 100%;
+      line-height: 50px;
+      padding: 0 4px 0 10px;
+    }
+    .option-search {
+      background: #ef3f5a;
+      border: 1px solid #ef3f5a;
+      color: #fff;
+      padding: 0 30px;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        background: #d73851;
+        border: 1px solid #d73851;
+      }
+    }
   }
 }
 
-/* ==== MEDIA QUERIES ==== */
-@media (max-width: 575px) {
-  /* Input Seeker*/
-  .input-seeker{
-    margin:0 auto;
-    width:95%;
-    border-radius:3px;
-    height:35px;
-    overflow:hidden;
-    border: 1px solid white;
-    background-color: white;
-
+@include mobile {
+  .input-seeker {
+    width: 100%;
   }
 }

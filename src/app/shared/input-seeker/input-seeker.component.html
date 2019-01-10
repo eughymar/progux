@@ -1,12 +1,16 @@
-<div class="">
-  <form class="field is-grouped input-seeker {{classs}}">
-    <div class="select category-search-span">
-      <select class="category-search" name="category" [(ngModel)]="model.idCategory" (change)="onChange($event.target.value)">
+<form class="field is-grouped input-seeker {{classs}}">
+  <div class="columns">
+    <!-- <div class="column is-4 is-paddingless">
+      <select class="select" name="category" [(ngModel)]="model.idCategory" (change)="onChange($event.target.value)">
         <option *ngFor="let category of categories" value="{{category?.idCategory}}">{{category?.nameCategory}}</option>
       </select>
+    </div> -->
+    <div class="column is-paddingless">
+      <div class="main-search is-flex">
+        <input name="wordsearch" type="search" class="input-search" placeholder="producto" 
+        [(ngModel)]="wordsearch" (keyup.enter)="search()"/>
+        <input type="submit" class="option-search" (click)="search()" value="Buscar">
+      </div>
     </div>
-    <input name="wordsearch" type="text" class="input" placeholder="producto" 
-    [(ngModel)]="wordsearch" (keyup.enter)="search()"/>
-    <button class="button is-primary button-search" (click)="search()"><i class="search-1icon- icon-search"></i></button>
-  </form>
-</div>
+  </div>
+</form>

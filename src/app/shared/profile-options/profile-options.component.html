@@ -1,0 +1,54 @@
+<!-- authenticated -->
+<div *ngIf="userHasStore != null && isAuthenticated" class="float-right profile">
+
+  <!-- Store -->
+  <div *ngIf="userHasStore && user.typeUser === 'N'" (click)="goToAdminStore()" style="cursor: pointer" class="icon-profile">
+    <i class="shop-1icon-"></i>
+  </div>
+
+  <div *ngIf="user.typeUser === 'R'" (click)="goToRegistratorAdmin()" style="cursor: pointer" class="icon-profile">
+    <i class="shop-1icon-"></i>
+  </div>
+
+  <span *ngIf="!userHasStore" class="session-text icon-profile" (click)="goToWizard()">
+    Crea tu negocio
+  </span>
+
+  <!-- Notifications -->
+  <div class="icon-profile">
+    <i class="bellicon-"></i>
+  </div>
+
+  <!-- User -->
+  <div ngbDropdown placement="bottom-right" class="icon-profile">
+    <span class="name-user-login" id="dropdownBasic1" ngbDropdownToggle>
+      <img class="img-user-profile" src="{{serverUrl+user?.picture}}">
+      {{user.firstNameUser}}
+    </span>
+
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button (click)="goToUserProfile()" class="dropdown-item text-user-session">Perfil</button>
+      <button (click)="logout()" class="dropdown-item text-user-session">Cerrar Sesión</button>
+    </div>
+  </div>
+</div>
+
+<!-- whithout authentication -->
+<ul *ngIf="!isAuthenticated" class="options-menu is-flex">
+  <li class="option">
+    <a (click)="openNoLoggedModal(noLoggedContent)">Crea tu negocio</a>
+  </li>
+  <li class="option marked">
+    <a (click)="goToLogIn()">Iniciar sesión</a>
+  </li>
+</ul>
+
+<!-- Need to be logged by negux modal template-->
+<ng-template #noLoggedContent let-c="close" let-d="dismiss">
+  <div class="modal-body new-description">
+    <p> Debe de iniciar sesión para poder crear su negocio</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn ngx-button" (click)="c('Close click')">Cerrar</button>
+  </div>
+</ng-template>
