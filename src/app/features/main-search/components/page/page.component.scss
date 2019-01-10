@@ -1,70 +1,92 @@
 @import "variables";
 @import "mixins";
 
-.content-search-main {
-    color:white;
+@mixin background {
+  position: fixed;
+  left: -50%;
+  right: -50%;
+  top: 0;
+  bottom: 0;
+}
+
+.search-main {
+  .bg {
+    @include background;
+    opacity: .5;
+    animation: slide 7s ease-in-out 2 alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    transform: translateZ(0);
+    z-index: -1;
+  }
+  .bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 8s;
+  }
+  .bg3 {
+    animation-duration: 9s;
+  }
+  &.transition-on {
+    .bg-image {
+      @include background;
+      background: url('assets/img/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      animation: fade 1.5s;
+      z-index: -1;
+    }
+    .cover {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+      @include background;
+      z-index: 0;
+      animation: fade 1.5s;
+    }
+  }
+  .content-search-main {
+    color: white;
     @include center(50%);
     width: 500px;
-
+    .img-ngx {
+      width: 200px;
+    }
     .option {
       i {
         font-size: 1rem;
       }
+
       span {
         font-size: 0.8rem;
       }
     }
+    .main-text {
+      color: white;
+      font-size: 1em;
+      text-align: center;
+      letter-spacing: 0.15em;
+    }
+  }
 }
 
 @include mobile-extra {
-  .content-search-main {
-    width: 100%;
-    padding: 0 1.5rem;
+  .search-main {
+    .content-search-main {
+      width: 100%;
+      padding: 0 1.5rem;
+    }
   }
 }
 
-.main-text{
-  color:white;
-  font-size:1em;
-  text-align: center;
-  letter-spacing:0.15em;
+@keyframes fade {
+  0% {
+    opacity: 0;
   }
-
-.img-ngx{
-  width:200px;
-}
-
-div.row.justify-content-lg-center{
-  color:white
+  100% {
+    opacity: 1;
   }
-
-.bg {
-  animation: slide 10s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-  bottom: 0;
-  left: -50%;
-  opacity: .5;
-  position: fixed;
-  right: -50%;
-  top: 0;
-  z-index: -1;
-  transform: translateZ(0);
-}
-
-.bg2 {
-  animation-direction: alternate-reverse;
-  animation-duration: 11s;
-}
-
-.bg3 {
-  animation-duration: 12s;
 }
 
 @keyframes slide {
   0% {
     transform: translateX(-25%);
   }
-
   100% {
     transform: translateX(25%);
   }

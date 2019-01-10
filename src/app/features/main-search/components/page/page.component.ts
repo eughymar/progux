@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-main-searcher',
@@ -7,8 +7,25 @@ import { Component, OnInit} from '@angular/core';
 })
 export class PageComponent implements OnInit{
 
-  constructor() { }
+  constructor(
+    private elem: ElementRef,
+    private renderer: Renderer2
+  ) { }
+  
+  @ViewChild('content') content: ElementRef;
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.effect();
+  }
 
+  effect() {
+    setTimeout(() => {
+      const LISTA = this.elem.nativeElement.querySelectorAll('.bg');
+      for (var i = 0; i < LISTA.length; i ++) {
+        this.renderer.setStyle(LISTA[i], 'animation-play-state', 'paused');
+      }
+      this.renderer.addClass(this.content.nativeElement, 'transition-on');
+    }, 7000);
+    // }, 17000);
+  }
 }

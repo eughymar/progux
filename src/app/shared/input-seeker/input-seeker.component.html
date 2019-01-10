@@ -7,7 +7,7 @@
     </div> -->
     <div class="column is-paddingless">
       <div class="main-search is-flex">
-        <input name="wordsearch" type="search" class="input-search" placeholder="producto" 
+        <input name="wordsearch" type="search" class="input-search" placeholder="producto" autocomplete="off"
         [(ngModel)]="wordsearch" (keyup.enter)="search()"/>
         <input type="submit" class="option-search" (click)="search()" value="Buscar">
       </div>
