@@ -9,6 +9,13 @@ $colorTextos: #0066c0;
     .input-validate-comment {
         resize: none;
         padding: 5px 5px;
+        @include tablet-only {
+            border-right: 0;
+        }
+        &:focus {
+            border-color: #b5b5b5;
+            box-shadow: none;
+        }
     }
     button {
         width: 100%;

@@ -11,6 +11,14 @@ body {
 *:focus {
   outline: none;
 }
+
+.button,
+.input,
+.textarea,
+.select {
+  border-radius: 0 !important;
+}
+
 .section {
   padding: 0.75rem !important;
 }
@@ -52,10 +60,10 @@ body {
 }
 
 .button {
+  transition: background-color 0.2s ease-in-out;
   &.button-ngx {
     padding: 10px 36px !important;
     text-transform: uppercase;
-    transition: background-color 0.2s ease-in-out;
     border-radius: 0 !important;
     height: auto !important;
   }
@@ -91,16 +99,6 @@ body {
 .title-section-store {
   font-size: 1.2rem;
 }
-
-/* ----------- forms ----------- */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  box-shadow: none !important;
-  border-color: $color-primary !important;
-}
-/* ----------- End forms ----------- */
 
 .is-centered {
   text-align: center;

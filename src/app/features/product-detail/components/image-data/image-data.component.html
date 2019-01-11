@@ -1,42 +1,12 @@
 <div class="columns">
-  <!-- Mobile -->
-  <!-- <div class="is-6">
-    <h3 class="product-title">{{data.nameProduct}}</h3>
-    <div>
-      <span class="qualification-text">{{data.starsProduct}}</span>
-      <ngb-rating class="product-rate" [rate]="data.starsProduct" [max]="5" [readonly]="true"></ngb-rating>
-    </div>
-    <br>
-  </div> -->
-
   <div class="column is-6">
     <div class="picture d-flex justify-content-center">
       <img class="" src="{{productSelected}}">
     </div>
-    <!-- slick -->
-    <!-- <div class="row" style="align-items: center;justify-content: center;">
-      <div *ngIf="displayArrow" class="col-2 col-sm-2 col-md-1 col-lg-1" (click)="slickModal.slickPrev()">
-        <i class="left-open-bigicon-"></i>
-      </div>
-
-      <div class="col-8 col-sm-8 col-md-10 col-lg-10">
-        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
-          <div ngxSlickItem *ngFor="let slide of slides" class="slide" (click)="selectImage(slide)" style="cursor: pointer;">
-            <img class="shadow-img" src="{{url+slide.urlImage}}">
-          </div>
-        </ngx-slick>
-      </div>
-
-      <div *ngIf="displayArrow" class="col-2 col-sm-2 col-md-1 col-lg-1">
-        <div class="" (click)="slickModal.slickNext()">
-          <i class="right-open-bigicon-"></i>
-        </div>
-      </div>
-    </div> -->
   </div>
 
-
   <div class="column is-6 product-data">
+    <h3 class="product-title">{{data.nameProduct}}</h3>
     <div class="is-flex has-margin-b-6">
       <p class="qualification">
         <span class="qualification-text">{{ data.starsProduct }}</span>
@@ -45,7 +15,7 @@
     </div>
 
     <div class="d-none d-sm-block div-line"></div>
-    <p>
+    <p class="has-padding-t-6">
       <span class="title-dproduct">Precio: </span>
       <ng-container *ngIf="data.percentDiscount==0">
         <span *ngIf="data.priceProduct > 0" class="price-product">{{ data.priceProduct|number:'1.2-2' }} Bs.</span>
@@ -71,14 +41,6 @@
 
 
     <div class="options is-flex">
-      <!-- <div *ngIf="followingReady&&!isFollowing" class="col-3 color-blue" (click)="followProduct(followWithoutSessionContent)">
-          <i class="ok-outlineicon-"></i><br><span>Seguir</span>
-        </div>
-
-        <div  *ngIf="followingReady&&isFollowing" class="col-3 follow" (click)="followProduct(stopFollowingContent)">
-          <i class="ok-outlineicon-"></i><br><span>Siguiendo</span>
-        </div> -->
-
       <div *ngIf="followingReady&&!isFollowing" class="col-1" (click)="followProduct()">
         <span class="dp-icon-color"><abbr title="Seguir">
             <i class="ok-outlineicon-"></i>
@@ -100,10 +62,6 @@
           </abbr>
         </span>
       </div>
-
-      <!-- <div *ngIf="data.store.modeStore !== 'personal'" class="">
-            <i class="basket-2icon-"></i><br>Añadir a<br>carrito
-          </div> -->
 
       <div *ngIf="isLogged" class="col-1" (click)="rateProduct(scoreContent)">
         <span class="dp-icon-color"><abbr title="Tú calificación">

@@ -43,8 +43,6 @@ export class ProductCardComponent implements OnInit{
   productDetail(product) {
     this.dialog.open(ProductDetailComponent, {
         data: {
-          title: product.nameProduct,
-          optionOk: 'Aceptar',
           product: product,
           size: 'large'
         }
