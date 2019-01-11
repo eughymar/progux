@@ -1,9 +1,6 @@
-/**
- * Created by rep33 on 24/01/2018
- */
 import { Component, Input, OnInit } from '@angular/core';
-// import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Router, Event, NavigationStart, NavigationEnd } from '@angular/router';
+import { DialogService } from '../../dialog/dialog.service';
 // import { RouterConfigLoader } from '@angular/router/src/router_config_loader';
 
 @Component({
@@ -23,7 +20,7 @@ export class FooterComponent implements OnInit {
 
   //Methods
   constructor(
-    // private modalService: NgbModal,
+    private dialog: DialogService,
     private router: Router
     ) {
   }
@@ -33,24 +30,14 @@ export class FooterComponent implements OnInit {
     this.neguxTitleData = "Copyright Negux 2018";
   }
 
-  //Methos for modal
-  // open(content) {
-  //   this.modalService.open(content).result.then((result) => {
-  //     this.closeResult = 'Closed with: ${result}';
-  //   }, (reason) => {
-  //     this.closeResult = 'Dismissed ${this.getDismissReason(reason)}';
-  //   });
-  // }
-
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return 'with: ${reason}';
-  //   }
-  // }
+  open(content, title) {
+    this.dialog.open(content, {
+      data: {
+      title: title,
+      optionOk: 'Aceptar',
+      message: 'Debe de iniciar sesión para poder seguir este producto'
+    }});
+  }
 
   goToStoreNegux() {
     this.router.navigate(['./bo/negux.innovations']);

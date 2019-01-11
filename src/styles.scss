@@ -11,6 +11,16 @@ body {
 *:focus {
   outline: none;
 }
+h3 {
+  font-size: 1.3rem !important;
+}
+h5 {
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+}
+p {
+  margin-bottom: 1rem !important;
+}
 
 .button,
 .input,

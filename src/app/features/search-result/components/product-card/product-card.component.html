@@ -3,7 +3,7 @@
     <div class="promotion-image " *ngIf="data.percentDiscount!=0">
       <p class="promotion-text">{{data.percentDiscount|number:'1.0-0'}}%</p>
     </div>
-    <figure class="image">
+    <figure class="image is-clickable">
       <img src="{{url+data.urlImageProduct}}" (click)='productDetail(data)'>
     </figure>
   </div>

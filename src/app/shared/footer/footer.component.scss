@@ -1,88 +1,53 @@
-/*------   ESTILOS PARA FOOTER   ------*/
-/* 19-03-2018 */
-
-.footer,
-.footer .container {
-  background-color:#1B1E25;
-}
+@import "mixins";
 .footer {
-  .container {/* Alternative background-color:#232F3F; */
+  padding: 0;
+  background-color:#373737;
+  color: white;
+  font-size: 12px;
+  a {
+    color: $primary;
+  }
+  .container {
     overflow: hidden;
     padding-top: 50px;
     padding-bottom: 50px;
-    .website {
-      color: rgb(23, 157, 165);
-      cursor: pointer;
+
+    .content-text {
+      position: relative;
+      padding: 0 0 0 3px;
+      letter-spacing: 1px;
+      .text {
+        font-size: 10px;
+      }
+    }
+
+    .is-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ngx-img img {
+      width: 64px;
+    }
+
+    .social-footer {
+      font-size: 1.3rem;
+      justify-content: center;
     }
   }
 }
 
-.footer-mobile {
-  color:white;
-  font-size: 12px;
-  padding-top:15px;
-  .logo {
-    margin-top: 19px;
-  }
-  .details {
-    text-align: right;
-  }
-  .ter-con-mobile-right{
-    i {
-      font-size: 20px;
+@include mobile-extra {
+  .footer {
+    .columns {
+      display: block !important;
+      .column {
+        text-align: center;
+        justify-content: center;
+        .is-pulled-right {
+          float: none !important;
+        }
+      }
     }
   }
 }
-
-  div.container-footer div span a {
-    color:white;
-    };
-
-div.without-session{
-  height:80px;
-  }
-
-div.fos-light{
-  color:white;
-  line-height:13px;
-  letter-spacing:1px;
-  }
-
-.content-text{
-  position: relative;
-  top: 10px;
-  padding:0 0 0 3px;
-  font-size:10px;
-  letter-spacing:-1px;
-  }
-.terminos-condiciones{
-  font-family:"open_sansregular";
-  font-size:12px;
-  color:#fff;
-  float:right;
-  }
-
-.ngx-img{
-  float:right;
-  }
-  .ngx-img img{
-    width:64px;
-  }
-
-  .footer-text-i{
-    font-size:14px;
-    color:white;
-    text-align: center;
-    }
-
-  .social-footer{
-    float:right;
-    }
-
-  div.social-footer span a{
-    font-size:25px;
-    color:white;
-  }
-  [class$="icon-"]:before, [class*="icon- "]:before{
-    margin-right:0px !important;
-    }

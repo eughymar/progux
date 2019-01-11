@@ -1,110 +1,172 @@
-<div class="container-shared footer">
-    <!-- With authentication page search mobile desktop -->
-    <div class="container" *ngIf="isMainSearch">
-        <div class="row without-session d-flex justify-content-center">
-            <div class="footer-text-i fos-light d-flex align-items-center">
-                &#169; 2018 Negux
-            </div>
+<div class="footer">
+  <div class="container">
+    <div class="columns is-flex" [hidden]="false">
+      <div class="column logo is-flex">
+        <!-- <div class="is-flex"> -->
+        <div class="ngx-img">
+          <img src="assets/img/lNegux.png">
         </div>
+        <div class="content-text is-list is-hidden-mobile">
+          <span class="text">SOLUCIONES TECNOLÓGICAS</span>
+          <span class="text">{{neguxTitle}} S.R.L</span>
+          <a (click)="goToStoreNegux()">
+            WebSite
+          </a>
+        </div>
+        <!-- </div> -->
+      </div>
+      <div class="column has-text-centered">
+        <div class="social-footer is-flex">
+          <a href=""><i class="twittericon-"></i></a>
+          <a href="https://www.facebook.com/Negux-Innovations-1851699738459654/"><i class="facebookicon-"></i></a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="is-pulled-right is-list">
+          <a (click)="open(termsConditions, 'Términos y condiciones')">Términos y condiciones</a>
+          <a (click)="open(policyPrivacy, 'Política de privacidad')">Política de privacidad</a>
+          <span>© {{neguxTitleData}}</span>
+        </div>
+      </div>
     </div>
-    <!-- Authentication -->
+  </div>
 
-    <!-- template condition and terms -->
-    <ng-template #content let-c="close" let-d="dismiss">
-        <div class="modal-header">
-            <h4 class="modal-title">Términos y condiciones</h4>
-            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p>
-                <b>1.1 El pasaje estándar Lorem Ipsum, usado desde el año 1500.</b>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  <ng-template #termsConditions>
+    <p>Aplicaciones Web, servicios WEB, aplicaciones moviles será la aplicación en adelante.</p>
 
-                <b>2.2Sección 1.10.32 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45 antes de Cristo</b>
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-                quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn ngx-button" (click)="c('Close click')">Cerrar</button>
-        </div>
-    </ng-template>
-    <!-- /template -->
+    <p>Al usar la aplicación negux, estos términos se aplicarán al usuario. Por lo tanto, debe asegurarse de leerlos
+      detenidamente y entederlos antes de utilizar la aplicación. No tiene autorización para copiar o modificar la
+      aplicación, cualquier parte de la aplicación o nuestras marcas comerciales de ninguna forma. No está permitido
+      intentar extraer el código fuente de la aplicación, y tampoco debe intentar traducir la aplicación a otros
+      idiomas ni hacer versiones derivadas. La aplicación en sí, y todas las marcas comerciales, derechos de autor,
+      derechos de base de datos y otros derechos de propiedad intelectual relacionados con ella y pertenecen
+      integramente a Negux S.R.L.</p>
 
-    <!-- Desktop -->
-    <div class="container d-none d-sm-block" *ngIf="!isMainSearch">
-        <div class="row" [hidden]="false">
-            <div class="logo col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="d-flex">
-                    <div class="ngx-img p-1">
-                        <img src="assets/img/lNegux.png">
-                    </div>
-                    <div class="content-text fos-light p-1">
-                        SOLUCIONES TECNOLÓGICAS
-                        <br/> {{neguxTitle}} S.R.L
-                        <br/>
-                        <span class="website" (click)="goToStoreNegux()">
-                            WebSite
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="terminos-condiciones">
-                    <a style="cursor:pointer;" (click)="open(content)">&nbsp;Términos y condiciones</a>
-                    <br/> &#169; {{neguxTitleData}}
-                    <div>
-                        <div class="social-footer" style="float:right">
-                            <span>
-                                <a href="">
-                                    <i class="twitter-squaredicon-"></i>
-                                </a>
-                            </span>
-                            <span>
-                                <a href="">
-                                    <i class="facebook-squaredicon-"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <p>Negux S.R.L. se compromete a garantizar que la aplicación sea lo más útil y eficiente posible. Por ese motivo,
+      nos reservamos el derecho de realizar cambios en la aplicación o cobrar por sus servicios, en cualquier momento y
+      por cualquier motivo. Nunca le cobraremos por la aplicación o sus servicios sin dejarle muy claro exactamente lo
+      que está pagando.</p>
 
-    <!-- Mobile -->
-    <div class="container d-sm-none" *ngIf="!isMainSearch">
-        <div class="row footer-mobile" [hidden]="false">
-            <div class="col-6 logo">
-                <img style="width:64px;" src="assets/img/textNGX.png">
-            </div>
+    <p>La aplicación Negux almacena y procesa los datos personales que nos ha entregado para proporcionar nuestro
+      Servicio. Es su responsabilidad mantener seguros su teléfono y el acceso a la aplicación. Por lo tanto, le
+      recomendamos que no haga jailbreak o rootee su teléfono, que es el proceso de eliminar las restricciones de
+      software y las limitaciones impuestas por el sistema operativo oficial de su dispositivo. Podría hacer que su
+      teléfono sea vulnerable a programas maliciosos / virus / maliciosos, ponga en peligro las funciones de seguridad
+      de su teléfono y podría significar que la aplicación negux no funcionará correctamente o no funcionará en
+      absoluto.</p>
 
-            <div class="col-6 details">
-                <div class="">
-                    <span class="ter-con-mobile-right">
-                        <a href="">
-                            <i class="twitter-squaredicon-"></i>
-                        </a>
-                    </span>
-                    <span class="ter-con-mobile-right">
-                        <a href="">
-                            <i class="facebook-squaredicon-"></i>
-                        </a>
-                    </span>
-                </div>
-                <div class="ter-con-mobile-right">&#169; 2018 Negux</div>
-            </div>
-        </div>
-    </div>
-</div>
+    <p>Debe tener en cuenta que hay ciertas cosas de las que Negux no será responsable. Ciertas funciones de la
+      aplicación o aplicación web requerirán que la aplicación tenga una conexión a Internet activa. La conexión puede
+      ser Wi-Fi, o proporcionada por su proveedor de red móvil, pero Negux no puede responsabilizarse de que la
+      aplicación no funcione con plena funcionalidad si no tiene acceso a Wi-Fi, y usted no tiene ninguna de su margen
+      de datos restante.</p>
+
+    <p>Si usa la aplicación fuera de un área con Wi-Fi, debe recordar que los términos del acuerdo con su proveedor de
+      red móvil seguirán vigentes. Como resultado, su proveedor de telefonía móvil puede cobrarle el costo de los datos
+      por la duración de la conexión mientras accede a la aplicación u otros cargos de terceros. Al utilizar la
+      aplicación, acepta la responsabilidad de dichos cargos, incluidos los cargos por datos de itinerancia si usa la
+      aplicación fuera de su territorio de origen (es decir, región o país) sin desactivar el roaming de datos. Si no
+      es el pagador de facturas del dispositivo en el que está usando la aplicación, tenga en cuenta que suponemos que
+      ha recibido permiso del pagador de facturas para usar la aplicación.</p>
+
+    <p>En la misma línea, Negux no siempre puede asumir la responsabilidad por la forma en que utiliza la aplicación,
+      es decir, debe asegurarse de que el dispositivo permanezca cargado; si se queda sin batería y no puede encenderlo
+      para aprovechar el Servicio, Negux no puede aceptar responsabilidad.</p>
+
+    <p>Con respecto a la responsabilidad de Negux por el uso que usted hace de la aplicación, cuando utiliza la
+      aplicación, es importante tener en cuenta que aunque nos esforzamos por garantizar que esté actualizada y sea
+      correcta en todo momento, confiamos en terceros para proporcionarnos información para que podamos ponerla a su
+      disposición. Negux no acepta ninguna responsabilidad por cualquier pérdida, directa o indirecta, que experimente
+      como resultado de confiar por completo en esta funcionalidad de la aplicación.</p>
+
+    <h5>Cambios a estos Términos y Condiciones</h5>
+
+    <p>Podemos actualizar nuestros Términos y condiciones de vez en cuando. Por lo tanto, se recomienda revisar esta
+      página periódicamente para cualquier cambio. Le notificaremos sobre cualquier cambio mediante la publicación de
+      los nuevos Términos y condiciones en esta página. Estos cambios entran en vigencia inmediatamente después de que
+      se publiquen en esta página.</p>
+
+    <h5>Contáctenos</h5>
+
+    <p>Si tiene alguna pregunta o sugerencia sobre nuestros Términos y condiciones, no dude en contactarnos.</p>
+  </ng-template>
+
+  <ng-template #policyPrivacy>
+    <p>Negux desarrollo la aplicación web como una aplicación Freemium.&nbsp;Negux entrega este SERVICIO y está
+      destinado a ser utilizado en la forma que ha sido concebido.</p>
+
+    <p>Esta página se utiliza para informar a los visitantes del sitio web sobre nuestras políticas con la
+      recopilación, el uso y la divulgación de Información personal si alguien decide utilizar nuestro Servicio.
+      Si elige usar nuestro Servicio, acepta la recopilación y el uso de la información en relación con esta
+      política.&nbsp;La información personal que recopilamos se usa para proporcionar y mejorar el servicio.&nbsp;No
+      usaremos ni compartiremos su información con nadie, excepto según se describe en esta Política de privacidad.
+      Los términos utilizados en esta Política de privacidad tienen los mismos significados que en nuestros Términos y
+      condiciones, a los que se puede acceder en Negux a menos que se defina lo contrario en esta Política de
+      privacidad.</p>
+
+    <h5>Recopilación y uso de información</h5>
+    <p>Para una mejor experiencia, al utilizar nuestro Servicio, podemos solicitarle que nos brinde cierta información
+      de identificación personal, que incluye, entre otros, ID de Google, Nombre de la empresa, Productos, Número de
+      teléfono.&nbsp;La información que solicitamos será retenida por nosotros y utilizada como se describe en esta
+      política de privacidad.</p>
+    <p>La aplicación utiliza servicios de terceros que pueden recopilar información utilizada para identificarlo.</p>
+
+    <h5>Dato de registro</h5>
+    <p>Queremos informarle que cada vez que utiliza nuestro Servicio, en caso de error en la aplicación, recopilamos
+      datos e información (a través de productos de terceros) en su teléfono, llamados Datos de registro.&nbsp;Este
+      registro de datos puede incluir información como la dirección del protocolo de Internet ("IP"), el nombre del
+      dispositivo, la versión del sistema operativo, la configuración de la aplicación al utilizar nuestro servicio, la
+      hora y la fecha de uso del servicio y otras estadísticas .</p>
+
+    <h5>Cookies</h5>
+    <p>Las cookies son archivos con poca cantidad de datos que se usan comúnmente como un identificador único
+      anónimo.&nbsp;Estos se envían a su navegador desde el sitio web que visita y se almacenan en la memoria interna
+      de su dispositivo.</p>
+    <p>Este Servicio no usa estas "cookies" explícitamente.&nbsp;Sin embargo, la aplicación puede usar código de
+      terceros y bibliotecas que usan "cookies" para recopilar información y mejorar sus servicios.&nbsp;Usted tiene la
+      opción de aceptar o rechazar estas cookies y saber cuándo se está enviando una cookie a su dispositivo.&nbsp;Si
+      elige rechazar nuestras cookies, es posible que no pueda usar algunas partes de este Servicio.</p>
+
+    <h5>Proveedores de servicio</h5>
+    <p>Podemos emplear compañías e individuos de terceros debido a las siguientes razones:</p>
+
+    <ul>
+      <li>Para facilitar nuestro servicio</li>
+      <li>Para proporcionar el Servicio en nuestro nombre</li>
+      <li>Para realizar servicios relacionados con el servicio</li>
+      <li>Para ayudarnos a analizar cómo se utiliza nuestro Servicio</li>
+    </ul>
+
+    <p>Queremos informar a los usuarios de este Servicio que estos terceros tienen acceso a su Información
+      personal.&nbsp;El motivo es realizar las tareas que se les asignaron en nuestro nombre.&nbsp;Sin embargo, están
+      obligados a no divulgar ni utilizar la información para ningún otro fin.</p>
+
+    <h5>Seguridad</h5>
+    <p>Valoramos su confianza al proporcionarnos su Información personal, por lo tanto, nos esforzamos por utilizar
+      medios comercialmente aceptables para protegerla.&nbsp;Pero recuerde que ningún método de transmisión a través de
+      Internet o método de almacenamiento electrónico es 100% seguro y confiable, y no podemos garantizar su seguridad
+      absoluta.</p>
+
+    <h5>Enlaces a otros sitios</h5>
+    <p>Este Servicio puede contener enlaces a otros sitios.&nbsp;Si hace clic en un enlace de un tercero, se lo
+      dirigirá a ese sitio.&nbsp;Tenga en cuenta que estos sitios externos no son operados por nosotros.&nbsp;Por lo
+      tanto, le recomendamos encarecidamente que revise la Política de privacidad de estos sitios web.&nbsp;No tenemos
+      control ni asumimos ninguna responsabilidad por el contenido, las políticas de privacidad o las prácticas de
+      sitios o servicios de terceros.</p>
+
+    <h5>Privacidad de los niños</h5>
+    <p>Estos servicios no se refieren a cualquier persona bajo la edad de 13. No recopilamos deliberadamente
+      información personal de niños menores de 13 años En el caso descubrimos que un niño menor de 13 años nos ha
+      proporcionado información personal, inmediatamente Eliminar esto de nuestros servidores.&nbsp;Si usted es un
+      padre o tutor y sabe que su hijo nos ha proporcionado información personal, comuníquese con nosotros para que
+      podamos hacer las acciones necesarias.</p>
+
+    <h5>Cambios a esta política de privacidad</h5>
+    <p>Es posible que estas políticas se actualicen.&nbsp;Por lo tanto, se recomienda revisar esta página
+      periódicamente para cualquier cambio.&nbsp;Le notificaremos de cualquier cambio publicando la nueva Política de
+      Privacidad en esta página.&nbsp;Estos cambios entran en vigencia inmediatamente después de que se publiquen en
+      esta página.</p>
+
+    <h5>Contáctenos</h5>
+    <p>Si tiene alguna pregunta o sugerencia sobre nuestra Política de privacidad, no dude en contactarnos.</p>
+  </ng-template>

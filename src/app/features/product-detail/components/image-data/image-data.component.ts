@@ -180,7 +180,6 @@ export class ImageDataComponent implements OnInit {
     if (!this.isLogged) {
       this.dialogService.openInfo({
         data: {
-          title: "Advertencia",
           optionOk: 'Aceptar',
           message: 'Debe de iniciar sesión para poder seguir este producto'
         }
@@ -194,7 +193,6 @@ export class ImageDataComponent implements OnInit {
       if (this.isFollowing) {
         const dialogUnFollow = this.dialogService.openInfo({
           data: {
-            title: "Advertencia",
             optionOk: 'Aceptar',
             optionCancel: 'Cerrar',
             message: 'Esta seguro que quiere dejar de seguir este producto?'
@@ -254,7 +252,6 @@ export class ImageDataComponent implements OnInit {
   noLogged(content): void {
     this.dialogService.openInfo({
       data: {
-        title: "Advertencia",
         optionOk: 'Aceptar',
         message: 'Debe de iniciar sesión para poder calificar este producto.'
       }

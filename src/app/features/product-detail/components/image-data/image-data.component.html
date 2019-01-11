@@ -15,7 +15,7 @@
     </div>
 
     <div class="d-none d-sm-block div-line"></div>
-    <p class="has-padding-t-6">
+    <div class="has-padding-t-6">
       <span class="title-dproduct">Precio: </span>
       <ng-container *ngIf="data.percentDiscount==0">
         <span *ngIf="data.priceProduct > 0" class="price-product">{{ data.priceProduct|number:'1.2-2' }} Bs.</span>
@@ -24,20 +24,20 @@
         <span *ngIf="data.priceProduct > 0" class="price-product line">{{ data.priceProduct|number:'1.2-2' }} Bs.</span>
         <span *ngIf="data.priceProduct > 0" class="price-product">{{data.newPrice|number:'1.2-2'}} Bs.</span>
       </ng-container>
-    </p>
+    </div>
 
-    <p>
+    <div>
       <span class="title-dproduct">{{ data.store.typeStore || 'Tienda' }}: </span>
       <a (click)="goToStore()">
         <img class="dp-img-store" src="{{ url+data?.store?.urlLogoStore }}">
         <span class="description-dproduct is-link"> {{ data?.store?.nameStore }}</span>
       </a>
-    </p>
+    </div>
 
-    <p>
+    <div>
       <span class="title-dproduct">Última actualización:</span>
       <span class="description-dproduct"> {{ data.lastUpdate | date }}</span>
-    </p>
+    </div>
 
 
     <div class="options is-flex">

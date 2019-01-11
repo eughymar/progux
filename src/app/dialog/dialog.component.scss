@@ -30,6 +30,7 @@
       right: 20px;
       width: 1.5rem;
       height: 1.5rem;
+      z-index: 2;
       cursor: pointer;
       &::before,
       &::after{
@@ -59,9 +60,8 @@
     }
     .modal-card-head {
       border-radius: 0;
-      .modal-card-title {
-        font-size: 1.3rem;
-      }
+      border: 0;
+      background: white;
     }
     .modal-card-foot {
       justify-content: flex-end;

@@ -2,6 +2,12 @@
   <div class="modal-background"></div>
   <div class="modal-card modal-content {{ config.data.size? 'is-' + config.data.size : '' }}">
     <div class="close-button" (click)="close()"></div>
+    <!-- <h1>{{config.data.title}}</h1> -->
+
+    <header class="modal-card-head" *ngIf="config.data.title">
+      <h3 class="modal-card-title">{{config.data.title}}</h3>
+    </header>
+
     <section class="modal-card-body">
       <ng-template appInsertion></ng-template>
     </section>

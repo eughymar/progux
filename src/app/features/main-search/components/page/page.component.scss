@@ -63,6 +63,14 @@
       letter-spacing: 0.1em;
     }
   }
+  .footer-main {
+    color: white;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translate(-50%);
+  }
 }
 
 @include mobile-extra {
