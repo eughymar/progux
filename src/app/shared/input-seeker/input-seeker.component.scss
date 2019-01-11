@@ -7,22 +7,16 @@
   margin: auto;
   overflow: hidden;
   box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
-  &.input-header {
-    width: 100%;
-  }
-  .category-search-span{
-    width:30%;
-    .category-search{
-      border:none;
-      width:100%;
-      font-size:13px;
-      font-family:arial,sans-serif;
+  &:not(.no-main) {
+    .category {
+      display: none;
     }
   }
-  .columns {
+  .content {
     width: 100%;
   }
   .main-search {
+    width: 100%;
     overflow: hidden;
     padding: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
@@ -43,6 +37,29 @@
       &:hover {
         background: #d73851;
         border: 1px solid #d73851;
+      }
+    }
+  }
+
+  &.no-main {
+    padding-top: 7px;
+    .category {
+      &.select {
+        width: 30%;
+        select {
+          border-radius: 0;
+          height: 35px;
+        }
+      }
+    }
+    .main-search {
+      .input-search {
+        line-height: 35px;
+      }
+      button {
+        background: white;
+        border: none;
+        cursor: pointer;
       }
     }
   }

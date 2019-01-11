@@ -1,5 +1,13 @@
 @import "mixins";
 
+.navbar-brand {
+  .logo-icon {
+    position: relative;
+    top: -3px;
+    margin-right: 5px;
+  }
+}
+
 @include touch {
   .navbar-menu {
     background: none;
