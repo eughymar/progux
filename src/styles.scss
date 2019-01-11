@@ -12,7 +12,7 @@ body {
   outline: none;
 }
 .section {
-  padding: 1.5rem !important;
+  padding: 0.75rem !important;
 }
 .columns {
   margin: 0 !important;
@@ -62,12 +62,6 @@ body {
 }
 
 @include mobile-extra {
-  .column {
-    &.is-full-mobile-extra {
-      width: 280px !important;
-      margin: auto;
-    }
-  }
   .is-hidden-mobile-extra {
     display: none !important;
   }
@@ -80,36 +74,6 @@ body {
     }
   }
 }
-
-
-/* ----- Title section ----- */
-// .title-section {
-//   padding-bottom: 40px;
-
-//   .title-name {
-//     font-size: 1.6rem;
-//     padding-top: 45px;
-//     margin: auto;
-//   }
-
-//   .title-line {
-//     width: 5%;
-
-//     &.w-10 {
-//       width: 10%;
-//     }
-//   }
-
-//   &.white {
-//     .title-name {
-//       color: white !important;
-//     }
-
-//     .title-line {
-//       border-color: white;
-//     }
-//   }
-// }
 
 /* ----- End title section ----- */
 @media (max-width: 575px) {
@@ -128,17 +92,6 @@ body {
   font-size: 1.2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* ----------- forms ----------- */
 input:focus,
 select:focus,
@@ -149,54 +102,6 @@ button:focus {
 }
 /* ----------- End forms ----------- */
 
-
-// /* ------ Columns ------ */
-// .col-lg-5ths,
-// .col-md-4ths,
-// .col-sm-3ths,
-// .col-2ths,
-// .col-1ths {
-//   float: left;
-//   margin-block-end: 5px;
-// }
-
-// @media (min-width: 576px) {
-//   .col-2ths {
-//     width: 50%;
-//   }
-// }
-
-// @media (min-width: 768px) {
-//   .col-sm-3ths {
-//     width: 33.33%;
-//   }
-// }
-
-// @media (min-width: 992px) {
-//   .col-md-4ths {
-//     width: 25%;
-//   }
-// }
-
-// @media (min-width: 1200px) {
-//   .col-lg-5ths {
-//     width: 25%;
-//     float: left;
-//   }
-// }
-
 .is-centered {
   text-align: center;
 }
-
-/* ------ End Columns ------ */
-
-
-// .title-section {
-//   padding-top: 10px;
-//   padding-bottom: 25px;
-//   color: #2A2f39;
-//   letter-spacing: 0.03rem;
-//   font-size: 1.1rem;
-//   @include is-bold;
-// }

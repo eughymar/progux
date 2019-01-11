@@ -20,7 +20,7 @@ export class CatalogueComponent implements OnInit {
   products: Array<any> = [];
   imagesFound: boolean = false;
   searching: boolean = false;
-  finished: boolean = false;
+  seeMore: boolean = false;
 
   idx: number = 0;
   qty: number = 8;
@@ -36,6 +36,7 @@ export class CatalogueComponent implements OnInit {
   }
 
   getTotalProducts() {
+    this.seeMore = false;
     this.idStore = this.data.store.idStore;
     this.title = this.data.store.titleProducts;
 
@@ -54,7 +55,7 @@ export class CatalogueComponent implements OnInit {
     if (this.queryTemp != this.query) {
       this.idx = 0;
       this.products = [];
-      this.finished = false;
+      this.seeMore = false;
     }
 
     this.queryTemp = this.query;
@@ -68,9 +69,10 @@ export class CatalogueComponent implements OnInit {
           if (result.length > 0) {
             this.idx += this.qty;
           }
-          if (this.idx >= this.productsCount) {
-            this.finished = true;
-          }
+          this.seeMore = this.idx >= this.productsCount && result.length > this.qty;
+          // if (this.idx >= this.productsCount ) {
+          //   this.seeMore = true;
+          // }
         },
         (error: any) => {
           console.log(error);

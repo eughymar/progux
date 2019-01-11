@@ -10,6 +10,18 @@ $themes: $themes;
   }
 }
 
-.button-vermas {
-  padding-bottom: 45px;
+.input-search {
+  border: solid 1px $primary;
+  input {
+    border: none;
+    line-height: 35px;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0 4px 0 10px;
+  }
+  button {
+    border: none;
+    background: transparent;
+    color: $primary;
+  }
 }

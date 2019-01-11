@@ -31,10 +31,20 @@ $themes: $themes;
     padding-top: 8px;
   }
   .navbar-item {
+    span {
+      &::after {
+        display: block;
+        content: "";
+        border-bottom: 1px solid #6d6d66;
+        transform: scaleX(0);
+        transition: transform .25s ease-in-out;
+      }
+    }
     &:hover {
       span {
-        text-decoration: underline;
-        // border-bottom: solid 1.3px #6d6d6d;
+        &::after {
+          transform: scaleX(1);
+        }
       }
       background: transparent;
     }
