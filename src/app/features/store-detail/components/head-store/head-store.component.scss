@@ -9,15 +9,32 @@ $themes: $themes;
 }
 
 .navbar {
-  background: $primary;
+  background: transparent;
   color: white;
+  height: 60px;
+  transition: all 0.5s ease-in-out;
+  &.menu-fixed {
+    background-color: #fffefd;
+    background-color: rgba(255, 254, 253, 0.97);
+    border-radius: 0;
+    box-shadow: 0 3px 9px rgba(8, 33, 30, 0.15);
+    padding-top: 0;
+    position: fixed;
+    transition: background-color 0.5s ease-in-out,
+    box-shadow 0.5s ease-in-out;
+    a {
+      color: #6d6d6d;
+    }
+  }
+
   .logo-negux {
     padding-top: 8px;
   }
   .navbar-item {
     &:hover {
       span {
-        border-bottom: solid 1.3px white;
+        text-decoration: underline;
+        // border-bottom: solid 1.3px #6d6d6d;
       }
       background: transparent;
     }
@@ -44,114 +61,6 @@ $themes: $themes;
   a {
     color: white;
     font-size: 1rem;
-  }
-}
-
-.store-banner {
-  height: 100vh;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.store-navbar {
-  width: 100vh;
-  color: rgb(253, 251, 251);
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  min-height: 65px;
-
-  &.active {
-    background: linear-gradient(to top, rgba(255, 0, 0, 0), #000);
-    height: 100%;
-  }
-
-  .store-logo {
-    float: left;
-    display: block;
-    line-height: 60px;
-    margin: 0 30px;
-
-    img {
-      width: 40px;
-    }
-
-  }
-
-  .menu-toggle {
-    display: none;
-    width: 35px;
-    height: 30px;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center;
-    right: 15px;
-    top: 21px;
-    z-index: 200;
-    float: right;
-    margin: 15px;
-
-    .menu-icon {
-      .line {
-        width: 30px;
-        height: 3px;
-        background-color: white;
-        display: block;
-        margin: 5px auto;
-        transition: all .3s ease-in-out;
-      }
-
-      &.active {
-        :nth-child(1) {
-          transform: translateY(8px) rotate(45deg);
-        }
-
-        :nth-child(2) {
-          opacity: 0;
-        }
-
-        :nth-child(3) {
-          transform: translateY(-8px) rotate(-45deg);
-        }
-      }
-    }
-  }
-
-  .menu-list {
-    font-size: 12px;
-    text-align: right;
-
-    li {
-      list-style: none;
-      display: inline-block;
-      text-transform: uppercase;
-      margin: 20px 10px 2px;
-      padding: 0;
-      letter-spacing: 0.05em;
-      transform: none;
-
-      a {
-        text-decoration: none;
-        cursor: pointer;
-
-        &:hover {
-          span {
-            padding-bottom: 5px;
-            border-bottom: solid 2px white;
-          }
-        }
-
-        .logo-negux {
-          border-bottom: solid 3px transparent;
-          width: 19px;
-        }
-      }
-    }
-
-    &.active {
-      display: block;
-    }
   }
 }
 
@@ -187,11 +96,33 @@ $themes: $themes;
 /*Banner Default block*/
 
 .store-banner {
+  height: 100vh;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  a {
+    color: white;
+  }
   .banner-img {
     height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 1;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: rgba(0, 0, 0, .5);
+      // background: rgba(255, 254, 253, 0.8);
+      content: " ";
+    }
   }
   .main-information-store {
     text-align: center;
@@ -221,8 +152,29 @@ $themes: $themes;
       }
     }
   }
-
+  .down-arrow {
+    font-size: 40px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floating-arrow 2s ease-in-out infinite;
+  }
 }
+
+@keyframes floating-arrow {
+  0%{
+    transform: translate(-50%, 0);
+  }
+  65%{
+    transform: translate(-50%, 15px);
+  }
+  100%{
+    transform: translate(-50%, 0);
+  }
+}
+
+
 // TODO is this necessary?
 .name-logo-default {
   font-size: 3.5rem;
@@ -250,7 +202,6 @@ $themes: $themes;
   border-radius: 3px;
   background-color: #0fb96a;
 }
-
 
 .n-opinions-store {
   font-size: 0.8rem;
@@ -401,6 +352,10 @@ $themes: $themes;
           font-size: 1rem;
         }
       }
+    }
+    .down-arrow {
+      bottom: 10px;
+      font-size: 30px;
     }
   }
 }

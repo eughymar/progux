@@ -1,6 +1,6 @@
 /* 09/02/2018 */
 
-import { Component, OnInit, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, HostListener, Renderer2, Inject, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 // import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -10,6 +10,7 @@ import { LocalStorageService } from '../../../../core/services/localStorage.serv
 import { StoreDetailService } from '../../services/store-detail.service';
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 import { FacebookService, InitParams, UIParams, UIResponse } from "ngx-facebook/dist/esm";
+import { DOCUMENT } from '@angular/platform-browser';
 
 
 @Component({
@@ -53,12 +54,29 @@ C4l1ps0
     private _scrollToService: ScrollToService,
     private fb: FacebookService,
     private _localStorage: LocalStorageService,
-    private _storeDetailService: StoreDetailService
+    private _storeDetailService: StoreDetailService,
+
+    // private elem: ElementRef,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
   ) {
     // customize default values of ratings used by this component tree
     // config.max = 5;
     // config.readonly = true;
   }
+
+  @ViewChild('navbar') navbar: ElementRef;
+
+  @HostListener('window:scroll') verificar() {
+    // if (this.document.documentElement.scrollTop > 10 || this.document.body.scrollTop > this.nroMaximoPx) {
+    if (this.document.documentElement.scrollTop > 10) {
+      this.renderer.addClass(this.navbar.nativeElement, 'menu-fixed');
+    } else {
+      this.renderer.removeClass(this.navbar.nativeElement, 'menu-fixed');
+    }
+  }
+
+
 
   ngOnInit() {
     this.idStore = this.data.store.idStore;
@@ -118,7 +136,8 @@ C4l1ps0
   triggerScrollTo(section) {
     const config: ScrollToConfigOptions = {
       target: section,
-      offset: -60
+      offset: -60,
+      duration: 1500
     };
     this._scrollToService.scrollTo(config);
   }

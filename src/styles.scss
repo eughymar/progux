@@ -51,6 +51,16 @@ body {
   align-items: center;
 }
 
+.button {
+  &.button-ngx {
+    padding: 10px 36px !important;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0 !important;
+    height: auto !important;
+  }
+}
+
 @include mobile-extra {
   .column {
     &.is-full-mobile-extra {
@@ -140,40 +150,40 @@ button:focus {
 /* ----------- End forms ----------- */
 
 
-/* ------ Columns ------ */
-.col-lg-5ths,
-.col-md-4ths,
-.col-sm-3ths,
-.col-2ths,
-.col-1ths {
-  float: left;
-  margin-block-end: 5px;
-}
+// /* ------ Columns ------ */
+// .col-lg-5ths,
+// .col-md-4ths,
+// .col-sm-3ths,
+// .col-2ths,
+// .col-1ths {
+//   float: left;
+//   margin-block-end: 5px;
+// }
 
-@media (min-width: 576px) {
-  .col-2ths {
-    width: 50%;
-  }
-}
+// @media (min-width: 576px) {
+//   .col-2ths {
+//     width: 50%;
+//   }
+// }
 
-@media (min-width: 768px) {
-  .col-sm-3ths {
-    width: 33.33%;
-  }
-}
+// @media (min-width: 768px) {
+//   .col-sm-3ths {
+//     width: 33.33%;
+//   }
+// }
 
-@media (min-width: 992px) {
-  .col-md-4ths {
-    width: 25%;
-  }
-}
+// @media (min-width: 992px) {
+//   .col-md-4ths {
+//     width: 25%;
+//   }
+// }
 
-@media (min-width: 1200px) {
-  .col-lg-5ths {
-    width: 25%;
-    float: left;
-  }
-}
+// @media (min-width: 1200px) {
+//   .col-lg-5ths {
+//     width: 25%;
+//     float: left;
+//   }
+// }
 
 .is-centered {
   text-align: center;

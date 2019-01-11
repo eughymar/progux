@@ -1,5 +1,5 @@
 <!--menu-store-->
-<nav class="navbar is-fixed-top" [ngClass]="{active: isActive}">
+<nav #navbar class="navbar is-fixed-top is-transparentE" [ngClass]="{active: isActive}">
   <div class="container">
     <div class="navbar-brand is-marginless">
       <a class="navbar-item">
@@ -96,6 +96,11 @@
           </div> -->
     </div>
     <!-- End SOR -->
+  </div>
+  <div class="down-arrow is-hidden-mobile-extra">
+    <a (click)="triggerScrollTo('actions')">
+      <i class="down-open-miniicon-"></i>
+    </a>
   </div>
 </div>
 <!-- End Store-->

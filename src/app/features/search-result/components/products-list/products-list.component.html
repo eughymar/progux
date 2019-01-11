@@ -1,11 +1,12 @@
-<h5 class="title-section"><span>{{productsCount}} </span>{{title}}</h5>
+<h5 class="title-section has-margin-t-4"><span>{{productsCount}} </span>{{title}}</h5>
 
-<div class="columns is-multiline">
-  <div *ngFor="let product of products" class="col-1ths col-2ths col-sm-3ths col-md-4ths col-lg-5ths">
-    <app-product-card [data]="product"></app-product-card>
+<div class="columns is-flex is-multiline">
+  <div class="column is-paddingless is-paddingless is-one-quarter-widescreen is-one-third-tablet is-half-mobile is-full-mobile-extra"
+    *ngFor="let product of products">
+    <app-product-card [data]="product" [isStore]="true"></app-product-card>
   </div>
 </div>
 
-<div class="is-centered">
+<div class="is-centered has-margin-t-4">
   <button *ngIf="!finished" class="button is-primary" (click)="getProducts()">Ver más</button>
 </div>
