@@ -17,7 +17,9 @@ $color-background: #24303e;
 
 /*Estilos para direcciones de tienda*/
 .container-contact {
-  background-color: $color-background;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+  url(assets/img/bannerNGX.jpg) center center fixed;
+  background-size: cover;
   .data-branch {
     color: white;
   }
@@ -127,32 +129,3 @@ $color-background: #24303e;
   text-align: center;
   color: white;
 }
-
-
-/*===   Media queries   ===*/
-// @media (max-width: 576px) {
-//   .section-addresses {
-//     padding-top: 10px;
-//     height: 250px;
-//   }
-
-//   .line-title {
-//     width: 10%;
-//   }
-
-//   .title-section-store {
-//     font-size: 1.2rem;
-//   }
-
-//   .mapa {
-//     width: 90%;
-//   }
-
-//   /*   overflow-y: scroll; */
-// }
-
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}

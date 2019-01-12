@@ -1,8 +1,10 @@
 <app-head-store *ngIf="headData" [data]="headData" id="home"></app-head-store>
 <app-actions *ngIf="idStore&&headData" [data]="headData" id="actions"></app-actions>
-<div class="section container" id="catalogue">
-  <div class="main-content" style="overflow-x: hidden;">
-    <app-catalogue *ngIf="idStore && headData" [data]="headData"></app-catalogue>
+<div class="section" id="catalogue">
+  <div class="container">
+    <div class="main-content" style="overflow-x: hidden;">
+      <app-catalogue *ngIf="idStore && headData" [data]="headData"></app-catalogue>
+    </div>
   </div>
 </div>
 <app-team *ngIf="headData && headData.team.length > 0" id="team" [team]="headData.team"></app-team>
