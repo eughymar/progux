@@ -3,6 +3,7 @@ import { FacebookService, InitParams, LoginResponse, UIParams, UIResponse } from
 import { environment } from '../../../../../environments/environment';
 import { Subject } from 'rxjs';
 import { DialogService } from '../../../../dialog/dialog.service';
+import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 
 @Component({
   selector: 'app-actions',
@@ -30,7 +31,7 @@ export class ActionsComponent implements OnInit {
   constructor(
     private dialogService: DialogService,
     private fb: FacebookService,
-
+    private _scrollToService: ScrollToService
   ) { }
 
   ngOnInit() {
@@ -99,5 +100,14 @@ export class ActionsComponent implements OnInit {
         size: 'large'
       }
     });
+  }
+
+  public triggerScrollTo(section): void {
+    const config: ScrollToConfigOptions = {
+      target: section,
+      offset: -60,
+      duration: 1500
+    };
+    this._scrollToService.scrollTo(config);
   }
 }

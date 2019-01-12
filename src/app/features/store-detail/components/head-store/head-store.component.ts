@@ -17,7 +17,6 @@ import { DOCUMENT } from '@angular/platform-browser';
   selector: 'app-head-store',
   templateUrl: 'head-store.component.html',
   styleUrls: ['head-store.component.scss'],
-  // providers: [NgbRatingConfig]
 })
 
 export class HeadStoreComponent implements OnInit, OnChanges {
@@ -39,24 +38,18 @@ export class HeadStoreComponent implements OnInit, OnChanges {
   pixeles: number;
   nameLogo: string;
   activeMenuMobile: boolean = false;
-
   idUser: string;
   closeResult;
   followingReady: boolean = false;
   isFollowing: boolean = false;
-Calips0
-C4l1ps0
+  
   constructor(
-    // private modalService: NgbModal,
     private route: ActivatedRoute,
     private router: Router,
-    // config: NgbRatingConfig,
     private _scrollToService: ScrollToService,
     private fb: FacebookService,
     private _localStorage: LocalStorageService,
     private _storeDetailService: StoreDetailService,
-
-    // private elem: ElementRef,
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document
   ) {
@@ -68,15 +61,12 @@ C4l1ps0
   @ViewChild('navbar') navbar: ElementRef;
 
   @HostListener('window:scroll') verificar() {
-    // if (this.document.documentElement.scrollTop > 10 || this.document.body.scrollTop > this.nroMaximoPx) {
     if (this.document.documentElement.scrollTop > 10) {
       this.renderer.addClass(this.navbar.nativeElement, 'menu-fixed');
     } else {
       this.renderer.removeClass(this.navbar.nativeElement, 'menu-fixed');
     }
   }
-
-
 
   ngOnInit() {
     this.idStore = this.data.store.idStore;

@@ -10,8 +10,11 @@
 <div class="info-video">
   <div class="container">
     <div class="columns">
-      <div class="column is-6 is-flex flex-center-v">
-        <p class="parrafo-regular">{{data.store.descriptionVideo}}</p>
+      <div class="column is-6 is-flex flex-center has-text-centered">
+        <div class="is-flex-columns">
+          <p class="description is-marginless has-padding-b-1">"{{data.store.descriptionVideo}}"</p>
+          <button class="button is-default is-outlined button-ngx is-transparent has-text-white" (click)="triggerScrollTo('contact')">Visítanos</button>
+        </div>
       </div>
       <div class="column is-6">
         <!-- If video exist -->

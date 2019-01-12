@@ -18,12 +18,17 @@ $themes: $themes;
 .info-video {
   color: white;
   background: rebeccapurple;
+  .description {
+    font-size: 2rem;
+    font-family: titillium-light;
+    text-align: center;
+  }
   .video-play {
     position: relative;
     text-align: center;
     img {
       background: #000;
-      min-height: 290px;
+      min-height: 350px;
       max-height: 300px;
     }
     .button-play {

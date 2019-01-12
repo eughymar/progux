@@ -1,6 +1,6 @@
 @import "_variables.scss";
 @import "_mixins.scss";
-@import "theme.scss";
+// @import "theme.scss";
 
 @import "_utils.scss";
 @import 'bulma';
@@ -65,12 +65,22 @@ p {
     }
   }
 }
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
 .flex-center-v {
   align-items: center;
 }
 
 .button {
   transition: background-color 0.2s ease-in-out;
+  &.is-default {
+    &:focus {
+      border-color: #b5b5b5 !important;
+      box-shadow: none !important;
+    }
+  }
   &.button-ngx {
     padding: 10px 36px !important;
     text-transform: uppercase;
