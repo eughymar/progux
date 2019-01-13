@@ -11,6 +11,7 @@ import { StoreDetailService } from '../../services/store-detail.service';
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 import { FacebookService, InitParams, UIParams, UIResponse } from "ngx-facebook/dist/esm";
 import { DOCUMENT } from '@angular/platform-browser';
+import { ThemeService } from '../../services/theme.service';
 
 
 @Component({
@@ -51,7 +52,8 @@ export class HeadStoreComponent implements OnInit, OnChanges {
     private _localStorage: LocalStorageService,
     private _storeDetailService: StoreDetailService,
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private themeService: ThemeService
   ) {
     // customize default values of ratings used by this component tree
     // config.max = 5;
@@ -66,6 +68,9 @@ export class HeadStoreComponent implements OnInit, OnChanges {
     } else {
       this.renderer.removeClass(this.navbar.nativeElement, 'menu-fixed');
     }
+  }
+  get nameTheme(): string {
+    return this.themeService.nameTheme;
   }
 
   ngOnInit() {

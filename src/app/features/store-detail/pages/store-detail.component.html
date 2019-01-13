@@ -1,4 +1,4 @@
-<div class="theme-dark">
+<div class="theme-{{theme}}">
   <app-head-store *ngIf="headData" [data]="headData" id="home"></app-head-store>
   <app-actions *ngIf="idStore&&headData" [data]="headData" id="actions"></app-actions>
   <div class="section" id="catalogue">
@@ -11,6 +11,16 @@
   <app-team *ngIf="headData && headData.team.length > 0" id="team" [team]="headData.team"></app-team>
   <app-pricing *ngIf="headData && headData.promotionImages.length > 0" id="promotion" [data]="headData"></app-pricing>
   <app-contact *ngIf="headData&&branchData" [storeName]="headData.store.nameStore" [data]="branchData" id="contact"></app-contact>
+</div>
+
+<div class="select-theme">
+  <ul>
+    <li><a (click)="changeTheme('dark')">D</a></li>
+    <li><a (click)="changeTheme('light')">L</a></li>
+    <li><a (click)="changeTheme('orange')">O</a></li>
+    <li><a (click)="changeTheme('blue')">B</a></li>
+    <li><a (click)="changeTheme('red')">R</a></li>
+  </ul>
 </div>
 
 <!-- <div id="facebook-chat">

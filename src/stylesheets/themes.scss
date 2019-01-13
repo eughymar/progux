@@ -1,10 +1,22 @@
 $themes: (
     light: (
-        primary: #333333,
-        backgroundInfoVideo: red
+        primary: #f74848,
+        backgroundInfoVideo: rgb(185, 214, 80)
     ),
     dark: (
         primary: #6C63FF,
         backgroundInfoVideo: #06D19C
+    ),
+    orange: (
+        primary: rgb(53, 187, 165),
+        backgroundInfoVideo: rgb(233, 42, 176)
+    ),
+    blue: (
+        primary: #6C63FF,
+        backgroundInfoVideo: #06D19C
+    ),
+    red: (
+        primary: rgb(53, 187, 165),
+        backgroundInfoVideo: rgb(233, 42, 176)
     )
 );

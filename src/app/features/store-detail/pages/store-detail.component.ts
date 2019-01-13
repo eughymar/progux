@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { StoreDetailService } from '../services/store-detail.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-store-detail',
@@ -17,19 +18,20 @@ export class StoreDetailComponent implements OnInit {
   headData: any;
   branchData: any;
   isNegux: boolean = false;
-
+  theme:string = 'dark';
+  
+  nameTheme: string;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private _storeDetailService: StoreDetailService
-  ) { }
+    private _storeDetailService: StoreDetailService,
+    private themeService: ThemeService
+  ) {
+    this.nameTheme = themeService.nameTheme;
+   }
 
   ngOnInit() {
-
-    // insert id
-    console.log("----- ngOnInit -----");
-
-    // getting id param
+    this.changeTheme(this.theme);
     this.route.params.subscribe(
       (params) => {
         this.urlName = params['id'];
@@ -90,4 +92,11 @@ export class StoreDetailComponent implements OnInit {
       }
     )
   }
+
+  changeTheme(theme) {
+    this.theme = theme;
+    this.themeService.toggleSidebarVisibility(theme);
+  }
+
+
 }
