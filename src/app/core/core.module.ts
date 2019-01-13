@@ -10,6 +10,7 @@ import { LocalStorageService } from './services/localStorage.service';
 import { SharingDataService } from './services/sharing.data.service';
 import { UtilService } from "./services/util.service";
 import { SafePipe } from "./pipes/safe.pipe";
+import { ParallaxDirective } from './directives/parallax.directive';
 
 @NgModule({
   imports: [
@@ -22,7 +23,9 @@ import { SafePipe } from "./pipes/safe.pipe";
     SharingDataService,
     UtilService,
     SafePipe
-  ]
+  ],
+  declarations: [ParallaxDirective],
+  exports: [ParallaxDirective]
 })
 export class CoreModule {
   /* Make sure CoreModule is imported only by one NgModule the AppModule */
