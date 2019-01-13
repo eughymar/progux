@@ -79,48 +79,48 @@
   }
 }
 
-@each $key in $themes {
-  $color: component-color($component: btn-primary, $state: color, $theme: $key);
+// @each $key in $themes {
+//   $color: component-color($component: btn-primary, $state: color, $theme: $key);
 
-  .#{$key} .pricing {
-    .package {
-      &:before {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-radius: 4px 0;
-        border-bottom: 40px solid transparent;
-        border-left: 40px solid $color;
-        border-top: 40px solid $color;
-        border-right: 40px solid transparent;
-        position: absolute;
-        left: 0;
-        top: 0;
-        content: "";
-      }
+//   .#{$key} .pricing {
+//     .package {
+//       &:before {
+//         width: 0;
+//         height: 0;
+//         border-style: solid;
+//         border-radius: 4px 0;
+//         border-bottom: 40px solid transparent;
+//         border-left: 40px solid $color;
+//         border-top: 40px solid $color;
+//         border-right: 40px solid transparent;
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         content: "";
+//       }
 
-      &:hover {
-        border-color: $color;
+//       &:hover {
+//         border-color: $color;
 
-        .name {
-          color: $color;
-        }
-      }
+//         .name {
+//           color: $color;
+//         }
+//       }
 
-      .available {
-        color: $color;
-      }
+//       .available {
+//         color: $color;
+//       }
 
-      ul {
-        li {
-          i {
-            color: $color;
-          }
-        }
-      }
-    }
-  }
-}
+//       ul {
+//         li {
+//           i {
+//             color: $color;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 624px) {
   .package {

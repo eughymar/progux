@@ -1,15 +1,14 @@
 @import "_variables.scss";
 @import "_mixins.scss";
-// @import "theme.scss";
-
-@import "_utils.scss";
-@import 'bulma';
 
 body {
   font-size: $font-size;
 }
 *:focus {
   outline: none;
+}
+h1 {
+  font-size: 1.6rem !important;
 }
 h3 {
   font-size: 1.3rem !important;
@@ -43,28 +42,6 @@ p {
   flex-direction: column;
 }
 
-.title-section {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  .title-name {
-    font-size: 1.6rem;
-  }
-
-  .title-line {
-    width: 3.5rem;
-    border-bottom: 2.3px solid $primary;
-    margin: auto;
-  }
-  &.white {
-    .title-name {
-      color: white !important;
-    }
-
-    .title-line {
-      border-color: white;
-    }
-  }
-}
 .flex-center {
   align-items: center;
   justify-content: center;

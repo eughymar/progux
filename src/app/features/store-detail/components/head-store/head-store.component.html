@@ -30,11 +30,12 @@
 <!--End menu-store-->
 
 <!-- StoreBanner -->
-<div class="store-banner ">
-  <!-- <div class="button-ctrl-back"><i class="angle-lefticon-"></i></div> -->
-  <!-- <ngx-slider-store  *ngIf="imagesSourceStore" [imageData]="imagesSourceStore" [title]=""></ngx-slider-store> -->
-  <div *ngIf="pixeles > 576" class="banner-img" [style.backgroundImage]="url+data.store.urlBannerDesktopStore | safe: 'urlStyle'"></div>
-  <div *ngIf="pixeles <= 576" class="banner-img" [style.backgroundImage]="url+data.store.urlBannerMobileStore | safe: 'urlStyle'"></div>
+
+<div #banner class="store-banner">
+  <div class="blend-yellow-light">
+    <img *ngIf="pixeles > 576" class="banner-img" src="{{url+data.store.urlBannerDesktopStore}}">
+    <img *ngIf="pixeles <= 576" class="banner-img" src="{{url+data.store.urlBannerMobileStore}}">
+  </div>
   <div class="main-information-store">
     <div *ngIf="data.store.renderedLogo" class="container-logo">
       <img src={{url+data.store.urlLogoStore}} class="img-logo">
@@ -50,7 +51,6 @@
     <div class="row">
       <div class="stars-store">
         <span class="number-stars">{{data.starsStore}}</span>
-        <!-- <ngb-rating [rate]="data.starsStore"></ngb-rating> -->
       </div>
     </div>
     <div class="row">
@@ -61,14 +61,8 @@
       <div class="icon-contact instagram d-inline-block " *ngIf="data.store.instagramStore">
         <a target="_blank" href={{data.store.instagramStore}}><i class="instagram-1icon-"></i></a>
       </div>
-      <!-- <div class="icon-contact twitter d-inline-block" *ngIf="data.store.twitterStore"> -->
       <div class="icon-contact twitter d-inline-block">
         <a><i class="twittericon-"></i></a>
-        <!-- <a class="twitter-share-button" target="_blank"
-                href="https://twitter.com/intent/tweet"
-                data-size="large">
-              <i class="twittericon-"></i>
-            </a> -->
       </div>
       <div class="icon-contact facebook d-inline-block" *ngIf="data.store.facebookStore">
         <a target="_blank" href="{{data.store.facebookStore}}"><i class=" facebookicon-"></i></a>

@@ -1,17 +1,6 @@
 <div class="container-contact has-padding-t-3 has-padding-b-3">
   <div class="container">
-    <div class="title-section white">
-      <div class="d-flex justify-content-center">
-        <span class="title-name">Contacto</span>
-      </div>
-      <div class="d-flex justify-content-center">
-        <div class="title-line"></div>
-      </div>
-      <div class="d-flex justify-content-center text-nro-sucursales">({{countBranchStore}}&nbsp;
-        <span *ngIf="countBranchStore==1">sucursal)</span>
-        <span *ngIf="countBranchStore>1">sucursales)</span>
-      </div>
-    </div>
+    <app-title-section title="Contacto" classs="white"></app-title-section>
     <!-- Address business store -->
     <div class="columns">
       <div class="column">

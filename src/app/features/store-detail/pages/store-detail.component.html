@@ -1,15 +1,17 @@
-<app-head-store *ngIf="headData" [data]="headData" id="home"></app-head-store>
-<app-actions *ngIf="idStore&&headData" [data]="headData" id="actions"></app-actions>
-<div class="section" id="catalogue">
-  <div class="container">
-    <div class="main-content" style="overflow-x: hidden;">
-      <app-catalogue *ngIf="idStore && headData" [data]="headData"></app-catalogue>
+<div class="theme-dark">
+  <app-head-store *ngIf="headData" [data]="headData" id="home"></app-head-store>
+  <app-actions *ngIf="idStore&&headData" [data]="headData" id="actions"></app-actions>
+  <div class="section" id="catalogue">
+    <div class="container">
+      <div class="main-content" style="overflow-x: hidden;">
+        <app-catalogue *ngIf="idStore && headData" [data]="headData"></app-catalogue>
+      </div>
     </div>
   </div>
+  <app-team *ngIf="headData && headData.team.length > 0" id="team" [team]="headData.team"></app-team>
+  <app-pricing *ngIf="headData && headData.promotionImages.length > 0" id="promotion" [data]="headData"></app-pricing>
+  <app-contact *ngIf="headData&&branchData" [storeName]="headData.store.nameStore" [data]="branchData" id="contact"></app-contact>
 </div>
-<app-team *ngIf="headData && headData.team.length > 0" id="team" [team]="headData.team"></app-team>
-<app-pricing *ngIf="headData && headData.promotionImages.length > 0" id="promotion" [data]="headData"></app-pricing>
-<app-contact *ngIf="headData&&branchData" [storeName]="headData.store.nameStore" [data]="branchData" id="contact"></app-contact>
 
 <!-- <div id="facebook-chat">
   <div id="fb-root"></div>

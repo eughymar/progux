@@ -1,23 +1,9 @@
 @import "_variables";
-@import "_utils.scss";
 @import "_mixins.scss";
-$themes: $themes;
-
-@each $key in $themes {
-  .#{$key} .container-actions {
-    background-color: component-color($component: btn-primary, $state: color, $theme: $key);
-  }
-
-  .#{$key} .container-actions {
-    .container {
-      background-color: component-color($component: btn-primary, $state: color, $theme: $key);
-    }
-  }
-}
 
 .info-video {
   color: white;
-  background: rebeccapurple;
+  @include background('backgroundInfoVideo'); 
   .description {
     font-size: 2rem;
     font-family: titillium-light;

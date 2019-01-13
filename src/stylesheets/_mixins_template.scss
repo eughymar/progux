@@ -1,0 +1,50 @@
+@import 'themes';
+@import 'functions';
+
+ @each $theme,
+ $map in $themes {
+   .#{$theme} & {
+     color: map-get($map, color);
+   }
+ }
+
+@mixin themify() {
+
+  @each $theme,
+  $map in $themes {
+    :host-context(.theme-#{$theme}) & {
+      $theme-map: () !global;
+
+      @each $key,
+      $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin color($nombre) {
+  @include themify() {
+    color: themed($nombre);
+  }
+}
+
+@mixin border($name, $top, $right, $bottom, $left) {
+    @include themify() {
+      border-top: solid $top;
+      border-right: solid $right;
+      border-bottom: solid $bottom;
+      border-left: solid $left;
+      border-color: themed($name);
+    }
+}
+
+@mixin background($name) {
+    @include themify() {
+      background: themed($name);
+    }
+}

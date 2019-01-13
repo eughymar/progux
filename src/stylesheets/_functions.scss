@@ -1,0 +1,13 @@
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@function theme-color($key: 'primary', $variant: 'base') {
+  $map: map-get($theme-colors, $key);
+  @return map-get($map, $variant);
+}
+
+// @function contrast($background: 'light', $type: 'primary') {
+//   $map: map-get($contrast-colors, $background);
+//   @return map-get($map, $type);
+// }

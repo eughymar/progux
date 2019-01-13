@@ -1,21 +1,5 @@
-/*===   19/04/2018   ===*/
-
-@import "_utils.scss";
-$themes: $themes;
-
-@each $key in $themes {
-  .#{$key} .locations {
-    &.no-mobile {
-      .branch-offices {
-        background: component-color($component: btn-primary, $state: color, $theme: $key);
-      }
-    }
-  }
-}
-
 $color-background: #24303e;
 
-/*Estilos para direcciones de tienda*/
 .container-contact {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
   url(assets/img/bannerNGX.jpg) center center fixed;

@@ -1,9 +1,0 @@
-@import "_utils.scss";
-$themes: $themes;
-
-@each $key in $themes {
-  .#{$key}
-  .title-line{
-    border-bottom: 3px solid component-color($component: btn-primary, $state: color, $theme: $key);
-  }
-}

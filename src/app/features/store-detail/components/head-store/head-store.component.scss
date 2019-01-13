@@ -1,12 +1,4 @@
-@import "_utils.scss";
 @import "_mixins.scss";
-$themes: $themes;
-
-@each $key in $themes {
-  .#{$key} .store-navbar {
-    background-color: component-color($component: navbar, $state: color, $theme: $key);
-  }
-}
 
 .navbar {
   background: transparent;
@@ -35,7 +27,7 @@ $themes: $themes;
       &::after {
         display: block;
         content: "";
-        border-bottom: 1px solid #6d6d66;
+        @include border('primary', 0, 0, 1px, 0);
         transform: scaleX(0);
         transition: transform .25s ease-in-out;
       }
@@ -107,32 +99,20 @@ $themes: $themes;
 
 .store-banner {
   height: 100vh;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
   a {
     color: white;
   }
   .banner-img {
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
-    &::after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background: rgba(0, 0, 0, .5);
-      // background: rgba(255, 254, 253, 0.8);
-      content: " ";
-    }
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    pointer-events: none;
   }
   .main-information-store {
     text-align: center;
@@ -401,9 +381,9 @@ $themes: $themes;
     }
   }
 
-  @each $key in $themes {
-    .#{$key} .store-navbar {
-      background: linear-gradient(to top, rgba(255, 0, 0, 0), component-color($component: navbar, $state: color-mobile, $theme: $key));
-    }
-  }
+  // @each $key in $themes {
+  //   .#{$key} .store-navbar {
+  //     background: linear-gradient(to top, rgba(255, 0, 0, 0), component-color($component: navbar, $state: color-mobile, $theme: $key));
+  //   }
+  // }
 }

@@ -1,17 +1,18 @@
 @import "_utils.scss";
 @import "mixins";
-$themes: $themes;
+// $themes: $themes;
 
-@each $key in $themes {
-  .#{$key} .input-search {
-    &:focus {
-      border: 1px solid component-color($component: btn-primary, $state: color, $theme: $key);
-    }
-  }
-}
+// @each $key in $themes {
+//   .#{$key} .input-search {
+//     &:focus {
+//       border: 1px solid component-color($component: btn-primary, $state: color, $theme: $key);
+//     }
+//   }
+// }
 
 .input-search {
-  border: solid 1px $primary;
+  // border: solid 1px $primary;
+  @include border('primary', 1px, 1px, 1px, 1px);
   input {
     border: none;
     line-height: 35px;
@@ -23,5 +24,6 @@ $themes: $themes;
     border: none;
     background: transparent;
     color: $primary;
+    @include color('primary');
   }
 }

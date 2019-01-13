@@ -1,5 +1,7 @@
 @import 'variables';
 @import 'bulma';
+@import 'utils';
+@import 'mixins_template';
 
 @mixin center($top: 50%, $left: 50%) {
   position: absolute;
