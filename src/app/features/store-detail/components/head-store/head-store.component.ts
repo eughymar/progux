@@ -43,6 +43,7 @@ export class HeadStoreComponent implements OnInit, OnChanges {
   closeResult;
   followingReady: boolean = false;
   isFollowing: boolean = false;
+  isActive: boolean = false;
   
   constructor(
     private route: ActivatedRoute,

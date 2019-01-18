@@ -21,6 +21,7 @@ export class CatalogueComponent implements OnInit {
   imagesFound: boolean = false;
   searching: boolean = false;
   seeMore: boolean = false;
+  finished: boolean = false;
 
   idx: number = 0;
   qty: number = 8;
@@ -52,6 +53,7 @@ export class CatalogueComponent implements OnInit {
   }
 
   getProducts() {
+    this.finished = false;
     if (this.queryTemp != this.query) {
       this.idx = 0;
       this.products = [];
@@ -73,6 +75,7 @@ export class CatalogueComponent implements OnInit {
           // if (this.idx >= this.productsCount ) {
           //   this.seeMore = true;
           // }
+          this.finished = true;
         },
         (error: any) => {
           console.log(error);

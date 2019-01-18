@@ -1,6 +1,7 @@
 // These are important and needed before anything else
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
+import 'localstorage-polyfill';
 
 import { enableProdMode } from '@angular/core';
 
@@ -19,6 +20,15 @@ const DIST_FOLDER = join(process.cwd(), 'dist');
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
 
+const domino = require('domino');
+const fs = require('fs');
+const path = require('path');
+const template = fs.readFileSync('dist/browser/index.html').toString();
+const win = domino.createWindow(template);
+global['window'] = win;
+global['document'] = win.document;
+global['navigator'] = win.navigator;
+global['localStorage'] = localStorage;
 // Express Engine
 import { ngExpressEngine } from '@nguniversal/express-engine';
 // Import module map for lazy loading
