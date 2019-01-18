@@ -1,22 +1,32 @@
 $themes: (
-    light: (
-        primary: #f74848,
-        backgroundInfoVideo: rgb(185, 214, 80)
-    ),
     dark: (
-        primary: #6C63FF,
-        backgroundInfoVideo: #06D19C
+        primary: #202020,
+        colorNavbar: white,
+        backgroundNavbar: rgba(4, 4, 4, 0.89),
+        backgroundInfoVideo: #3c3b3b
+        ),
+        light: (
+        primary: #a5a5a7,
+        colorNavbar: rgb(59, 59, 59),
+        backgroundNavbar: rgba(255, 254, 253, 0.97),
+        backgroundInfoVideo: rgba(81, 87, 105, 0.4)
     ),
     orange: (
-        primary: rgb(53, 187, 165),
-        backgroundInfoVideo: rgb(233, 42, 176)
+        primary: #f5cc42,
+        colorNavbar: white,
+        backgroundNavbar: rgba(4, 4, 4, 0.89),
+        backgroundInfoVideo: linear-gradient(to right, #f83600 0%, #f9d423 100%)
     ),
     blue: (
-        primary: #6C63FF,
-        backgroundInfoVideo: #06D19C
+        primary: #34319d,
+        colorNavbar: white,
+        backgroundNavbar: rgba(42, 50, 148, 0.89),
+        backgroundInfoVideo: linear-gradient(50deg, #ff4169 0, #7c26f8 100%)
     ),
     red: (
-        primary: rgb(53, 187, 165),
-        backgroundInfoVideo: rgb(233, 42, 176)
+        primary: #7430e8,
+        colorNavbar: white,
+        backgroundNavbar: rgba(121, 30, 158, 0.89),
+        backgroundInfoVideo: linear-gradient(to top, #30cfd0 0%, #330867 100%)
     )
 );

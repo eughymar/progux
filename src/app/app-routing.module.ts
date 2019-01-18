@@ -10,10 +10,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { WelcomeComponent } from "./features/welcome/pages/welcome.component";
 import { ContactComponent } from "./features/contact/pages/contact.component";
 import { PageComponent } from "./features/main-search/components/page/page.component";
-import { SearchResultComponent } from './features/search-result/pages/page.component';
+import { SearchResultComponent } from "./features/search-result/pages/page.component";
 import { StoreDetailComponent } from "./features/store-detail/pages/store-detail.component";
 import { NotFoundComponent } from "./features/not-found/not-found.component";
-
 
 // ------------------------------------------------------------------------------
 // Import custom preload strategy
@@ -32,8 +31,8 @@ const routes: Routes = [
   { path: "", component: PageComponent, pathMatch: "full" },
   { path: "contact", component: ContactComponent, data: { preload: true } },
   { path: "searchResult", component: SearchResultComponent },
-  { path: 'bo/:id', component: StoreDetailComponent },
-  { path: 'not-found', component: NotFoundComponent },
+  { path: "bo/:id", component: StoreDetailComponent },
+  { path: "not-found", component: NotFoundComponent }
 ];
 
 @NgModule({

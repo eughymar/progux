@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------------------
 import { NgModule, ErrorHandler } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 // ------------------------------------------------------------------------------
@@ -15,8 +15,8 @@ import { WelcomeModule } from "./features/welcome/welcome.module";
 import { ContactModule } from "./features/contact/contact.module";
 import { MainSearchModule } from "./features/main-search/main-search.module";
 import { SearchResultModule } from "./features/search-result/search-result.module";
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { StoreDetailModule } from './features/store-detail/store-detail.module';
+import { SlickCarouselModule } from "ngx-slick-carousel";
+import { StoreDetailModule } from "./features/store-detail/store-detail.module";
 import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
 import { NotFoundModule } from "./features/not-found/not-found.module";
 import { FacebookModule } from "ngx-facebook/dist/esm/facebook.module";
@@ -47,7 +47,6 @@ import { isPlatformBrowser } from "@angular/common";
 // Import environments
 // ------------------------------------------------------------------------------
 import { environment } from "../environments/environment";
-
 
 @NgModule({
   imports: [
