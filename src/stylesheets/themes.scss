@@ -3,30 +3,35 @@ $themes: (
         primary: #202020,
         colorNavbar: white,
         backgroundNavbar: rgba(4, 4, 4, 0.89),
-        backgroundInfoVideo: #3c3b3b
+        backgroundInfoVideo: #3c3b3b,
+        backgroundNavbarActive: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(4, 4, 4, 0.89))
         ),
         light: (
         primary: #a5a5a7,
         colorNavbar: rgb(59, 59, 59),
         backgroundNavbar: rgba(255, 254, 253, 0.97),
-        backgroundInfoVideo: rgba(81, 87, 105, 0.4)
+        backgroundInfoVideo: rgba(81, 87, 105, 0.4),
+        backgroundNavbarActive: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(255, 254, 253, 0.97))
     ),
     orange: (
         primary: #f5cc42,
         colorNavbar: white,
         backgroundNavbar: rgba(4, 4, 4, 0.89),
-        backgroundInfoVideo: linear-gradient(to right, #f83600 0%, #f9d423 100%)
+        backgroundInfoVideo: linear-gradient(to right, #f83600 0%, #f9d423 100%),
+        backgroundNavbarActive: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(4, 4, 4, 0.89))
     ),
     blue: (
         primary: #34319d,
         colorNavbar: white,
         backgroundNavbar: rgba(42, 50, 148, 0.89),
-        backgroundInfoVideo: linear-gradient(50deg, #ff4169 0, #7c26f8 100%)
+        backgroundInfoVideo: linear-gradient(50deg, #ff4169 0, #7c26f8 100%),
+        backgroundNavbarActive: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(42, 50, 148, 0.89))
     ),
     red: (
         primary: #7430e8,
         colorNavbar: white,
         backgroundNavbar: rgba(121, 30, 158, 0.89),
-        backgroundInfoVideo: linear-gradient(to top, #30cfd0 0%, #330867 100%)
+        backgroundInfoVideo: linear-gradient(to top, #30cfd0 0%, #330867 100%),
+        backgroundNavbarActive: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(121, 30, 158, 0.89))
     )
 );

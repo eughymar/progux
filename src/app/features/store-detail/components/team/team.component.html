@@ -1,20 +1,11 @@
-<div class="container-fluid c-color-bgr">
-  <div class="container c-color-bgr team-container">
-    <!--title-section-->
-    <div class="title-section white">
-      <div class="d-flex justify-content-center">
-        <span class="title-name">Nuestro equipo</span>
-      </div>
-      <div class="d-flex justify-content-center">
-        <div class="title-line"></div>
-      </div>
-    </div>
-    <!--end title-section-->
+<!-- <div class=""> -->
+  <div class="container team-container has-margin-t-3 has-margin-b-3">
+    <app-title-section title="Nuestro equipo"></app-title-section>
 
-    <div class="row d-flex justify-content-between">
-      <div *ngFor="let member of team" class="col-6 col-md-4 col-lg-3">
+    <div class="columns is-flex flex-wrap has-margin-t-4">
+      <div *ngFor="let member of team" class="column has-text-centered is-half-mobile is-full-mobile-extra">
 
-        <div class="team-wrapper mb-5 ">
+        <div class="team-wrapper">
 
           <!-- <picture class="team-image"> -->
           <picture class="team-image d-flex justify-content-center">
@@ -24,10 +15,10 @@
             <div class="name">
               <span>{{member.firstName}} {{member.lastName}}</span>
             </div>
-            <ul class="list-inline mb-0">
+            <div class="is-flex flex-center">
               <a href="#"><i class="twittericon-"></i></a>
               <a href="#"><i class="facebookicon-"></i></a>
-            </ul>
+            </div>
             <div *ngIf="member.position" class="description">
               <span>{{member.position}}</span>
             </div>
@@ -113,4 +104,4 @@
       </div> -->
     </div>
   </div>
-</div>
+<!-- </div> -->

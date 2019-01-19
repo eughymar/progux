@@ -8,14 +8,14 @@
       </div>
       <div class="column data-branch">
         <div *ngFor="let branchStore of data; let idx = index" class="branch">
-          <div class="has-text-weight-bold"> SUCURSAL {{idx+1}} </div>
+          <div class="has-text-weight-bold has-text-centered"> SUCURSAL {{idx+1}} </div>
           <div class="detail">
             <div (click)="selectBranchStore(branchStore)" class="detail">
               <i class="location-1icon-"></i> <span>{{branchStore.address}}</span>
             </div>
             <div class=""><i class="phone-2icon-"></i> <span>Tel.{{branchStore.cellphoneBranchStore}}</span></div>
 
-            <p class="has-margin-t-4 has-text-weight-bold">HORARIOS DE ATENCIÓN</p>
+            <p class="has-margin-t-4 has-text-weight-bold has-text-centered">HORARIOS DE ATENCIÓN</p>
 
             <div *ngIf="mondayToFriday">
               <i class="clockicon-"></i> Lunes a Viernes
